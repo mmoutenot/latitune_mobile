@@ -16,22 +16,16 @@
 
 @implementation LTBlipViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  [super viewDidLoad];
+  locationController = [[LTLocationController alloc] init];
+  locationController.delegate = self;
+  [locationController.locationManager startUpdatingLocation];
+  NSLog(@"started location");
 }
 
-- (IBAction)showMediaPicker:(id)sender
-{
+- (IBAction)showMediaPicker:(id)sender {
   MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
   mediaPicker.delegate = self;
   mediaPicker.allowsPickingMultipleItems = YES;
@@ -48,15 +42,52 @@
   }
 }
 
-- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
-{
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection {
   if (mediaItemCollection) {
+    MPMediaItem *representativeItem = [mediaItemCollection representativeItem];
+    NSString *albumName = [representativeItem valueForProperty: MPMediaItemPropertyAlbumTitle];
+    NSString *artistName = [representativeItem valueForProperty: MPMediaItemPropertyArtist];
+    NSString *songName = [representativeItem valueForProperty: MPMediaItemPropertyTitle];
+    
+    Song *newSong = [[Song alloc] initWithTitle:songName artist:artistName album:albumName];
+    
+    [[LTCommunication sharedInstance] addSong:newSong withDelegate:self];
+    
+    GeoPoint point;
+    point.lat = locationController.locationManager.location.coordinate.latitude;
+    point.lng = locationController.locationManager.location.coordinate.longitude;
+    
+    [[LTCommunication sharedInstance] addBlipWithSong:newSong atLocation:point withDelegate:self];
   }
   [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
-{
+
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker {
   [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) addSongDidFail {
+  NSLog(@"Failed adding song");
+}
+
+- (void) addSongDidSucceedWithSong:(Song*) song {
+  NSLog(@"Song succesfully added");
+}
+
+- (void) getBlipsDidFail {
+  NSLog(@"Failed adding blip");
+}
+
+- (void) getBlipsDidSucceedWithBlips:(NSArray *)blips {
+  NSLog(@"Blip successfully added");
+}
+
+- (void)locationUpdate:(CLLocation *)location {
+  NSLog(@"%@",location);
+}
+
+- (void)locationError:(NSError *)error {
+  NSLog(@"%@",error);
 }
 
 - (void)didReceiveMemoryWarning

@@ -15,6 +15,9 @@ typedef struct {
 @interface Song : NSObject
 @property (strong, nonatomic) NSString *title, *album, *artist, *providerSongID, *providerKey;
 @property (nonatomic) NSInteger songID;
+
+- (id) initWithTitle:(NSString *)_title artist:(NSString*)_artist album:(NSString*)_album;
+
 - (NSDictionary *)asDictionary;
 @end
 

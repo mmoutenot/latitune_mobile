@@ -13,15 +13,14 @@
 @implementation Song
 
 @synthesize album,artist,providerKey,providerSongID,songID,title;
-- (id) initWithTitle:(NSString *)_title artist:(NSString*)_artist album:(NSString*)_album
-      providerSongID:(NSString*)_providerSongID providerKey:(NSString*)_providerKey {
+- (id) initWithTitle:(NSString *)_title artist:(NSString*)_artist album:(NSString*)_album {
     self = [super init];
     if (self) {
         title = _title;
         artist = _artist;
         album = _album;
-        providerKey = _providerKey;
-        providerSongID = _providerSongID;
+        providerKey = @"";
+        providerSongID = @"";
     }
     return self;
 }
@@ -137,7 +136,7 @@
 
 - (void) requestToAddSongDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
     NSDictionary *song = response[@"objects"][0];
-    Song *toReturn = [[Song alloc] initWithTitle:song[@"title"] artist:song[@"artist"] album:song[@"album"] providerSongID:song[@"provider_song_id"] providerKey:song[@"provider_key"]];
+    Song *toReturn = [[Song alloc] initWithTitle:song[@"title"] artist:song[@"artist"] album:song[@"album"]];
     toReturn.songID = [song[@"id"] intValue];
     [cl[@"delegate"] performSelector:@selector(addSongDidSucceedWithSong:) withObject:song];
 }
@@ -164,9 +163,7 @@
     NSDictionary *song = blip[@"song"];
     toReturn.song = [[Song alloc] initWithTitle:song[@"title"]
                                          artist:song[@"artist"]
-                                          album:song[@"album"]
-                                 providerSongID:song[@"provider_song_id"]
-                                    providerKey:song[@"provider_key"]];
+                                          album:song[@"album"]];
     toReturn.song.songID = [song[@"id"] intValue];
     toReturn.userID = [blip[@"user_id"] intValue];
     toReturn.timestamp = nil;
@@ -190,9 +187,7 @@
         NSDictionary *song = blip[@"song"];
         blipObj.song = [[Song alloc] initWithTitle:song[@"title"]
                                              artist:song[@"artist"]
-                                              album:song[@"album"]
-                                     providerSongID:song[@"provider_song_id"]
-                                        providerKey:song[@"provider_key"]];
+                                             album:song[@"album"]];
         blipObj.song.songID = [song[@"id"] intValue];
         blipObj.userID = [blip[@"user_id"] intValue];
         blipObj.timestamp = nil;

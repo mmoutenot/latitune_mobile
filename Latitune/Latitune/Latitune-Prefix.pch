@@ -11,6 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <CoreLocation/CoreLocation.h>
 #endif
 
 #define SERVER_ROOT @"https://latitune.herokuapp.com/api/"
