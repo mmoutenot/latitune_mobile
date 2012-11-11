@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the 'Latitune' target in the 'Latitune' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define SERVER_ROOT @"https://latitune.herokuapp.com/api/"
+#define BLIP_EXT [NSString stringWithFormat:@"%@%@",SERVER_ROOT,@"blip"]
+#define SONG_EXT [NSString stringWithFormat:@"%@%@",SERVER_ROOT,@"song"]
+#define USER_EXT [NSString stringWithFormat:@"%@%@",SERVER_ROOT,@"user"]
