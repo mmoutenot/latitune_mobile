@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LTCommunication.h"
 
-@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *blips;
 @property (strong, nonatomic) UIWebView *webViewPlayer;

@@ -27,6 +27,7 @@
   [[LTCommunication sharedInstance] getBlipsNearLocation:point withDelegate:self];
   blips = [[NSMutableArray alloc] init];
   webViewPlayer = [[UIWebView alloc] init];
+  webViewPlayer.delegate = self;
   
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -103,11 +104,35 @@
   NSDictionary* selBlipDict = blips[indexPath.row];
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", YOUTUBE_PREFIX, selSongID]];
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&autoplay=1", YOUTUBE_PREFIX, selSongID]];
   NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
   
   [webViewPlayer loadRequest:requestObj];
   NSLog(@"Loaded webview with %@", url);
+}
+
+- (UIButton *)findButtonInView:(UIView *)view {
+  UIButton *button = nil;
+  
+  if ([view isMemberOfClass:[UIButton class]]) {
+    return (UIButton *)view;
+  }
+  
+  if (view.subviews && [view.subviews count] > 0) {
+    for (UIView *subview in view.subviews) {
+      button = [self findButtonInView:subview];
+      if (button) return button;
+    }
+  }
+  
+  return button;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)_webView {
+  NSLog(@"TRALALAL");
+  _webView.mediaPlaybackRequiresUserAction=FALSE;
+  UIButton *b = [self findButtonInView:_webView];
+  [b sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
