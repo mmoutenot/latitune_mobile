@@ -11,7 +11,7 @@
 #import "LTLocationController.h"
 #import "LBYouTube.h"
 
-@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, LTLocationControllerDelegate, LBYouTubePlayerControllerDelegate>
+@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, LTLocationControllerDelegate, LBYouTubePlayerControllerDelegate, LBYouTubePlayerDelegate>
 {
   LBYouTubePlayerViewController *controller;
 }
@@ -20,5 +20,6 @@
 @property (strong, nonatomic) UIWebView *webViewPlayer;
 @property (nonatomic, strong) LBYouTubePlayerViewController* controller;
 
+-(void)videoFinished;
 
 @end
