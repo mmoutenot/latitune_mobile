@@ -133,6 +133,8 @@
   NSString *selSongID = selSong.providerSongID;
   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&autoplay=1",@"http://www.youtube.com/embed/", selSongID]];
   [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
+  [self.view addSubview:webViewPlayer];
+  webViewPlayer.frame = self.view.frame;
   NSLog(@"%@",url);
 }
 
