@@ -14,6 +14,7 @@
 @end
 
 @implementation LTExploreViewController
+@synthesize blips;
 
 - (void)viewDidLoad
 {
@@ -24,6 +25,7 @@
   point.lat = location.latitude;
   point.lng = location.longitude;
   [[LTCommunication sharedInstance] getBlipsNearLocation:point withDelegate:self];
+  blips = [[NSMutableArray alloc] init];
   
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -34,32 +36,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) getBlipsDidSucceedWithBlips:(NSArray *)blips {
-  NSMutableArray *locations = [[NSMutableArray alloc] init];
+- (void) getBlipsDidSucceedWithBlips:(NSArray *)_blips {
   LTLocationController *locationController = [LTLocationController sharedInstance];
   CLLocationCoordinate2D currentLocationCoordinate = [locationController location];
   CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:currentLocationCoordinate.latitude
                                                            longitude:currentLocationCoordinate.longitude];
   __block int waiting = 0;
-  for (Blip *blip in blips) {
+  for (Blip *blip in _blips) {
     CLLocation *location = [[CLLocation alloc] initWithLatitude:blip.location.lat longitude:blip.location.lng];
     waiting++;
     [[[CLGeocoder alloc] init] reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
       waiting--;
       NSDictionary *locationData = @{@"description":((CLPlacemark*)placemarks[0]).name,@"latlng":location,@"song":blip.song};
-      NSUInteger newIndex = [locations indexOfObject:locationData
-                                   inSortedRange:(NSRange){0, [locations count]}
+      NSUInteger newIndex = [blips indexOfObject:locationData
+                                   inSortedRange:(NSRange){0, [blips count]}
                                          options:NSBinarySearchingInsertionIndex
                                      usingComparator:^NSComparisonResult(id obj1, id obj2) {
                                        CLLocation *obj1location = obj1[@"latlng"];
                                        CLLocation *obj2location = obj2[@"latlng"];
                                        return [@([obj1location distanceFromLocation:currentLocation]) compare:@([obj2location distanceFromLocation:currentLocation])] ;
                                      }];
-      [locations insertObject:locationData atIndex:newIndex];
+      [blips insertObject:locationData atIndex:newIndex];
       if (waiting == 0) {
-        for (NSDictionary *loc in locations) {
-          NSLog(@"%@ bye %@ at %@",((Song *)loc[@"song"]).title, ((Song *)loc[@"song"]).artist, loc[@"description"]);
+        for (NSDictionary *loc in blips) {
+          NSLog(@"%@ by %@ at %@",((Song *)loc[@"song"]).title, ((Song *)loc[@"song"]).artist, loc[@"description"]);
         }
+        [self.tableView reloadData];
       }
     }];
   }
@@ -68,5 +70,29 @@
 - (void) getBlipsDidFail {
   NSLog(@"get blips fail");
 }
+
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+  return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [blips count];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"Cell";
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+  }
+  NSDictionary *blipDict = blips[indexPath.row];
+  Song *song = blipDict[@"song"];
+  cell.textLabel.text = [NSString stringWithFormat:@"%@ by %@", song.title, song.artist];
+  cell.detailTextLabel.text = blipDict[@"description"];
+  //cell.imageView = [UIImageView]
+  return cell;
+}
+
 
 @end

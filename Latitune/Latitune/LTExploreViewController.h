@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "LTCommunication.h"
 
-@interface LTExploreViewController : UIViewController <GetBlipsDelegate>
+@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray *blips;
 
 @end

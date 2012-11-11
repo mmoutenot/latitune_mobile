@@ -190,6 +190,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA2E05B4164F8FC400BF9B50 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		DAF33093164F335100DBBFD3 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +206,7 @@
 				DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */,
 				DAF33138164F431000DBBFD3 /* SystemConfiguration.framework */,
 				DAF33136164F430300DBBFD3 /* CFNetwork.framework */,
+				DA2E05B4164F8FC400BF9B50 /* Resources */,
 				DAF330EE164F374000DBBFD3 /* External Sources */,
 				DAF330A8164F335100DBBFD3 /* Latitune */,
 				DAF330D7164F335200DBBFD3 /* LatituneTests */,
