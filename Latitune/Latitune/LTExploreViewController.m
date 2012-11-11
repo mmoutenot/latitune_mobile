@@ -90,8 +90,71 @@
   Song *song = blipDict[@"song"];
   cell.textLabel.text = [NSString stringWithFormat:@"%@ by %@", song.title, song.artist];
   cell.detailTextLabel.text = blipDict[@"description"];
-  //cell.imageView = [UIImageView]
+  LTLocationController *locationController = [LTLocationController sharedInstance];
+  CLLocationCoordinate2D currentLocationCoordinate = [locationController location];
+  float heading = [self getHeadingForDirectionFromCoordinate:currentLocationCoordinate toCoordinate:((CLLocation*)blipDict[@"latlng"]).coordinate];
+  cell.imageView.image = [UIImage imageNamed:@"glyphicons_233_direction.png"];
   return cell;
+}
+
+
+- (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
+{
+  
+  CGFloat angleInRadians = angle * (M_PI / 180);
+  CGFloat width = CGImageGetWidth(imgRef);
+  CGFloat height = CGImageGetHeight(imgRef);
+  
+  CGRect imgRect = CGRectMake(0, 0, width, height);
+  CGAffineTransform transform = CGAffineTransformMakeRotation(angleInRadians);
+  CGRect rotatedRect = CGRectApplyAffineTransform(imgRect, transform);
+  
+  CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+  
+  CGContextRef bmContext = CGBitmapContextCreate(NULL,
+                                                 rotatedRect.size.width,
+                                                 rotatedRect.size.height,
+                                                 8,
+                                                 0,
+                                                 colorSpace,
+                                                 kCGImageAlphaPremultipliedFirst);
+  CGContextSetAllowsAntialiasing(bmContext, YES);
+  CGContextSetShouldAntialias(bmContext, YES);
+  CGContextSetInterpolationQuality(bmContext, kCGInterpolationHigh);
+  CGColorSpaceRelease(colorSpace);
+  CGContextTranslateCTM(bmContext,
+                        +(rotatedRect.size.width/2),
+                        +(rotatedRect.size.height/2));
+  CGContextRotateCTM(bmContext, angleInRadians);
+  CGContextTranslateCTM(bmContext,
+                        -(rotatedRect.size.width/2),
+                        -(rotatedRect.size.height/2));
+  CGContextDrawImage(bmContext, CGRectMake(0, 0,
+                                           rotatedRect.size.width,
+                                           rotatedRect.size.height),
+                     imgRef);
+  
+  
+  
+  CGImageRef rotatedImage = CGBitmapContextCreateImage(bmContext);
+  CFRelease(bmContext);
+  return rotatedImage;
+}
+
+- (float)getHeadingForDirectionFromCoordinate:(CLLocationCoordinate2D)fromLoc toCoordinate:(CLLocationCoordinate2D)toLoc
+{
+  float fLat = degreesToRadians(fromLoc.latitude);
+  float fLng = degreesToRadians(fromLoc.longitude);
+  float tLat = degreesToRadians(toLoc.latitude);
+  float tLng = degreesToRadians(toLoc.longitude);
+  
+  float degree = radiandsToDegrees(atan2(sin(tLng-fLng)*cos(tLat), cos(fLat)*sin(tLat)-sin(fLat)*cos(tLat)*cos(tLng-fLng)));
+  
+  if (degree >= 0) {
+    return degree;
+  } else {
+    return 360+degree;
+  }
 }
 
 
