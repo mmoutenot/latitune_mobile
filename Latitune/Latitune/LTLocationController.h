@@ -30,4 +30,6 @@
 
 - (CLLocationCoordinate2D)location;
 
+- (float) heading;
+
 @end

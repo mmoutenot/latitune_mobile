@@ -30,6 +30,12 @@
   webViewPlayer = [[UIWebView alloc] init];
   webViewPlayer.delegate = self;
   
+  [NSTimer scheduledTimerWithTimeInterval:0.1
+                                   target:self
+                                 selector:@selector(updateCompass)
+                                 userInfo:nil
+                                  repeats:YES];
+  
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -184,8 +190,7 @@
   float fLng = degreesToRadians(fromLoc.longitude);
   float tLat = degreesToRadians(toLoc.latitude);
   float tLng = degreesToRadians(toLoc.longitude);
-  
-  float degree = radiandsToDegrees(atan2(sin(tLng-fLng)*cos(tLat), cos(fLat)*sin(tLat)-sin(fLat)*cos(tLat)*cos(tLng-fLng)));
+  float degree = radiansToDegrees(atan2(sin(tLng-fLng)*cos(tLat), cos(fLat)*sin(tLat)-sin(fLat)*cos(tLat)*cos(tLng-fLng)));
   
   if (degree >= 0) {
     return degree;
@@ -195,18 +200,25 @@
 }
 
 -(void)locationUpdate:(CLLocation *)location {
+}
+
+- (void)updateCompass {
+  LTLocationController *locationController = [LTLocationController sharedInstance];
+  CLLocationCoordinate2D coordinate = locationController.location;
+  float magneticHeading = [locationController heading];
+  //NSLog(@"%f",magneticHeading);
   NSArray *visibleCells= [self.tableView visibleCells];
   for (UITableViewCell* cell in visibleCells) {
     NSInteger cellIndex = [self.tableView indexPathForCell:cell].row;
     NSDictionary *blipDict = blips[cellIndex];
-    float heading = [self getHeadingForDirectionFromCoordinate:location.coordinate toCoordinate:((CLLocation*)blipDict[@"latlng"]).coordinate];
+    float heading = [self getHeadingForDirectionFromCoordinate:coordinate toCoordinate:((CLLocation*)blipDict[@"latlng"]).coordinate];
+   // NSLog(@"%f",heading);
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
     //[UIView setAnimationCurve:curve];
     [UIView setAnimationBeginsFromCurrentState:YES];
     
-    // The transform matrix
-    CGAffineTransform transform = CGAffineTransformMakeRotation(degreesToRadians(heading));
+    CGAffineTransform transform = CGAffineTransformMakeRotation((-magneticHeading-heading)*M_PI/180);
     cell.imageView.transform = transform;
     
     // Commit the changes

@@ -22,4 +22,4 @@
 #define USER_EXT [NSString stringWithFormat:@"%@%@",SERVER_ROOT,@"user"]
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
-#define radiandsToDegrees(x) (x * 180.0 / M_PI)
+#define radiansToDegrees(x) (x * 180.0 / M_PI)

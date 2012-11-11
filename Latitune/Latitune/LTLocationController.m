@@ -28,13 +28,14 @@
 }
 
 - (id) init {
-    self = [super init];
-    if (self != nil) {
-        locationManager = [[CLLocationManager alloc] init];
-        locationManager.delegate = self;
-        [locationManager startUpdatingLocation];
-    }
-    return self;
+  self = [super init];
+  if (self != nil) {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    [locationManager startUpdatingHeading];
+  }
+  return self;
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -52,6 +53,9 @@
 
 - (CLLocationCoordinate2D)location {
     return locationManager.location.coordinate;
+}
+- (float) heading {
+  return locationManager.heading.magneticHeading;
 }
 
 @end
