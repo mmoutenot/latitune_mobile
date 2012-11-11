@@ -19,9 +19,9 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  locationController = [[LTLocationController alloc] init];
+  locationController = [LTLocationController sharedInstance];
   locationController.delegate = self;
-  [locationController.locationManager startUpdatingLocation];
+  [[LTCommunication sharedInstance] loginWithUsername:@"ben25" password:@"testpass" withDelegate:self];
   NSLog(@"started location");
 }
 
@@ -29,17 +29,18 @@
   MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
   mediaPicker.delegate = self;
   mediaPicker.allowsPickingMultipleItems = YES;
-  mediaPicker.prompt = @"Select songs to play";
-  @try {
+    NSLog(@"show media picker");
+  //mediaPicker.prompt = @"Select songs to play";
+  //@try {
     [self presentViewController:mediaPicker animated:YES completion:nil];
-  }
+ /* }
   @catch (NSException *exception) {
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Oops!",@"Error title")
                                 message:NSLocalizedString(@"The music library is not available.",@"Error message when MPMediaPickerController fails to load")
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
-  }
+  }*/
 }
 
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection {
@@ -50,14 +51,7 @@
     NSString *songName = [representativeItem valueForProperty: MPMediaItemPropertyTitle];
     
     Song *newSong = [[Song alloc] initWithTitle:songName artist:artistName album:albumName];
-    
     [[LTCommunication sharedInstance] addSong:newSong withDelegate:self];
-    
-    GeoPoint point;
-    point.lat = locationController.locationManager.location.coordinate.latitude;
-    point.lng = locationController.locationManager.location.coordinate.longitude;
-    
-    [[LTCommunication sharedInstance] addBlipWithSong:newSong atLocation:point withDelegate:self];
   }
   [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -66,12 +60,28 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void) loginDidSucceedWithUser:(NSDictionary *)user {
+    NSLog(@"login succeed");
+}
+
+- (void) loginDidFail {
+    NSLog(@"login fail");
+}
+
 - (void) addSongDidFail {
   NSLog(@"Failed adding song");
 }
 
 - (void) addSongDidSucceedWithSong:(Song*) song {
-  NSLog(@"Song succesfully added");
+  GeoPoint point;
+  CLLocationCoordinate2D location = [locationController location];
+  point.lat = location.latitude;
+  point.lng = location.longitude;
+  [[LTCommunication sharedInstance] addBlipWithSong:song atLocation:point withDelegate:self];
+}
+
+- (void) addBlipDidSucceedWithBlip:(Blip*) blip {
+    NSLog(@"added blip y'all");
 }
 
 - (void) getBlipsDidFail {

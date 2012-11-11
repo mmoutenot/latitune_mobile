@@ -14,12 +14,12 @@
 
 
 @interface LTLocationController : NSObject <CLLocationManagerDelegate> {
-	CLLocationManager *locationManager;
   id<LTLocationControllerDelegate> __unsafe_unretained delegate;
 }
 
-@property (nonatomic, retain) CLLocationManager *locationManager;
 @property (unsafe_unretained) id <LTLocationControllerDelegate> delegate;
+
++ (id) sharedInstance;
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
@@ -27,5 +27,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error;
+
+- (CLLocationCoordinate2D)location;
 
 @end

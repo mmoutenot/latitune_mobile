@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LTCommunication.h"
 
-@interface LTExploreViewController : UIViewController
+@interface LTExploreViewController : UIViewController <GetBlipsDelegate>
 
 @end

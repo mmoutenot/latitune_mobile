@@ -8,18 +8,33 @@
 
 #import "LTLocationController.h"
 
+@interface LTLocationController()
+{
+    CLLocationManager *locationManager;
+}
+@end
+
 @implementation LTLocationController
 
-@synthesize locationManager;
 @synthesize delegate;
 
++ (id)sharedInstance {
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // or some other init method
+    });
+    return _sharedObject;
+}
+
 - (id) init {
-  self = [super init];
-  if (self != nil) {
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-  }
-  return self;
+    self = [super init];
+    if (self != nil) {
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        [locationManager startUpdatingLocation];
+    }
+    return self;
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -33,6 +48,10 @@
        didFailWithError:(NSError *)error
 {
   [self.delegate locationError:error];
+}
+
+- (CLLocationCoordinate2D)location {
+    return locationManager.location.coordinate;
 }
 
 @end

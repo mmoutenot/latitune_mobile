@@ -11,7 +11,7 @@
 #import "LTCommunication.h"
 #import "LTLocationController.h"
 
-@interface LTBlipViewController : UIViewController <MPMediaPickerControllerDelegate, AddSongDelegate, AddBlipDelegate, LTLocationControllerDelegate>{
+@interface LTBlipViewController : UIViewController <MPMediaPickerControllerDelegate, AddSongDelegate, AddBlipDelegate, LTLocationControllerDelegate, LoginDelegate>{
   LTLocationController *locationController;
 }
 

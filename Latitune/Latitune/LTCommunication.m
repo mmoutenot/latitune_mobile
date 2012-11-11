@@ -8,6 +8,7 @@
 
 #import "LTCommunication.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 #import "SBJson.h"
 
 @implementation Song
@@ -73,6 +74,7 @@
     for (id key in [params allKeys]) {
         urlString = [NSString stringWithFormat:@"%@&%@=%@",urlString,key,params[key]];
     }
+    NSLog(@"%@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     __weak ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setCompletionBlock:^{
@@ -89,13 +91,17 @@
 
 - (void)putURL:(NSString*)urlString parameters:(NSDictionary*)params succeedSelector:(SEL)succeedSelector
         failSelector:(SEL) failSelector closure:(NSDictionary*)cl; {
+    NSLog(@"in put url");
+    NSLog(@"%@",params);
     NSURL *url = [NSURL URLWithString:urlString];
-    __weak ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    __weak ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setPostValue:username forKey:@"username"];
+    [request setPostValue:password forKey:@"password"];
     NSString *paramString = [NSString stringWithFormat:@"username=%@&password=%@",username,password];
     for (id key in [params allKeys]) {
         paramString = [NSString stringWithFormat:@"%@&%@=%@",paramString,key,params[key]];
+        [request setPostValue:params[key] forKey:key];
     }
-    [request appendPostData:[paramString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setRequestMethod:@"PUT"];
     [request setCompletionBlock:^{
         NSString *responseString = [request responseString];
@@ -105,6 +111,7 @@
     [request setFailedBlock:^{
         [self performSelector:failSelector withObject:cl];
     }];
+
     [request startAsynchronous];
 }
 
@@ -128,7 +135,9 @@
 }
 
 - (void) requestToLoginDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
+    NSLog(@"%@",response);
     NSDictionary *user = response[@"objects"][0];
+    userID = [user[@"id"] intValue];
     [cl[@"delegate"] performSelector:@selector(loginDidSucceedWithUser:) withObject:user];
 }
 
@@ -141,7 +150,7 @@
     username = uname;
     password = upassword;
     NSDictionary *cl = @{@"delegate":delegate};
-    [self putURL:USER_EXT parameters:nil succeedSelector:@selector(requestToLoginDidSucceedWithResponse:closure:)
+    [self getURL:USER_EXT parameters:nil succeedSelector:@selector(requestToLoginDidSucceedWithResponse:closure:)
     failSelector:@selector(requestToLoginDidFailWithClosure:) closure:cl];
 }
 
@@ -153,10 +162,11 @@
 }
 
 - (void) requestToAddSongDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
+    NSLog(@"%@",response);
     NSDictionary *song = response[@"objects"][0];
     Song *toReturn = [[Song alloc] initWithTitle:song[@"title"] artist:song[@"artist"] album:song[@"album"]];
     toReturn.songID = [song[@"id"] intValue];
-    [cl[@"delegate"] performSelector:@selector(addSongDidSucceedWithSong:) withObject:song];
+    [cl[@"delegate"] performSelector:@selector(addSongDidSucceedWithSong:) withObject:toReturn];
 }
 
 - (void) requestToAddSongDidFailWithClosure:(NSDictionary *)cl {
@@ -171,10 +181,11 @@
 
 - (void) getBlipsWithDelegate:(NSObject<GetBlipsDelegate> *)delegate {
     NSDictionary *cl = @{@"delegate":delegate};
-    [self getURL:BLIP_EXT parameters:nil succeedSelector:@selector(requestToAddBlipDidSucceedWithResponse:closure:) failSelector:@selector(requestToAddBlipDidFailWithClosure:) closure:cl];
+    [self getURL:BLIP_EXT parameters:nil succeedSelector:@selector(requestToGetBlipsDidSucceedWithResponse:closure:) failSelector:@selector(requestToGetBlipsDidFailWithClosure:) closure:cl];
 }
 
 - (void) requestToAddBlipDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
+    NSLog(@"%@",response);
     NSDictionary *blip = response[@"objects"][0];
     Blip *toReturn = [[Blip alloc] init];
     toReturn.userID = [blip[@"user_id"] intValue];
@@ -218,16 +229,20 @@
     [cl[@"delegate"] performSelector:@selector(getBlipsDidSucceedWithBlips:) withObject:toReturn];
 }
 
+- (void) requestToGetBlipsDidFailWithClosure:(NSDictionary*)cl {
+  [cl[@"delegate"] performSelector:@selector(getBlipsDidFail)];
+}
+
 - (void) getBlipsNearLocation:(GeoPoint)location withDelegate:(NSObject<GetBlipsDelegate>*)delegate {
     NSDictionary *params = @{@"latitude":@(location.lat),@"longitude":@(location.lng)};
     NSDictionary *cl = @{@"delegate":delegate};
-    [self getURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToAddBlipDidSucceedWithResponse:closure:) failSelector:@selector(requestToAddBlipDidFailWithClosure:) closure:cl];
+    [self getURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToGetBlipsDidSucceedWithResponse:closure:) failSelector:@selector(requestToGetBlipsDidFailWithClosure:) closure:cl];
 }
 
 - (void) getBlipWithID:(NSInteger)blipID withDelegate:(NSObject<GetBlipsDelegate> *)delegate {
     NSDictionary *params = @{@"id":@(blipID)};
     NSDictionary *cl = @{@"delegate":delegate};
-    [self getURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToAddBlipDidSucceedWithResponse:closure:) failSelector:@selector(requestToAddBlipDidFailWithClosure:) closure:cl];
+       [self getURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToGetBlipsDidSucceedWithResponse:closure:) failSelector:@selector(requestToGetBlipsDidFailWithClosure:) closure:cl];
 }
 
 
