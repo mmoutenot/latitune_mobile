@@ -8,14 +8,29 @@
 
 #import "LTAppDelegate.h"
 #import "LTLocationController.h"
+#import "LTCommunication.h"
+#import "SSKeychain.h"
 
 @implementation LTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  if ([[SSKeychain allAccounts] count]>0) {
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    NSString *password = [SSKeychain passwordForService:@"latitune" account:username];
+    [[LTCommunication sharedInstance] loginWithUsername:username password:password withDelegate:self];
+  }
   [LTLocationController sharedInstance];
   return YES;
+}
+
+- (void)loginDidSucceedWithUser:(NSDictionary *)user {
+  
+}
+
+- (void)loginDidFail {
+  
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

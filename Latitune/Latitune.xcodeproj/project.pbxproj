@@ -10,6 +10,41 @@
 		A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69FE9BA164F51C600274407 /* MediaPlayer.framework */; };
 		A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FE9C2164F59AB00274407 /* LTLocationController.m */; };
 		DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */; };
+		DA0A31FA1650206A00E7A2A4 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A31F91650206A00E7A2A4 /* SSKeychain.m */; };
+		DA0A32471650225200E7A2A4 /* FKBadgeField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A31FE1650225200E7A2A4 /* FKBadgeField.m */; };
+		DA0A32481650225200E7A2A4 /* FKButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32001650225200E7A2A4 /* FKButtonField.m */; };
+		DA0A32491650225200E7A2A4 /* FKDisclosureIndicatorAccessoryField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32021650225200E7A2A4 /* FKDisclosureIndicatorAccessoryField.m */; };
+		DA0A324A1650225200E7A2A4 /* FKFloatField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32061650225200E7A2A4 /* FKFloatField.m */; };
+		DA0A324B1650225200E7A2A4 /* FKImageField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32081650225200E7A2A4 /* FKImageField.m */; };
+		DA0A324C1650225200E7A2A4 /* FKIntegerField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A320A1650225200E7A2A4 /* FKIntegerField.m */; };
+		DA0A324D1650225200E7A2A4 /* FKLabelField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A320C1650225200E7A2A4 /* FKLabelField.m */; };
+		DA0A324E1650225200E7A2A4 /* FKPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A320E1650225200E7A2A4 /* FKPasswordTextField.m */; };
+		DA0A324F1650225200E7A2A4 /* FKSaveButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32101650225200E7A2A4 /* FKSaveButtonField.m */; };
+		DA0A32501650225200E7A2A4 /* FKSimpleField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32121650225200E7A2A4 /* FKSimpleField.m */; };
+		DA0A32511650225200E7A2A4 /* FKSliderField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32141650225200E7A2A4 /* FKSliderField.m */; };
+		DA0A32521650225200E7A2A4 /* FKSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32161650225200E7A2A4 /* FKSwitchField.m */; };
+		DA0A32531650225200E7A2A4 /* FKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32181650225200E7A2A4 /* FKTextField.m */; };
+		DA0A32541650225200E7A2A4 /* FKTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A321A1650225200E7A2A4 /* FKTextViewField.m */; };
+		DA0A32551650225200E7A2A4 /* FKValueViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A321C1650225200E7A2A4 /* FKValueViewField.m */; };
+		DA0A32561650225200E7A2A4 /* FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A321F1650225200E7A2A4 /* FKFormAttributeMapping.m */; };
+		DA0A32571650225200E7A2A4 /* FKFormAttributeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32211650225200E7A2A4 /* FKFormAttributeValidation.m */; };
+		DA0A32581650225200E7A2A4 /* FKFormMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32231650225200E7A2A4 /* FKFormMapper.m */; };
+		DA0A32591650225200E7A2A4 /* FKFormMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32251650225200E7A2A4 /* FKFormMapping.m */; };
+		DA0A325A1650225200E7A2A4 /* FKFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32271650225200E7A2A4 /* FKFormModel.m */; };
+		DA0A325B1650225200E7A2A4 /* FKSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A322A1650225200E7A2A4 /* FKSectionObject.m */; };
+		DA0A325C1650225200E7A2A4 /* NSObject+FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A322D1650225200E7A2A4 /* NSObject+FKFormAttributeMapping.m */; };
+		DA0A325D1650225200E7A2A4 /* UITableViewCell+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A322F1650225200E7A2A4 /* UITableViewCell+FormKit.m */; };
+		DA0A325E1650225200E7A2A4 /* UIView+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32311650225200E7A2A4 /* UIView+FormKit.m */; };
+		DA0A325F1650225200E7A2A4 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32351650225200E7A2A4 /* AbstractActionSheetPicker.m */; };
+		DA0A32601650225200E7A2A4 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32371650225200E7A2A4 /* ActionSheetCustomPicker.m */; };
+		DA0A32611650225200E7A2A4 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A323A1650225200E7A2A4 /* ActionSheetDatePicker.m */; };
+		DA0A32621650225200E7A2A4 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A323C1650225200E7A2A4 /* ActionSheetDistancePicker.m */; };
+		DA0A32631650225200E7A2A4 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A323E1650225200E7A2A4 /* ActionSheetStringPicker.m */; };
+		DA0A32641650225200E7A2A4 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32401650225200E7A2A4 /* DistancePickerView.m */; };
+		DA0A32651650225200E7A2A4 /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32431650225200E7A2A4 /* BWLongTextViewController.m */; };
+		DA0A32661650225200E7A2A4 /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32461650225200E7A2A4 /* BWSelectViewController.m */; };
+		DA0A3269165022DE00E7A2A4 /* LTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A3268165022DE00E7A2A4 /* LTRegisterViewController.m */; };
+		DA0A326B165026B500E7A2A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A326A165026B400E7A2A4 /* Security.framework */; };
 		DA2E05B9164F900600BF9B50 /* glyphicons_233_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */; };
 		DA2E05BA164F900600BF9B50 /* glyphicons_233_direction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */; };
 		DAF330A3164F335100DBBFD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
@@ -79,6 +114,81 @@
 		A69FE9C2164F59AB00274407 /* LTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLocationController.m; sourceTree = "<group>"; };
 		DA0A31EE16501AFB00E7A2A4 /* LTYouTubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYouTubeViewController.h; sourceTree = "<group>"; };
 		DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYouTubeViewController.m; sourceTree = "<group>"; };
+		DA0A31F81650206A00E7A2A4 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		DA0A31F91650206A00E7A2A4 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		DA0A31FD1650225200E7A2A4 /* FKBadgeField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBadgeField.h; sourceTree = "<group>"; };
+		DA0A31FE1650225200E7A2A4 /* FKBadgeField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBadgeField.m; sourceTree = "<group>"; };
+		DA0A31FF1650225200E7A2A4 /* FKButtonField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKButtonField.h; sourceTree = "<group>"; };
+		DA0A32001650225200E7A2A4 /* FKButtonField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKButtonField.m; sourceTree = "<group>"; };
+		DA0A32011650225200E7A2A4 /* FKDisclosureIndicatorAccessoryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDisclosureIndicatorAccessoryField.h; sourceTree = "<group>"; };
+		DA0A32021650225200E7A2A4 /* FKDisclosureIndicatorAccessoryField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDisclosureIndicatorAccessoryField.m; sourceTree = "<group>"; };
+		DA0A32031650225200E7A2A4 /* FKFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFields.h; sourceTree = "<group>"; };
+		DA0A32041650225200E7A2A4 /* FKFieldsBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFieldsBlocks.h; sourceTree = "<group>"; };
+		DA0A32051650225200E7A2A4 /* FKFloatField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFloatField.h; sourceTree = "<group>"; };
+		DA0A32061650225200E7A2A4 /* FKFloatField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFloatField.m; sourceTree = "<group>"; };
+		DA0A32071650225200E7A2A4 /* FKImageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKImageField.h; sourceTree = "<group>"; };
+		DA0A32081650225200E7A2A4 /* FKImageField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKImageField.m; sourceTree = "<group>"; };
+		DA0A32091650225200E7A2A4 /* FKIntegerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKIntegerField.h; sourceTree = "<group>"; };
+		DA0A320A1650225200E7A2A4 /* FKIntegerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKIntegerField.m; sourceTree = "<group>"; };
+		DA0A320B1650225200E7A2A4 /* FKLabelField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLabelField.h; sourceTree = "<group>"; };
+		DA0A320C1650225200E7A2A4 /* FKLabelField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKLabelField.m; sourceTree = "<group>"; };
+		DA0A320D1650225200E7A2A4 /* FKPasswordTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPasswordTextField.h; sourceTree = "<group>"; };
+		DA0A320E1650225200E7A2A4 /* FKPasswordTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKPasswordTextField.m; sourceTree = "<group>"; };
+		DA0A320F1650225200E7A2A4 /* FKSaveButtonField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSaveButtonField.h; sourceTree = "<group>"; };
+		DA0A32101650225200E7A2A4 /* FKSaveButtonField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSaveButtonField.m; sourceTree = "<group>"; };
+		DA0A32111650225200E7A2A4 /* FKSimpleField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSimpleField.h; sourceTree = "<group>"; };
+		DA0A32121650225200E7A2A4 /* FKSimpleField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSimpleField.m; sourceTree = "<group>"; };
+		DA0A32131650225200E7A2A4 /* FKSliderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSliderField.h; sourceTree = "<group>"; };
+		DA0A32141650225200E7A2A4 /* FKSliderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSliderField.m; sourceTree = "<group>"; };
+		DA0A32151650225200E7A2A4 /* FKSwitchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSwitchField.h; sourceTree = "<group>"; };
+		DA0A32161650225200E7A2A4 /* FKSwitchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSwitchField.m; sourceTree = "<group>"; };
+		DA0A32171650225200E7A2A4 /* FKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTextField.h; sourceTree = "<group>"; };
+		DA0A32181650225200E7A2A4 /* FKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTextField.m; sourceTree = "<group>"; };
+		DA0A32191650225200E7A2A4 /* FKTextViewField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTextViewField.h; sourceTree = "<group>"; };
+		DA0A321A1650225200E7A2A4 /* FKTextViewField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTextViewField.m; sourceTree = "<group>"; };
+		DA0A321B1650225200E7A2A4 /* FKValueViewField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKValueViewField.h; sourceTree = "<group>"; };
+		DA0A321C1650225200E7A2A4 /* FKValueViewField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKValueViewField.m; sourceTree = "<group>"; };
+		DA0A321D1650225200E7A2A4 /* FKBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBlocks.h; sourceTree = "<group>"; };
+		DA0A321E1650225200E7A2A4 /* FKFormAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormAttributeMapping.h; sourceTree = "<group>"; };
+		DA0A321F1650225200E7A2A4 /* FKFormAttributeMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormAttributeMapping.m; sourceTree = "<group>"; };
+		DA0A32201650225200E7A2A4 /* FKFormAttributeValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormAttributeValidation.h; sourceTree = "<group>"; };
+		DA0A32211650225200E7A2A4 /* FKFormAttributeValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormAttributeValidation.m; sourceTree = "<group>"; };
+		DA0A32221650225200E7A2A4 /* FKFormMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormMapper.h; sourceTree = "<group>"; };
+		DA0A32231650225200E7A2A4 /* FKFormMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormMapper.m; sourceTree = "<group>"; };
+		DA0A32241650225200E7A2A4 /* FKFormMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormMapping.h; sourceTree = "<group>"; };
+		DA0A32251650225200E7A2A4 /* FKFormMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormMapping.m; sourceTree = "<group>"; };
+		DA0A32261650225200E7A2A4 /* FKFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFormModel.h; sourceTree = "<group>"; };
+		DA0A32271650225200E7A2A4 /* FKFormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFormModel.m; sourceTree = "<group>"; };
+		DA0A32281650225200E7A2A4 /* FKMacrosDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKMacrosDefinitions.h; sourceTree = "<group>"; };
+		DA0A32291650225200E7A2A4 /* FKSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSectionObject.h; sourceTree = "<group>"; };
+		DA0A322A1650225200E7A2A4 /* FKSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSectionObject.m; sourceTree = "<group>"; };
+		DA0A322B1650225200E7A2A4 /* FormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormKit.h; sourceTree = "<group>"; };
+		DA0A322C1650225200E7A2A4 /* NSObject+FKFormAttributeMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FKFormAttributeMapping.h"; sourceTree = "<group>"; };
+		DA0A322D1650225200E7A2A4 /* NSObject+FKFormAttributeMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FKFormAttributeMapping.m"; sourceTree = "<group>"; };
+		DA0A322E1650225200E7A2A4 /* UITableViewCell+FormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+FormKit.h"; sourceTree = "<group>"; };
+		DA0A322F1650225200E7A2A4 /* UITableViewCell+FormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FormKit.m"; sourceTree = "<group>"; };
+		DA0A32301650225200E7A2A4 /* UIView+FormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormKit.h"; sourceTree = "<group>"; };
+		DA0A32311650225200E7A2A4 /* UIView+FormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormKit.m"; sourceTree = "<group>"; };
+		DA0A32341650225200E7A2A4 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		DA0A32351650225200E7A2A4 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		DA0A32361650225200E7A2A4 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		DA0A32371650225200E7A2A4 /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		DA0A32381650225200E7A2A4 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		DA0A32391650225200E7A2A4 /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		DA0A323A1650225200E7A2A4 /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		DA0A323B1650225200E7A2A4 /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		DA0A323C1650225200E7A2A4 /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		DA0A323D1650225200E7A2A4 /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		DA0A323E1650225200E7A2A4 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		DA0A323F1650225200E7A2A4 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		DA0A32401650225200E7A2A4 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		DA0A32421650225200E7A2A4 /* BWLongTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWLongTextViewController.h; sourceTree = "<group>"; };
+		DA0A32431650225200E7A2A4 /* BWLongTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWLongTextViewController.m; sourceTree = "<group>"; };
+		DA0A32451650225200E7A2A4 /* BWSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSelectViewController.h; sourceTree = "<group>"; };
+		DA0A32461650225200E7A2A4 /* BWSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSelectViewController.m; sourceTree = "<group>"; };
+		DA0A3267165022DE00E7A2A4 /* LTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRegisterViewController.h; sourceTree = "<group>"; };
+		DA0A3268165022DE00E7A2A4 /* LTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRegisterViewController.m; sourceTree = "<group>"; };
+		DA0A326A165026B400E7A2A4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_233_direction.png; sourceTree = "<group>"; };
 		DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_233_direction@2x.png"; sourceTree = "<group>"; };
 		DAF3309E164F335100DBBFD3 /* Latitune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latitune.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0A326B165026B500E7A2A4 /* Security.framework in Frameworks */,
 				A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */,
 				DAF3313F164F443600DBBFD3 /* CoreLocation.framework in Frameworks */,
 				DAF3313D164F432700DBBFD3 /* libz.dylib in Frameworks */,
@@ -197,6 +308,131 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0A31F71650206A00E7A2A4 /* SSKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A31F81650206A00E7A2A4 /* SSKeychain.h */,
+				DA0A31F91650206A00E7A2A4 /* SSKeychain.m */,
+			);
+			path = SSKeyChain;
+			sourceTree = "<group>";
+		};
+		DA0A31FB1650225200E7A2A4 /* FormKit */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A31FC1650225200E7A2A4 /* Fields */,
+				DA0A321D1650225200E7A2A4 /* FKBlocks.h */,
+				DA0A321E1650225200E7A2A4 /* FKFormAttributeMapping.h */,
+				DA0A321F1650225200E7A2A4 /* FKFormAttributeMapping.m */,
+				DA0A32201650225200E7A2A4 /* FKFormAttributeValidation.h */,
+				DA0A32211650225200E7A2A4 /* FKFormAttributeValidation.m */,
+				DA0A32221650225200E7A2A4 /* FKFormMapper.h */,
+				DA0A32231650225200E7A2A4 /* FKFormMapper.m */,
+				DA0A32241650225200E7A2A4 /* FKFormMapping.h */,
+				DA0A32251650225200E7A2A4 /* FKFormMapping.m */,
+				DA0A32261650225200E7A2A4 /* FKFormModel.h */,
+				DA0A32271650225200E7A2A4 /* FKFormModel.m */,
+				DA0A32281650225200E7A2A4 /* FKMacrosDefinitions.h */,
+				DA0A32291650225200E7A2A4 /* FKSectionObject.h */,
+				DA0A322A1650225200E7A2A4 /* FKSectionObject.m */,
+				DA0A322B1650225200E7A2A4 /* FormKit.h */,
+				DA0A322C1650225200E7A2A4 /* NSObject+FKFormAttributeMapping.h */,
+				DA0A322D1650225200E7A2A4 /* NSObject+FKFormAttributeMapping.m */,
+				DA0A322E1650225200E7A2A4 /* UITableViewCell+FormKit.h */,
+				DA0A322F1650225200E7A2A4 /* UITableViewCell+FormKit.m */,
+				DA0A32301650225200E7A2A4 /* UIView+FormKit.h */,
+				DA0A32311650225200E7A2A4 /* UIView+FormKit.m */,
+			);
+			path = FormKit;
+			sourceTree = "<group>";
+		};
+		DA0A31FC1650225200E7A2A4 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A31FD1650225200E7A2A4 /* FKBadgeField.h */,
+				DA0A31FE1650225200E7A2A4 /* FKBadgeField.m */,
+				DA0A31FF1650225200E7A2A4 /* FKButtonField.h */,
+				DA0A32001650225200E7A2A4 /* FKButtonField.m */,
+				DA0A32011650225200E7A2A4 /* FKDisclosureIndicatorAccessoryField.h */,
+				DA0A32021650225200E7A2A4 /* FKDisclosureIndicatorAccessoryField.m */,
+				DA0A32031650225200E7A2A4 /* FKFields.h */,
+				DA0A32041650225200E7A2A4 /* FKFieldsBlocks.h */,
+				DA0A32051650225200E7A2A4 /* FKFloatField.h */,
+				DA0A32061650225200E7A2A4 /* FKFloatField.m */,
+				DA0A32071650225200E7A2A4 /* FKImageField.h */,
+				DA0A32081650225200E7A2A4 /* FKImageField.m */,
+				DA0A32091650225200E7A2A4 /* FKIntegerField.h */,
+				DA0A320A1650225200E7A2A4 /* FKIntegerField.m */,
+				DA0A320B1650225200E7A2A4 /* FKLabelField.h */,
+				DA0A320C1650225200E7A2A4 /* FKLabelField.m */,
+				DA0A320D1650225200E7A2A4 /* FKPasswordTextField.h */,
+				DA0A320E1650225200E7A2A4 /* FKPasswordTextField.m */,
+				DA0A320F1650225200E7A2A4 /* FKSaveButtonField.h */,
+				DA0A32101650225200E7A2A4 /* FKSaveButtonField.m */,
+				DA0A32111650225200E7A2A4 /* FKSimpleField.h */,
+				DA0A32121650225200E7A2A4 /* FKSimpleField.m */,
+				DA0A32131650225200E7A2A4 /* FKSliderField.h */,
+				DA0A32141650225200E7A2A4 /* FKSliderField.m */,
+				DA0A32151650225200E7A2A4 /* FKSwitchField.h */,
+				DA0A32161650225200E7A2A4 /* FKSwitchField.m */,
+				DA0A32171650225200E7A2A4 /* FKTextField.h */,
+				DA0A32181650225200E7A2A4 /* FKTextField.m */,
+				DA0A32191650225200E7A2A4 /* FKTextViewField.h */,
+				DA0A321A1650225200E7A2A4 /* FKTextViewField.m */,
+				DA0A321B1650225200E7A2A4 /* FKValueViewField.h */,
+				DA0A321C1650225200E7A2A4 /* FKValueViewField.m */,
+			);
+			path = Fields;
+			sourceTree = "<group>";
+		};
+		DA0A32321650225200E7A2A4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A32331650225200E7A2A4 /* ActionSheetPicker */,
+				DA0A32411650225200E7A2A4 /* BWLongTextViewController */,
+				DA0A32441650225200E7A2A4 /* BWSelectViewController */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		DA0A32331650225200E7A2A4 /* ActionSheetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A32341650225200E7A2A4 /* AbstractActionSheetPicker.h */,
+				DA0A32351650225200E7A2A4 /* AbstractActionSheetPicker.m */,
+				DA0A32361650225200E7A2A4 /* ActionSheetCustomPicker.h */,
+				DA0A32371650225200E7A2A4 /* ActionSheetCustomPicker.m */,
+				DA0A32381650225200E7A2A4 /* ActionSheetCustomPickerDelegate.h */,
+				DA0A32391650225200E7A2A4 /* ActionSheetDatePicker.h */,
+				DA0A323A1650225200E7A2A4 /* ActionSheetDatePicker.m */,
+				DA0A323B1650225200E7A2A4 /* ActionSheetDistancePicker.h */,
+				DA0A323C1650225200E7A2A4 /* ActionSheetDistancePicker.m */,
+				DA0A323D1650225200E7A2A4 /* ActionSheetStringPicker.h */,
+				DA0A323E1650225200E7A2A4 /* ActionSheetStringPicker.m */,
+				DA0A323F1650225200E7A2A4 /* DistancePickerView.h */,
+				DA0A32401650225200E7A2A4 /* DistancePickerView.m */,
+			);
+			path = ActionSheetPicker;
+			sourceTree = "<group>";
+		};
+		DA0A32411650225200E7A2A4 /* BWLongTextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A32421650225200E7A2A4 /* BWLongTextViewController.h */,
+				DA0A32431650225200E7A2A4 /* BWLongTextViewController.m */,
+			);
+			path = BWLongTextViewController;
+			sourceTree = "<group>";
+		};
+		DA0A32441650225200E7A2A4 /* BWSelectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A32451650225200E7A2A4 /* BWSelectViewController.h */,
+				DA0A32461650225200E7A2A4 /* BWSelectViewController.m */,
+			);
+			path = BWSelectViewController;
+			sourceTree = "<group>";
+		};
 		DA2E05B4164F8FC400BF9B50 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +453,7 @@
 		DAF33093164F335100DBBFD3 = {
 			isa = PBXGroup;
 			children = (
+				DA0A326A165026B400E7A2A4 /* Security.framework */,
 				A69FE9BA164F51C600274407 /* MediaPlayer.framework */,
 				DAF3313E164F443600DBBFD3 /* CoreLocation.framework */,
 				DAF3313C164F432700DBBFD3 /* libz.dylib */,
@@ -270,6 +507,8 @@
 				DAF330C5164F335200DBBFD3 /* LTListenViewController.m */,
 				DAF330E8164F343D00DBBFD3 /* LTBlipViewController.h */,
 				DAF330E9164F343D00DBBFD3 /* LTBlipViewController.m */,
+				DA0A3267165022DE00E7A2A4 /* LTRegisterViewController.h */,
+				DA0A3268165022DE00E7A2A4 /* LTRegisterViewController.m */,
 				DAF330EB164F347400DBBFD3 /* LTCommunication.h */,
 				DAF330EC164F347400DBBFD3 /* LTCommunication.m */,
 				DAF330C7164F335200DBBFD3 /* second.png */,
@@ -315,6 +554,9 @@
 		DAF330EE164F374000DBBFD3 /* External Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA0A31FB1650225200E7A2A4 /* FormKit */,
+				DA0A32321650225200E7A2A4 /* Vendor */,
+				DA0A31F71650206A00E7A2A4 /* SSKeyChain */,
 				DAF330EF164F375800DBBFD3 /* ASIHTTPRequest */,
 				DAF33104164F375800DBBFD3 /* Reachability */,
 				DAF33107164F375800DBBFD3 /* SBJSON */,
@@ -536,6 +778,40 @@
 				DAF33135164F375800DBBFD3 /* SBJsonWriter.m in Sources */,
 				A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */,
 				DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */,
+				DA0A31FA1650206A00E7A2A4 /* SSKeychain.m in Sources */,
+				DA0A32471650225200E7A2A4 /* FKBadgeField.m in Sources */,
+				DA0A32481650225200E7A2A4 /* FKButtonField.m in Sources */,
+				DA0A32491650225200E7A2A4 /* FKDisclosureIndicatorAccessoryField.m in Sources */,
+				DA0A324A1650225200E7A2A4 /* FKFloatField.m in Sources */,
+				DA0A324B1650225200E7A2A4 /* FKImageField.m in Sources */,
+				DA0A324C1650225200E7A2A4 /* FKIntegerField.m in Sources */,
+				DA0A324D1650225200E7A2A4 /* FKLabelField.m in Sources */,
+				DA0A324E1650225200E7A2A4 /* FKPasswordTextField.m in Sources */,
+				DA0A324F1650225200E7A2A4 /* FKSaveButtonField.m in Sources */,
+				DA0A32501650225200E7A2A4 /* FKSimpleField.m in Sources */,
+				DA0A32511650225200E7A2A4 /* FKSliderField.m in Sources */,
+				DA0A32521650225200E7A2A4 /* FKSwitchField.m in Sources */,
+				DA0A32531650225200E7A2A4 /* FKTextField.m in Sources */,
+				DA0A32541650225200E7A2A4 /* FKTextViewField.m in Sources */,
+				DA0A32551650225200E7A2A4 /* FKValueViewField.m in Sources */,
+				DA0A32561650225200E7A2A4 /* FKFormAttributeMapping.m in Sources */,
+				DA0A32571650225200E7A2A4 /* FKFormAttributeValidation.m in Sources */,
+				DA0A32581650225200E7A2A4 /* FKFormMapper.m in Sources */,
+				DA0A32591650225200E7A2A4 /* FKFormMapping.m in Sources */,
+				DA0A325A1650225200E7A2A4 /* FKFormModel.m in Sources */,
+				DA0A325B1650225200E7A2A4 /* FKSectionObject.m in Sources */,
+				DA0A325C1650225200E7A2A4 /* NSObject+FKFormAttributeMapping.m in Sources */,
+				DA0A325D1650225200E7A2A4 /* UITableViewCell+FormKit.m in Sources */,
+				DA0A325E1650225200E7A2A4 /* UIView+FormKit.m in Sources */,
+				DA0A325F1650225200E7A2A4 /* AbstractActionSheetPicker.m in Sources */,
+				DA0A32601650225200E7A2A4 /* ActionSheetCustomPicker.m in Sources */,
+				DA0A32611650225200E7A2A4 /* ActionSheetDatePicker.m in Sources */,
+				DA0A32621650225200E7A2A4 /* ActionSheetDistancePicker.m in Sources */,
+				DA0A32631650225200E7A2A4 /* ActionSheetStringPicker.m in Sources */,
+				DA0A32641650225200E7A2A4 /* DistancePickerView.m in Sources */,
+				DA0A32651650225200E7A2A4 /* BWLongTextViewController.m in Sources */,
+				DA0A32661650225200E7A2A4 /* BWSelectViewController.m in Sources */,
+				DA0A3269165022DE00E7A2A4 /* LTRegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

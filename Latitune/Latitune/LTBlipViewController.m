@@ -20,16 +20,13 @@
 {
   [super viewDidLoad];
   locationController = [LTLocationController sharedInstance];
-  //locationController.delegate = self;
-  [[LTCommunication sharedInstance] loginWithUsername:@"ben25" password:@"testpass" withDelegate:self];
-  NSLog(@"started location");
 }
 
 - (IBAction)showMediaPicker:(id)sender {
+  if ([[LTCommunication sharedInstance] userID]) {
   MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
   mediaPicker.delegate = self;
   mediaPicker.allowsPickingMultipleItems = YES;
-    NSLog(@"show media picker");
   //mediaPicker.prompt = @"Select songs to play";
   //@try {
     [self presentViewController:mediaPicker animated:YES completion:nil];
@@ -41,6 +38,16 @@
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
   }*/
+  } else {
+    
+  }
+}
+
+- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+  if ([identifier isEqualToString:@"registerSegue"]) {
+    if ([[LTCommunication sharedInstance] userID]) return NO;
+  }
+  return YES;
 }
 
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection {

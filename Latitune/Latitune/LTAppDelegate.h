@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LTCommunication.h"
 
-@interface LTAppDelegate : UIResponder <UIApplicationDelegate>
+@interface LTAppDelegate : UIResponder <UIApplicationDelegate, LoginDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
