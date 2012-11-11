@@ -94,15 +94,35 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+      }
+  if (cell.accessoryView.tag != 3) {
+    UIView *accessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    accessoryView.tag = 3;
+    UIImageView *compassView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"glyphicons_233_direction.png"]];
+    compassView.contentMode = UIViewContentModeScaleAspectFit;
+    compassView.frame = CGRectMake(0,5,44,22);
+    compassView.tag = 0;
+    UILabel *mileLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 22, 44, 22)];
+    mileLabel.font = [UIFont systemFontOfSize:14];
+    mileLabel.tag = 1;
+    [accessoryView addSubview:mileLabel];
+    [accessoryView addSubview:compassView];
+    [cell setAccessoryView:accessoryView];
+    [mileLabel setText:@"2.2mi"];
+
   }
   NSDictionary *blipDict = blips[indexPath.row];
   Song *song = blipDict[@"song"];
   cell.textLabel.text = [NSString stringWithFormat:@"%@ by %@", song.title, song.artist];
   cell.detailTextLabel.text = blipDict[@"description"];
-  LTLocationController *locationController = [LTLocationController sharedInstance];
-  CLLocationCoordinate2D currentLocationCoordinate = [locationController location];
-  float heading = [self getHeadingForDirectionFromCoordinate:currentLocationCoordinate toCoordinate:((CLLocation*)blipDict[@"latlng"]).coordinate];
-  cell.imageView.image = [UIImage imageNamed:@"glyphicons_233_direction.png"];
+  LTLocationController *ltlc = [LTLocationController sharedInstance];
+  CLLocationCoordinate2D coord = [ltlc location];
+  CLLocation *location = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
+  float distance = [location distanceFromLocation:blipDict[@"latlng"]]/1609.34;
+  UILabel *distanceLabel = (UILabel *)[cell.accessoryView viewWithTag:1];
+  [distanceLabel setText:[NSString stringWithFormat:@"%.01fmi",distance]];
+  [distanceLabel setTextColor:[UIColor grayColor]];
+  //cell.imageView.image = [UIImage imageNamed:@"glyphicons_233_direction.png"];
   return cell;
 }
 
@@ -111,11 +131,66 @@
   NSDictionary* selBlipDict = blips[indexPath.row];
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://www.youtube.com/embed/", selSongID]];
+  //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://www.youtube.com/embed/", selSongID]];
   self.autoplay = YES;
-  [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
-  NSLog(@"%@",url);
+  NSString *html = [NSString stringWithFormat:@"<!DOCTYPE html>\
+                                      <html>\
+                                      <head>\
+                                      </head>\
+                                      <body>\
+                                      <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->\
+                                      <div id=\"player\"></div>\
+                                      \
+                                      <script>\
+                                      alert('abc');\
+                                      var tag = document.createElement('script');\
+                                      tag.src = \"http://www.youtube.com/iframe_api\";\
+                                      var firstScriptTag = document.getElementsByTagName('script')[0];\
+                                      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\
+                                      \
+                                      var player;\
+                                      function onYouTubeIframeAPIReady() {\
+                                        player = new YT.Player('player', {\
+                                        height: '390',\
+                                        width: '640',\
+                                        videoId: '%@',\
+                                        events: {\
+                                          'onReady': onPlayerReady,\
+                                          'onStateChange': onPlayerStateChange\
+                                        }\
+                                        });\
+                                      }\
+                                      \
+                                      function onPlayerReady(event) {\
+                                        alert('qwerty');\
+                                        event.target.playVideo();\
+                                        \
+                                      }\
+                                      \
+                                      var done = false;\
+                                      function onPlayerStateChange(event) {\
+                                        if (event.data == YT.PlayerState.PLAYING && !done) {\
+                                          done = true;\
+                                        }\
+                                      }\
+                                      function stopVideo() {\
+                                        player.stopVideo();\
+                                      }\
+                                      </script>\
+                                      testing 1 2 3\
+                                      <script>\
+                                      alert(\"123\");\
+                                      player.playVideo();\
+                                      </script>\
+                                      </body>\
+                                   </html>", selSongID];
+  [self.webViewPlayer loadHTMLString:html baseURL:nil];
+  [self clickVideo];
+  self.webViewPlayer.frame = self.view.frame;
+  [self.view addSubview:self.webViewPlayer];
 }
+
+
 
 
 // UIWebView delegate
@@ -199,6 +274,14 @@
 }
 
 -(void)locationUpdate:(CLLocation *)location {
+  NSArray *visibleCells= [self.tableView visibleCells];
+  for (UITableViewCell* cell in visibleCells) {
+    NSInteger cellIndex = [self.tableView indexPathForCell:cell].row;
+    NSDictionary *blipDict = blips[cellIndex];
+    float distance = [location distanceFromLocation:blipDict[@"latlng"]]/1609.34;
+    UILabel *distanceLabel = (UILabel *)[cell.accessoryView viewWithTag:1];
+    [distanceLabel setText:[NSString stringWithFormat:@"%.01fmi",distance]];
+  }
 }
 
 - (void)updateCompass {
@@ -218,7 +301,8 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     
     CGAffineTransform transform = CGAffineTransformMakeRotation((-magneticHeading-heading)*M_PI/180);
-    cell.imageView.transform = transform;
+    CGAffineTransform scaleTransform = CGAffineTransformScale(transform, 0.6, 0.6);
+    [cell.accessoryView viewWithTag:0].transform = scaleTransform;
     
     // Commit the changes
     [UIView commitAnimations];
