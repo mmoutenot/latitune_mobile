@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) NSMutableArray *blips;
 @property (strong, nonatomic) UIWebView *webViewPlayer;
+@property BOOL autoplay;
 
 @end
