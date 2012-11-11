@@ -12,5 +12,6 @@
 @interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *blips;
+@property (strong, nonatomic) UIWebView *webViewPlayer;
 
 @end

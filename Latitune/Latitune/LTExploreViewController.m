@@ -14,7 +14,7 @@
 @end
 
 @implementation LTExploreViewController
-@synthesize blips;
+@synthesize blips, webViewPlayer;
 
 - (void)viewDidLoad
 {
@@ -26,6 +26,7 @@
   point.lng = location.longitude;
   [[LTCommunication sharedInstance] getBlipsNearLocation:point withDelegate:self];
   blips = [[NSMutableArray alloc] init];
+  webViewPlayer = [[UIWebView alloc] init];
   
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -94,5 +95,16 @@
   return cell;
 }
 
+- (void)tableView: (UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *)indexPath
+{
+  NSDictionary* selBlipDict = blips[indexPath.row];
+  Song* selSong = selBlipDict[@"song"];
+  NSString *selSongID = selSong.providerSongID;
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", YOUTUBE_PREFIX, selSongID]];
+  NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+  
+  [webViewPlayer loadRequest:requestObj];
+  NSLog(@"Loaded webview with %@", url);
+}
 
 @end

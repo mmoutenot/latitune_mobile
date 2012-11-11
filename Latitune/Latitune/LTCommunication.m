@@ -166,6 +166,7 @@
     NSDictionary *song = response[@"objects"][0];
     Song *toReturn = [[Song alloc] initWithTitle:song[@"title"] artist:song[@"artist"] album:song[@"album"]];
     toReturn.songID = [song[@"id"] intValue];
+    toReturn.providerSongID = song[@"provider_song_id"];
     [cl[@"delegate"] performSelector:@selector(addSongDidSucceedWithSong:) withObject:toReturn];
 }
 
