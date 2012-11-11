@@ -8,6 +8,7 @@
 
 #import "LTExploreViewController.h"
 #import "LTLocationController.h"
+#import "LTYouTubeViewController.h"
 
 @interface LTExploreViewController ()
 
@@ -133,7 +134,6 @@
   NSString *selSongID = selSong.providerSongID;
   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
   [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
-  [self.view addSubview:webViewPlayer];
   webViewPlayer.frame = self.view.frame;
   NSLog(@"%@",url);
 }
@@ -144,6 +144,20 @@
 // UIWebView delegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
   [self.view addSubview:webView];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([[segue identifier] isEqualToString:@"YouTubeSegue"]) {
+    LTYouTubeViewController *ytc = ((UINavigationController*)[segue destinationViewController]).topViewController;
+    NSArray *selectedPaths = [self.tableView indexPathsForSelectedRows];
+    NSInteger selectedRow = ((NSIndexPath*)selectedPaths[0]).row;
+    NSDictionary *selBlipDict = blips[selectedRow];
+    Song* selSong = selBlipDict[@"song"];
+    NSString *selSongID = selSong.providerSongID;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
+    [ytc.webView loadRequest:[NSURLRequest requestWithURL:url]];
+   // ytc.webView loadRequest:];
+  }
 }
 
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle

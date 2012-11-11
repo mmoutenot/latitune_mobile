@@ -17,7 +17,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="498"/>
+            <point key="canvasLocation" x="257" y="638"/>
         </scene>
         <!--Blip View Controller - Blip-->
         <scene sceneID="aTa-9X-Xv0">
@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1t-73-LAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="1167"/>
+            <point key="canvasLocation" x="257" y="1307"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -75,7 +75,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="-264" y="320"/>
         </scene>
         <!--Explore View Controller - Explore-->
         <scene sceneID="ZcM-nh-xVK">
@@ -138,6 +138,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="lZt-Wg-wD6" kind="modal" identifier="YouTubeSegue" id="TGV-cZ-eQg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -149,12 +152,86 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdO-OD-ntb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="-161"/>
+            <point key="canvasLocation" x="257" y="-21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8zM-xi-tRi">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="lZt-Wg-wD6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FqO-bz-eDY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YIw-ZY-y25" kind="relationship" relationship="rootViewController" id="yAU-Qa-fVD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EKC-6T-4dK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="-21"/>
+        </scene>
+        <!--You Tube View Controller - Title-->
+        <scene sceneID="f5l-5K-hdc">
+            <objects>
+                <viewController id="YIw-ZY-y25" customClass="LTYouTubeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w69-Fd-0Qv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWB-dF-PTw">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YWB-dF-PTw" firstAttribute="trailing" secondItem="w69-Fd-0Qv" secondAttribute="trailing" type="default" id="KUy-Iy-kyh"/>
+                            <constraint firstItem="YWB-dF-PTw" firstAttribute="leading" secondItem="w69-Fd-0Qv" secondAttribute="leading" type="default" id="N39-KQ-q8G"/>
+                            <constraint firstItem="YWB-dF-PTw" firstAttribute="bottom" secondItem="w69-Fd-0Qv" secondAttribute="bottom" type="default" id="kQX-kt-gx8"/>
+                            <constraint firstItem="YWB-dF-PTw" firstAttribute="top" secondItem="w69-Fd-0Qv" secondAttribute="top" type="default" id="mw9-RQ-jmv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="unb-Gl-IeL">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="L5w-b5-V6c">
+                            <connections>
+                                <action selector="close:" destination="YIw-ZY-y25" id="JwR-9P-Gwi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="YWB-dF-PTw" id="FSK-Lz-7Fi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cb0-SX-4BR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="-21"/>
         </scene>
     </scenes>
     <resources>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="LTBlipViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTBlipViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showMediaPicker:"/>
+            </relationships>
+        </class>
+        <class className="LTExploreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTExploreViewController.h"/>
+        </class>
+        <class className="LTListenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTListenViewController.h"/>
+        </class>
+        <class className="LTYouTubeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTYouTubeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69FE9BA164F51C600274407 /* MediaPlayer.framework */; };
 		A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FE9C2164F59AB00274407 /* LTLocationController.m */; };
+		DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */; };
 		DA2E05B9164F900600BF9B50 /* glyphicons_233_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */; };
 		DA2E05BA164F900600BF9B50 /* glyphicons_233_direction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */; };
 		DAF330A3164F335100DBBFD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
@@ -76,6 +77,8 @@
 		A69FE9BA164F51C600274407 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A69FE9C1164F59AB00274407 /* LTLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocationController.h; sourceTree = "<group>"; };
 		A69FE9C2164F59AB00274407 /* LTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLocationController.m; sourceTree = "<group>"; };
+		DA0A31EE16501AFB00E7A2A4 /* LTYouTubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYouTubeViewController.h; sourceTree = "<group>"; };
+		DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYouTubeViewController.m; sourceTree = "<group>"; };
 		DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_233_direction.png; sourceTree = "<group>"; };
 		DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_233_direction@2x.png"; sourceTree = "<group>"; };
 		DAF3309E164F335100DBBFD3 /* Latitune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latitune.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +262,8 @@
 				DAF330BA164F335100DBBFD3 /* MainStoryboard.storyboard */,
 				DAF330BD164F335100DBBFD3 /* LTExploreViewController.h */,
 				DAF330BE164F335100DBBFD3 /* LTExploreViewController.m */,
+				DA0A31EE16501AFB00E7A2A4 /* LTYouTubeViewController.h */,
+				DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */,
 				DAF330C0164F335100DBBFD3 /* first.png */,
 				DAF330C2164F335100DBBFD3 /* first@2x.png */,
 				DAF330C4164F335200DBBFD3 /* LTListenViewController.h */,
@@ -530,6 +535,7 @@
 				DAF33134164F375800DBBFD3 /* SBJsonUTF8Stream.m in Sources */,
 				DAF33135164F375800DBBFD3 /* SBJsonWriter.m in Sources */,
 				A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */,
+				DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
