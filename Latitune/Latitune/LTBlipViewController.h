@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface LTBlipViewController : UIViewController
+@interface LTBlipViewController : UIViewController <MPMediaPickerControllerDelegate>
+
+- (IBAction)showMediaPicker:(id)sender;
 
 @end
