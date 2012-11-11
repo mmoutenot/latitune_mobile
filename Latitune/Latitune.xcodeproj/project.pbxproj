@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69FE9BA164F51C600274407 /* MediaPlayer.framework */; };
 		A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FE9C2164F59AB00274407 /* LTLocationController.m */; };
+		A6E84AD916501F4200CE73F6 /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E84AD416501F4200CE73F6 /* LBYouTubeExtractor.m */; };
+		A6E84ADA16501F4200CE73F6 /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E84AD616501F4200CE73F6 /* LBYouTubePlayerController.m */; };
+		A6E84ADB16501F4200CE73F6 /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E84AD816501F4200CE73F6 /* LBYouTubePlayerViewController.m */; };
 		DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */; };
 		DA2E05B9164F900600BF9B50 /* glyphicons_233_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */; };
 		DA2E05BA164F900600BF9B50 /* glyphicons_233_direction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */; };
@@ -77,6 +80,13 @@
 		A69FE9BA164F51C600274407 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A69FE9C1164F59AB00274407 /* LTLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocationController.h; sourceTree = "<group>"; };
 		A69FE9C2164F59AB00274407 /* LTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLocationController.m; sourceTree = "<group>"; };
+		A6E84AD216501F4200CE73F6 /* LBYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTube.h; sourceTree = "<group>"; };
+		A6E84AD316501F4200CE73F6 /* LBYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubeExtractor.h; sourceTree = "<group>"; };
+		A6E84AD416501F4200CE73F6 /* LBYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubeExtractor.m; sourceTree = "<group>"; };
+		A6E84AD516501F4200CE73F6 /* LBYouTubePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerController.h; sourceTree = "<group>"; };
+		A6E84AD616501F4200CE73F6 /* LBYouTubePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerController.m; sourceTree = "<group>"; };
+		A6E84AD716501F4200CE73F6 /* LBYouTubePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerViewController.h; sourceTree = "<group>"; };
+		A6E84AD816501F4200CE73F6 /* LBYouTubePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerViewController.m; sourceTree = "<group>"; };
 		DA0A31EE16501AFB00E7A2A4 /* LTYouTubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYouTubeViewController.h; sourceTree = "<group>"; };
 		DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTYouTubeViewController.m; sourceTree = "<group>"; };
 		DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_233_direction.png; sourceTree = "<group>"; };
@@ -197,6 +207,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6E84AD116501F4200CE73F6 /* LBYouTubeView */ = {
+			isa = PBXGroup;
+			children = (
+				A6E84AD216501F4200CE73F6 /* LBYouTube.h */,
+				A6E84AD316501F4200CE73F6 /* LBYouTubeExtractor.h */,
+				A6E84AD416501F4200CE73F6 /* LBYouTubeExtractor.m */,
+				A6E84AD516501F4200CE73F6 /* LBYouTubePlayerController.h */,
+				A6E84AD616501F4200CE73F6 /* LBYouTubePlayerController.m */,
+				A6E84AD716501F4200CE73F6 /* LBYouTubePlayerViewController.h */,
+				A6E84AD816501F4200CE73F6 /* LBYouTubePlayerViewController.m */,
+			);
+			path = LBYouTubeView;
+			sourceTree = "<group>";
+		};
 		DA2E05B4164F8FC400BF9B50 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +339,7 @@
 		DAF330EE164F374000DBBFD3 /* External Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A6E84AD116501F4200CE73F6 /* LBYouTubeView */,
 				DAF330EF164F375800DBBFD3 /* ASIHTTPRequest */,
 				DAF33104164F375800DBBFD3 /* Reachability */,
 				DAF33107164F375800DBBFD3 /* SBJSON */,
@@ -536,6 +561,9 @@
 				DAF33135164F375800DBBFD3 /* SBJsonWriter.m in Sources */,
 				A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */,
 				DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */,
+				A6E84AD916501F4200CE73F6 /* LBYouTubeExtractor.m in Sources */,
+				A6E84ADA16501F4200CE73F6 /* LBYouTubePlayerController.m in Sources */,
+				A6E84ADB16501F4200CE73F6 /* LBYouTubePlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
