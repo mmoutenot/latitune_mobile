@@ -30,15 +30,15 @@
 		DAF330DF164F335200DBBFD3 /* LatituneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330DE164F335200DBBFD3 /* LatituneTests.m */; };
 		DAF330EA164F343D00DBBFD3 /* LTBlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330E9164F343D00DBBFD3 /* LTBlipViewController.m */; };
 		DAF330ED164F347400DBBFD3 /* LTCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330EC164F347400DBBFD3 /* LTCommunication.m */; };
-		DAF33121164F375800DBBFD3 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F1164F375800DBBFD3 /* ASIAuthenticationDialog.m */; };
-		DAF33122164F375800DBBFD3 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F4164F375800DBBFD3 /* ASIDataCompressor.m */; };
-		DAF33123164F375800DBBFD3 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F6164F375800DBBFD3 /* ASIDataDecompressor.m */; };
-		DAF33124164F375800DBBFD3 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F8164F375800DBBFD3 /* ASIDownloadCache.m */; };
-		DAF33125164F375800DBBFD3 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330FA164F375800DBBFD3 /* ASIFormDataRequest.m */; };
-		DAF33126164F375800DBBFD3 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330FC164F375800DBBFD3 /* ASIHTTPRequest.m */; };
-		DAF33127164F375800DBBFD3 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33100164F375800DBBFD3 /* ASIInputStream.m */; };
-		DAF33128164F375800DBBFD3 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33102164F375800DBBFD3 /* ASINetworkQueue.m */; };
-		DAF33129164F375800DBBFD3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33106164F375800DBBFD3 /* Reachability.m */; };
+		DAF33121164F375800DBBFD3 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F1164F375800DBBFD3 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33122164F375800DBBFD3 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F4164F375800DBBFD3 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33123164F375800DBBFD3 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F6164F375800DBBFD3 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33124164F375800DBBFD3 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F8164F375800DBBFD3 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33125164F375800DBBFD3 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330FA164F375800DBBFD3 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33126164F375800DBBFD3 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330FC164F375800DBBFD3 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33127164F375800DBBFD3 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33100164F375800DBBFD3 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33128164F375800DBBFD3 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33102164F375800DBBFD3 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DAF33129164F375800DBBFD3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33106164F375800DBBFD3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DAF3312A164F375800DBBFD3 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33109164F375800DBBFD3 /* NSObject+SBJson.m */; };
 		DAF3312B164F375800DBBFD3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3310C164F375800DBBFD3 /* SBJsonParser.m */; };
 		DAF3312C164F375800DBBFD3 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3310E164F375800DBBFD3 /* SBJsonStreamParser.m */; };
@@ -51,6 +51,11 @@
 		DAF33133164F375800DBBFD3 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3311C164F375800DBBFD3 /* SBJsonTokeniser.m */; };
 		DAF33134164F375800DBBFD3 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3311E164F375800DBBFD3 /* SBJsonUTF8Stream.m */; };
 		DAF33135164F375800DBBFD3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33120164F375800DBBFD3 /* SBJsonWriter.m */; };
+		DAF33137164F430300DBBFD3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF33136164F430300DBBFD3 /* CFNetwork.framework */; };
+		DAF33139164F431000DBBFD3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF33138164F431000DBBFD3 /* SystemConfiguration.framework */; };
+		DAF3313B164F431600DBBFD3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */; };
+		DAF3313D164F432700DBBFD3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313C164F432700DBBFD3 /* libz.dylib */; };
+		DAF3313F164F443600DBBFD3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313E164F443600DBBFD3 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +148,11 @@
 		DAF3311E164F375800DBBFD3 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		DAF3311F164F375800DBBFD3 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		DAF33120164F375800DBBFD3 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		DAF33136164F430300DBBFD3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DAF33138164F431000DBBFD3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DAF3313C164F432700DBBFD3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DAF3313E164F443600DBBFD3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,9 +160,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF3313F164F443600DBBFD3 /* CoreLocation.framework in Frameworks */,
+				DAF3313D164F432700DBBFD3 /* libz.dylib in Frameworks */,
+				DAF330A7164F335100DBBFD3 /* CoreGraphics.framework in Frameworks */,
+				DAF3313B164F431600DBBFD3 /* MobileCoreServices.framework in Frameworks */,
+				DAF33139164F431000DBBFD3 /* SystemConfiguration.framework in Frameworks */,
+				DAF33137164F430300DBBFD3 /* CFNetwork.framework in Frameworks */,
 				DAF330A3164F335100DBBFD3 /* UIKit.framework in Frameworks */,
 				DAF330A5164F335100DBBFD3 /* Foundation.framework in Frameworks */,
-				DAF330A7164F335100DBBFD3 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +187,11 @@
 		DAF33093164F335100DBBFD3 = {
 			isa = PBXGroup;
 			children = (
+				DAF3313E164F443600DBBFD3 /* CoreLocation.framework */,
+				DAF3313C164F432700DBBFD3 /* libz.dylib */,
+				DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */,
+				DAF33138164F431000DBBFD3 /* SystemConfiguration.framework */,
+				DAF33136164F430300DBBFD3 /* CFNetwork.framework */,
 				DAF330EE164F374000DBBFD3 /* External Sources */,
 				DAF330A8164F335100DBBFD3 /* Latitune */,
 				DAF330D7164F335200DBBFD3 /* LatituneTests */,

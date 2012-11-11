@@ -31,6 +31,12 @@
 }
 @end
 
+@implementation Blip
+
+@synthesize userID,blipID,location,song,timestamp;
+
+@end
+
 @implementation LTCommunication
 @synthesize password, userID, username;
 
@@ -62,7 +68,8 @@
     return nil;
 }
 
-- (void)getURL:(NSString*)urlString parameters:(NSDictionary*)params selector:(SEL)selector delegate:(id)delegate {
+- (void)getURL:(NSString*)urlString parameters:(NSDictionary*)params succeedSelector:(SEL)succeedSelector
+  failSelector:(SEL) failSelector closure:(NSDictionary*)cl; {
     urlString = [NSString stringWithFormat:@"%@?username=%@&password=%@",urlString,username,password];
     for (id key in [params allKeys]) {
         urlString = [NSString stringWithFormat:@"%@&%@=%@",urlString,key,params[key]];
@@ -72,12 +79,17 @@
     [request setCompletionBlock:^{
         NSString *responseString = [request responseString];
         NSDictionary *responseDict = [responseString JSONValue];
-        [self performSelector:selector withObject:responseDict];
+        [self performSelector:succeedSelector withObject:responseDict withObject:cl];
+
+    }];
+    [request setFailedBlock:^{
+        [self performSelector:failSelector withObject:cl];
     }];
     [request startAsynchronous];
 }
 
-- (void)putURL:(NSString*)urlString parameters:(NSDictionary*)params selector:(SEL)selector closure:(NSDictionary*)cl; {
+- (void)putURL:(NSString*)urlString parameters:(NSDictionary*)params succeedSelector:(SEL)succeedSelector
+        failSelector:(SEL) failSelector closure:(NSDictionary*)cl; {
     NSURL *url = [NSURL URLWithString:urlString];
     __weak ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     NSString *paramString = [NSString stringWithFormat:@"username=%@&password=%@",username,password];
@@ -89,7 +101,10 @@
     [request setCompletionBlock:^{
         NSString *responseString = [request responseString];
         NSDictionary *responseDict = [responseString JSONValue];
-        [self performSelector:selector withObject:responseDict withObject:cl];
+        [self performSelector:succeedSelector withObject:responseDict withObject:cl];
+    }];
+    [request setFailedBlock:^{
+        [self performSelector:failSelector withObject:cl];
     }];
     [request startAsynchronous];
 }
@@ -97,7 +112,8 @@
 - (void) addSong:(Song *)song withDelegate:(NSObject<AddSongDelegate> *)delegate {
     NSDictionary *params = [song asDictionary];
     NSDictionary *cl = @{@"delegate":delegate};
-    [self putURL:SONG_EXT parameters:params selector:@selector(addSongDidSucceedWithSong:) closure:cl];
+    [self putURL:SONG_EXT parameters:params succeedSelector:@selector(requestToAddSongDidSucceedWithResponse:closure:)
+          failSelector:@selector(requestToAddSongDidFailWithClosure:) closure:cl];
 }
 
 - (void) requestToAddSongDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
@@ -106,6 +122,69 @@
     toReturn.songID = [song[@"id"] intValue];
     [cl[@"delegate"] performSelector:@selector(addSongDidSucceedWithSong:) withObject:song];
 }
-                                                              
+
+- (void) requestToAddSongDidFailWithClosure:(NSDictionary *)cl {
+    [cl[@"delegate"] performSelector:@selector(addSongDidFail)];
+}
+
+- (void) addBlipWithSong:(Song *)song atLocation:(GeoPoint)point withDelegate:(NSObject <AddBlipDelegate>*)delegate {
+    NSDictionary *params = @{@"song_id":@(song.songID),@"latitude":@(point.lat),@"longitude":@(point.lng),@"user_id":@(userID)};
+    NSDictionary *cl = @{@"delegate":delegate};
+    [self putURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToAddBlipDidSucceedWithResponse:closure:) failSelector:@selector(requestToAddBlipDidFailWithClosure:) closure:cl];
+}
+
+- (void) getBlipsWithDelegate:(NSObject<GetBlipsDelegate> *)delegate {
+    NSDictionary *cl = @{@"delegate":delegate};
+    [self getURL:BLIP_EXT parameters:nil succeedSelector:@selector(requestToAddBlipDidSucceedWithResponse:closure:) failSelector:@selector(requestToAddBlipDidFailWithClosure:) closure:cl];
+}
+
+- (void) requestToAddBlipDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
+    NSDictionary *blip = response[@"objects"][0];
+    Blip *toReturn = [[Blip alloc] init];
+    toReturn.userID = [blip[@"user_id"] intValue];
+    NSDictionary *song = blip[@"song"];
+    toReturn.song = [[Song alloc] initWithTitle:song[@"title"]
+                                         artist:song[@"artist"]
+                                          album:song[@"album"]
+                                 providerSongID:song[@"provider_song_id"]
+                                    providerKey:song[@"provider_key"]];
+    toReturn.song.songID = [song[@"id"] intValue];
+    toReturn.userID = [blip[@"user_id"] intValue];
+    toReturn.timestamp = nil;
+    GeoPoint location;
+    location.lat = [blip[@"latitude"] floatValue];
+    location.lng = [blip[@"longitude"] floatValue];
+    toReturn.location = location;
+    [cl[@"delegate"] performSelector:@selector(addBlipDidSucceedWithBlip:) withObject:toReturn];
+}
+
+- (void) requestToAddBlipDidFailWithClosure:(NSDictionary *)cl {
+    [cl[@"delegate"] performSelector:@selector(addBlipDidFail)];
+}
+
+- (void) requestToGetBlipsDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
+    NSDictionary *blips = response[@"objects"];
+    NSMutableArray *toReturn = [[NSMutableArray alloc] init];
+    for (NSDictionary *blip in blips) {
+        Blip *blipObj = [[Blip alloc] init];
+        blipObj.userID = [blip[@"user_id"] intValue];
+        NSDictionary *song = blip[@"song"];
+        blipObj.song = [[Song alloc] initWithTitle:song[@"title"]
+                                             artist:song[@"artist"]
+                                              album:song[@"album"]
+                                     providerSongID:song[@"provider_song_id"]
+                                        providerKey:song[@"provider_key"]];
+        blipObj.song.songID = [song[@"id"] intValue];
+        blipObj.userID = [blip[@"user_id"] intValue];
+        blipObj.timestamp = nil;
+        GeoPoint location;
+        location.lat = [blip[@"latitude"] floatValue];
+        location.lng = [blip[@"longitude"] floatValue];
+        blipObj.location = location;
+        [toReturn addObject:blipObj];
+    }
+    [cl[@"delegate"] performSelector:@selector(getBlipsDidSucceedWithBlips:) withObject:toReturn];
+}
+
 
 @end
