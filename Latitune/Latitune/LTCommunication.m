@@ -109,6 +109,25 @@
     [request startAsynchronous];
 }
 
+- (void) requestToAddUserDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
+    NSDictionary *user = response[@"objects"][0];
+    [cl[@"delegate"] performSelector:@selector(createUserDidSucceedWithUser:) withObject:user];
+}
+
+- (void) requestToAddUserDidFailWithClosure:(NSDictionary*)cl {
+    [cl[@"delegate"] performSelector:@selector(createUserDidFail)];
+}
+
+- (void) createUserWithUsername:(NSString *)uname email:(NSString*)uemail password:(NSString*)upassword
+                   withDelegate:(NSObject<CreateUserDelegate>*) delegate {
+    username = uname;
+    password = upassword;
+    NSDictionary *params = @{@"email":uemail};
+    NSDictionary *cl = @{@"delegate":delegate};
+    [self putURL:USER_EXT parameters:params succeedSelector:@selector(requestToAddUserDidSucceedWithResponse:closure:)
+    failSelector:@selector(requestToAddUserDidFailWithClosure:) closure:cl];
+}
+
 - (void) addSong:(Song *)song withDelegate:(NSObject<AddSongDelegate> *)delegate {
     NSDictionary *params = [song asDictionary];
     NSDictionary *cl = @{@"delegate":delegate};
@@ -184,6 +203,18 @@
         [toReturn addObject:blipObj];
     }
     [cl[@"delegate"] performSelector:@selector(getBlipsDidSucceedWithBlips:) withObject:toReturn];
+}
+
+- (void) getBlipsNearLocation:(GeoPoint)location withDelegate:(NSObject<GetBlipsDelegate>*)delegate {
+    NSDictionary *params = @{@"latitude":@(location.lat),@"longitude":@(location.lng)};
+    NSDictionary *cl = @{@"delegate":delegate};
+    [self getURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToAddBlipDidSucceedWithResponse:closure:) failSelector:@selector(requestToAddBlipDidFailWithClosure:) closure:cl];
+}
+
+- (void) getBlipWithID:(NSInteger)blipID withDelegate:(NSObject<GetBlipsDelegate> *)delegate {
+    NSDictionary *params = @{@"id":@(blipID)};
+    NSDictionary *cl = @{@"delegate":delegate};
+    [self getURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToAddBlipDidSucceedWithResponse:closure:) failSelector:@selector(requestToAddBlipDidFailWithClosure:) closure:cl];
 }
 
 

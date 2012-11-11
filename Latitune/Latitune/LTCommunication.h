@@ -47,13 +47,24 @@ typedef struct {
 
 @end
 
+@protocol CreateUserDelegate <NSObject>
+
+- (void) createUserDidFail;
+- (void) createUserDidSucceedWithUser:(NSDictionary*)user;
+
+@end
+
 @interface LTCommunication : NSObject
 @property (strong,nonatomic) NSString *username, *password;
 @property (nonatomic) NSInteger userID;
 
 +(id)sharedInstance;
+- (void) createUserWithUsername:(NSString *)uname email:(NSString*)uemail password:(NSString*)upassword
+                   withDelegate:(NSObject<CreateUserDelegate>*) delegate;
 - (void) addSong:(Song *)song withDelegate:(NSObject <AddSongDelegate>*)delegate;
 - (void) addBlipWithSong:(Song *)song atLocation:(GeoPoint)point withDelegate:(NSObject <AddBlipDelegate>*)delegate;
 - (void) getBlipsWithDelegate:(NSObject <GetBlipsDelegate> *)delegate;
+- (void) getBlipsNearLocation:(GeoPoint)location withDelegate:(NSObject<GetBlipsDelegate>*)delegate;
+- (void) getBlipWithID:(NSInteger)blipID withDelegate:(NSObject<GetBlipsDelegate>*)delegate;
 
 @end
