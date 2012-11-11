@@ -14,7 +14,7 @@
 @end
 
 @implementation LTExploreViewController
-@synthesize blips, webViewPlayer, autoplay;
+@synthesize blips, webViewPlayer;
 
 - (void)viewDidLoad
 {
@@ -114,6 +114,12 @@
   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://www.youtube.com/embed/", selSongID]];
   [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
   NSLog(@"%@",url);
+}
+
+
+// UIWebView delegate
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  [self.view addSubview:webView];
 }
 
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
