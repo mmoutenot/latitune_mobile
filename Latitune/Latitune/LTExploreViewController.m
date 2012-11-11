@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
   LTLocationController *locationController = [LTLocationController sharedInstance];
+  locationController.delegate = self;
   CLLocationCoordinate2D location = [locationController location];
   GeoPoint point;
   point.lat = location.latitude;
@@ -105,7 +106,6 @@
   NSString *selSongID = selSong.providerSongID;
   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", YOUTUBE_PREFIX, selSongID]];
   NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-  
   [webViewPlayer loadRequest:requestObj];
   NSLog(@"Loaded webview with %@", url);
 }
@@ -169,5 +169,24 @@
   }
 }
 
+-(void)locationUpdate:(CLLocation *)location {
+  NSArray *visibleCells= [self.tableView visibleCells];
+  for (UITableViewCell* cell in visibleCells) {
+    NSInteger cellIndex = [self.tableView indexPathForCell:cell].row;
+    NSDictionary *blipDict = blips[cellIndex];
+    float heading = [self getHeadingForDirectionFromCoordinate:location.coordinate toCoordinate:((CLLocation*)blipDict[@"latlng"]).coordinate];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    //[UIView setAnimationCurve:curve];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    // The transform matrix
+    CGAffineTransform transform = CGAffineTransformMakeRotation(degreesToRadians(heading));
+    cell.imageView.transform = transform;
+    
+    // Commit the changes
+    [UIView commitAnimations];
+  }
+}
 
 @end

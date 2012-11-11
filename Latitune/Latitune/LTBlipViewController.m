@@ -20,7 +20,7 @@
 {
   [super viewDidLoad];
   locationController = [LTLocationController sharedInstance];
-  locationController.delegate = self;
+  //locationController.delegate = self;
   [[LTCommunication sharedInstance] loginWithUsername:@"ben25" password:@"testpass" withDelegate:self];
   NSLog(@"started location");
 }
