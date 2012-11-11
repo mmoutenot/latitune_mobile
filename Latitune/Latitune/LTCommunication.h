@@ -54,11 +54,19 @@ typedef struct {
 
 @end
 
+@protocol LoginDelegate <NSObject>
+
+- (void) loginDidFail;
+- (void) loginDidSucceedWithUser:(NSDictionary*)user;
+
+@end
+
 @interface LTCommunication : NSObject
 @property (strong,nonatomic) NSString *username, *password;
 @property (nonatomic) NSInteger userID;
 
 +(id)sharedInstance;
+- (void) loginWithUsername:(NSString *)uname password:(NSString *)password withDelegate:(NSObject <LoginDelegate>*)delegate;
 - (void) createUserWithUsername:(NSString *)uname email:(NSString*)uemail password:(NSString*)upassword
                    withDelegate:(NSObject<CreateUserDelegate>*) delegate;
 - (void) addSong:(Song *)song withDelegate:(NSObject <AddSongDelegate>*)delegate;

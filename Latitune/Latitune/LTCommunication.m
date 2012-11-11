@@ -128,6 +128,24 @@
     failSelector:@selector(requestToAddUserDidFailWithClosure:) closure:cl];
 }
 
+- (void) requestToLoginDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
+    NSDictionary *user = response[@"objects"][0];
+    [cl[@"delegate"] performSelector:@selector(loginDidSucceedWithUser:) withObject:user];
+}
+
+- (void) requestToLoginDidFailWithClosure:(NSDictionary*)cl {
+    [cl[@"delegate"] performSelector:@selector(loginDidFail)];
+}
+
+
+- (void) loginWithUsername:(NSString *)uname password:(NSString *)upassword withDelegate:(NSObject <LoginDelegate>*)delegate {
+    username = uname;
+    password = upassword;
+    NSDictionary *cl = @{@"delegate":delegate};
+    [self putURL:USER_EXT parameters:nil succeedSelector:@selector(requestToLoginDidSucceedWithResponse:closure:)
+    failSelector:@selector(requestToLoginDidFailWithClosure:) closure:cl];
+}
+
 - (void) addSong:(Song *)song withDelegate:(NSObject<AddSongDelegate> *)delegate {
     NSDictionary *params = [song asDictionary];
     NSDictionary *cl = @{@"delegate":delegate};
