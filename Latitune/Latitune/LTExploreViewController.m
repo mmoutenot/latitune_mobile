@@ -135,8 +135,7 @@
   NSDictionary* selBlipDict = blips[indexPath.row];
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
-//  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
-  NSURL *url = [NSURL URLWithString:@"http://www.youtube.com/watch?v=1fTIhC1WSew&list=FLEYfH4kbq85W_CiOTuSjf8w&feature=mh_lolz"];
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
   
   self.controller = [[LBYouTubePlayerViewController alloc] initWithYouTubeURL:url quality:LBYouTubeVideoQualitySmall];
   self.controller.delegate = self;
