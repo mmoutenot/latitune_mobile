@@ -14,7 +14,7 @@
 @end
 
 @implementation LTExploreViewController
-@synthesize blips, webViewPlayer, autoplay;
+@synthesize blips, webViewPlayer;
 
 - (void)viewDidLoad
 {
@@ -131,63 +131,9 @@
   NSDictionary* selBlipDict = blips[indexPath.row];
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
-  //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://www.youtube.com/embed/", selSongID]];
-  self.autoplay = YES;
-  NSString *html = [NSString stringWithFormat:@"<!DOCTYPE html>\
-                                      <html>\
-                                      <head>\
-                                      </head>\
-                                      <body>\
-                                      <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->\
-                                      <div id=\"player\"></div>\
-                                      \
-                                      <script>\
-                                      alert('abc');\
-                                      var tag = document.createElement('script');\
-                                      tag.src = \"http://www.youtube.com/iframe_api\";\
-                                      var firstScriptTag = document.getElementsByTagName('script')[0];\
-                                      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\
-                                      \
-                                      var player;\
-                                      function onYouTubeIframeAPIReady() {\
-                                        player = new YT.Player('player', {\
-                                        height: '390',\
-                                        width: '640',\
-                                        videoId: '%@',\
-                                        events: {\
-                                          'onReady': onPlayerReady,\
-                                          'onStateChange': onPlayerStateChange\
-                                        }\
-                                        });\
-                                      }\
-                                      \
-                                      function onPlayerReady(event) {\
-                                        alert('qwerty');\
-                                        event.target.playVideo();\
-                                        \
-                                      }\
-                                      \
-                                      var done = false;\
-                                      function onPlayerStateChange(event) {\
-                                        if (event.data == YT.PlayerState.PLAYING && !done) {\
-                                          done = true;\
-                                        }\
-                                      }\
-                                      function stopVideo() {\
-                                        player.stopVideo();\
-                                      }\
-                                      </script>\
-                                      testing 1 2 3\
-                                      <script>\
-                                      alert(\"123\");\
-                                      player.playVideo();\
-                                      </script>\
-                                      </body>\
-                                   </html>", selSongID];
-  [self.webViewPlayer loadHTMLString:html baseURL:nil];
-  [self clickVideo];
-  self.webViewPlayer.frame = self.view.frame;
-  [self.view addSubview:self.webViewPlayer];
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&autoplay=1",@"http://www.youtube.com/embed/", selSongID]];
+  [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
+  NSLog(@"%@",url);
 }
 
 
@@ -195,24 +141,7 @@
 
 // UIWebView delegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-  if (self.autoplay) {
-    self.autoplay = NO;
-    [self clickVideo];
-  }
-}
-
-- (void)clickVideo {
-  [self.webViewPlayer stringByEvaluatingJavaScriptFromString:@"\
-   function pollToPlay() {\
-   var vph5 = document.getElementById(\"video-player-html5\");\
-   if (vph5) {\
-   vph5.click();\
-   } else {\
-   setTimeout(pollToPlay, 100);\
-   }\
-   }\
-   pollToPlay();\
-   "];
+  [self.view addSubview:webView];
 }
 
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
