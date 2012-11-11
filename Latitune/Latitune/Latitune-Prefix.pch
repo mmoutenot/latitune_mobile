@@ -14,7 +14,10 @@
     #import <CoreLocation/CoreLocation.h>
 #endif
 
+#define YOUTUBE_PREFIX @"http://www.youtube.com/watch?v="
+
 #define SERVER_ROOT @"https://latitune.herokuapp.com/api/"
 #define BLIP_EXT [NSString stringWithFormat:@"%@%@",SERVER_ROOT,@"blip"]
 #define SONG_EXT [NSString stringWithFormat:@"%@%@",SERVER_ROOT,@"song"]
 #define USER_EXT [NSString stringWithFormat:@"%@%@",SERVER_ROOT,@"user"]
+
