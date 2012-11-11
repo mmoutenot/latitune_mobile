@@ -14,7 +14,7 @@
 @end
 
 @implementation LTExploreViewController
-@synthesize blips, webViewPlayer;
+@synthesize blips, webViewPlayer, autoplay;
 
 - (void)viewDidLoad
 {
@@ -105,34 +105,33 @@
   NSDictionary* selBlipDict = blips[indexPath.row];
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&autoplay=1", YOUTUBE_PREFIX, selSongID]];
-  NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-  [webViewPlayer loadRequest:requestObj];
-  NSLog(@"Loaded webview with %@", url);
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://www.youtube.com/embed/", selSongID]];
+  self.autoplay = YES;
+  [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
+  NSLog(@"%@",url);
 }
 
-- (UIButton *)findButtonInView:(UIView *)view {
-  UIButton *button = nil;
-  
-  if ([view isMemberOfClass:[UIButton class]]) {
-    return (UIButton *)view;
+
+// UIWebView delegate
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  if (self.autoplay) {
+    self.autoplay = NO;
+    [self clickVideo];
   }
-  
-  if (view.subviews && [view.subviews count] > 0) {
-    for (UIView *subview in view.subviews) {
-      button = [self findButtonInView:subview];
-      if (button) return button;
-    }
-  }
-  
-  return button;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)_webView {
-  NSLog(@"TRALALAL");
-  _webView.mediaPlaybackRequiresUserAction=FALSE;
-  UIButton *b = [self findButtonInView:_webView];
-  [b sendActionsForControlEvents:UIControlEventTouchUpInside];
+- (void)clickVideo {
+  [self.webViewPlayer stringByEvaluatingJavaScriptFromString:@"\
+   function pollToPlay() {\
+   var vph5 = document.getElementById(\"video-player-html5\");\
+   if (vph5) {\
+   vph5.click();\
+   } else {\
+   setTimeout(pollToPlay, 100);\
+   }\
+   }\
+   pollToPlay();\
+   "];
 }
 
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
