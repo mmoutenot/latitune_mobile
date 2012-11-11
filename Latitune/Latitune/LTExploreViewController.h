@@ -10,7 +10,7 @@
 #import "LTCommunication.h"
 #import "LTLocationController.h"
 
-@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, LTLocationControllerDelegate>
+@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, LTLocationControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *blips;
 @property (strong, nonatomic) UIWebView *webViewPlayer;
