@@ -131,7 +131,7 @@
   NSDictionary* selBlipDict = blips[indexPath.row];
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@&autoplay=1",@"http://www.youtube.com/embed/", selSongID]];
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
   [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
   NSLog(@"%@",url);
 }
