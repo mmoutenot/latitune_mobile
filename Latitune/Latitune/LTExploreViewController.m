@@ -112,32 +112,8 @@
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"http://www.youtube.com/embed/", selSongID]];
-  self.autoplay = YES;
   [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
   NSLog(@"%@",url);
-}
-
-
-// UIWebView delegate
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-  if (self.autoplay) {
-    self.autoplay = NO;
-    [self clickVideo];
-  }
-}
-
-- (void)clickVideo {
-  [self.webViewPlayer stringByEvaluatingJavaScriptFromString:@"\
-   function pollToPlay() {\
-   var vph5 = document.getElementById(\"video-player-html5\");\
-   if (vph5) {\
-   vph5.click();\
-   } else {\
-   setTimeout(pollToPlay, 100);\
-   }\
-   }\
-   pollToPlay();\
-   "];
 }
 
 - (CGImageRef)CGImageRotatedByAngle:(CGImageRef)imgRef angle:(CGFloat)angle
