@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import "LTCommunication.h"
+#import "LTLocationController.h"
 
-@interface LTBlipViewController : UIViewController
+@interface LTBlipViewController : UIViewController <MPMediaPickerControllerDelegate, AddSongDelegate, AddBlipDelegate, LTLocationControllerDelegate>{
+  LTLocationController *locationController;
+}
+
+- (IBAction)showMediaPicker:(id)sender;
 
 @end

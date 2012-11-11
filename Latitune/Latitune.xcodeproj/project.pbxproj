@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69FE9BA164F51C600274407 /* MediaPlayer.framework */; };
+		A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FE9C2164F59AB00274407 /* LTLocationController.m */; };
 		DAF330A3164F335100DBBFD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
 		DAF330A5164F335100DBBFD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A4164F335100DBBFD3 /* Foundation.framework */; };
 		DAF330A7164F335100DBBFD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A6164F335100DBBFD3 /* CoreGraphics.framework */; };
@@ -69,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A69FE9BA164F51C600274407 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A69FE9C1164F59AB00274407 /* LTLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocationController.h; sourceTree = "<group>"; };
+		A69FE9C2164F59AB00274407 /* LTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLocationController.m; sourceTree = "<group>"; };
 		DAF3309E164F335100DBBFD3 /* Latitune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latitune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF330A2164F335100DBBFD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DAF330A4164F335100DBBFD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */,
 				DAF3313F164F443600DBBFD3 /* CoreLocation.framework in Frameworks */,
 				DAF3313D164F432700DBBFD3 /* libz.dylib in Frameworks */,
 				DAF330A7164F335100DBBFD3 /* CoreGraphics.framework in Frameworks */,
@@ -187,6 +193,7 @@
 		DAF33093164F335100DBBFD3 = {
 			isa = PBXGroup;
 			children = (
+				A69FE9BA164F51C600274407 /* MediaPlayer.framework */,
 				DAF3313E164F443600DBBFD3 /* CoreLocation.framework */,
 				DAF3313C164F432700DBBFD3 /* libz.dylib */,
 				DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */,
@@ -223,6 +230,8 @@
 		DAF330A8164F335100DBBFD3 /* Latitune */ = {
 			isa = PBXGroup;
 			children = (
+				A69FE9C1164F59AB00274407 /* LTLocationController.h */,
+				A69FE9C2164F59AB00274407 /* LTLocationController.m */,
 				DAF330B1164F335100DBBFD3 /* LTAppDelegate.h */,
 				DAF330B2164F335100DBBFD3 /* LTAppDelegate.m */,
 				DAF330BA164F335100DBBFD3 /* MainStoryboard.storyboard */,
@@ -496,6 +505,7 @@
 				DAF33133164F375800DBBFD3 /* SBJsonTokeniser.m in Sources */,
 				DAF33134164F375800DBBFD3 /* SBJsonUTF8Stream.m in Sources */,
 				DAF33135164F375800DBBFD3 /* SBJsonWriter.m in Sources */,
+				A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +680,7 @@
 				DAF330E4164F335200DBBFD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAF330E5164F335200DBBFD3 /* Build configuration list for PBXNativeTarget "LatituneTests" */ = {
 			isa = XCConfigurationList;
@@ -678,6 +689,7 @@
 				DAF330E7164F335200DBBFD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
