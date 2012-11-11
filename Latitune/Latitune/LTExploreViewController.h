@@ -9,10 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "LTCommunication.h"
 #import "LTLocationController.h"
+#import "LBYouTube.h"
 
-@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, LTLocationControllerDelegate>
+@interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, LTLocationControllerDelegate, LBYouTubePlayerControllerDelegate, LBYouTubePlayerDelegate>
+{
+  LBYouTubePlayerViewController *controller;
+}
 
 @property (strong, nonatomic) NSMutableArray *blips;
 @property (strong, nonatomic) UIWebView *webViewPlayer;
+@property (nonatomic, strong) LBYouTubePlayerViewController* controller;
+
+-(void)videoFinished;
 
 @end

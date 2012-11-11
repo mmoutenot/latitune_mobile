@@ -15,7 +15,7 @@
 @end
 
 @implementation LTExploreViewController
-@synthesize blips, webViewPlayer;
+@synthesize blips, webViewPlayer, controller;
 
 - (void)viewDidLoad
 {
@@ -28,8 +28,11 @@
   point.lng = location.longitude;
   [[LTCommunication sharedInstance] getBlipsNearLocation:point withDelegate:self];
   blips = [[NSMutableArray alloc] init];
+  
   webViewPlayer = [[UIWebView alloc] init];
   webViewPlayer.delegate = self;
+  
+  
   
   [NSTimer scheduledTimerWithTimeInterval:0.1
                                    target:self
@@ -132,9 +135,20 @@
   NSDictionary* selBlipDict = blips[indexPath.row];
   Song* selSong = selBlipDict[@"song"];
   NSString *selSongID = selSong.providerSongID;
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
-  [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
-  webViewPlayer.frame = self.view.frame;
+//  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
+  NSURL *url = [NSURL URLWithString:@"http://www.youtube.com/watch?v=1fTIhC1WSew&list=FLEYfH4kbq85W_CiOTuSjf8w&feature=mh_lolz"];
+  
+  self.controller = [[LBYouTubePlayerViewController alloc] initWithYouTubeURL:url quality:LBYouTubeVideoQualitySmall];
+  self.controller.delegate = self;
+  self.controller.view.delegate = self;
+  self.controller.view.frame = CGRectMake(0.0f, 0.0f, 200.0f, 200.0f);
+  self.controller.view.center = self.view.center;
+  self.controller.view.hidden = true;
+  
+  [self.view addSubview:self.controller.view];
+
+//  [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
+//  webViewPlayer.frame = self.view.frame;
   NSLog(@"%@",url);
 }
 
@@ -252,6 +266,24 @@
     // Commit the changes
     [UIView commitAnimations];
   }
+}
+
+#pragma mark -
+#pragma mark LBYouTubePlayerViewControllerDelegate
+
+-(void)youTubePlayerViewController:(LBYouTubePlayerViewController *)controller didSuccessfullyExtractYouTubeURL:(NSURL *)videoURL {
+  NSLog(@"Did extract video source:%@", videoURL);
+}
+
+-(void)youTubePlayerViewController:(LBYouTubePlayerViewController *)controller failedExtractingYouTubeURLWithError:(NSError *)error {
+  NSLog(@"Failed loading video due to error:%@", error);
+}
+
+#pragma mark -
+#pragma mark LBYouTubePlayerViewDelegate
+
+-(void) videoFinished {
+  NSLog(@"video finished");
 }
 
 @end
