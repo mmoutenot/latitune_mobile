@@ -1,8 +1,8 @@
 //
-//  LTRegisterViewController.h
+//  LTLoginViewController.h
 //  Latitune
 //
-//  Created by Ben Weitzman on 11/11/12.
+//  Created by Ben Weitzman on 11/12/12.
 //  Copyright (c) 2012 Ben Weitzman. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import "FormKit.h"
 #import "LTCommunication.h"
 
-@interface LTRegisterViewController : UITableViewController <CreateUserDelegate>
+@interface LTLoginViewController : UITableViewController <LoginDelegate>
 
 @property (nonatomic, strong) FKFormModel *formModel;
 - (IBAction)close:(id)sender;

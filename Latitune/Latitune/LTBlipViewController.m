@@ -44,7 +44,7 @@
 }
 
 - (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-  if ([identifier isEqualToString:@"registerSegue"]) {
+  if ([identifier isEqualToString:@"authenticateSegue"]) {
     if ([[LTCommunication sharedInstance] userID]) return NO;
   }
   return YES;

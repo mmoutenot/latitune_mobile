@@ -85,6 +85,9 @@
 		DA0A331116502C6B00E7A2A4 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C316502B9C00E7A2A4 /* DistancePickerView.m */; };
 		DA0A331216502C6B00E7A2A4 /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C616502B9C00E7A2A4 /* BWLongTextViewController.m */; };
 		DA0A331316502C6B00E7A2A4 /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C916502B9C00E7A2A4 /* BWSelectViewController.m */; };
+		DA0A331816503CE400E7A2A4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA0A331516503CE400E7A2A4 /* SVProgressHUD.bundle */; };
+		DA0A331916503CE400E7A2A4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A331716503CE400E7A2A4 /* SVProgressHUD.m */; };
+		DA0A331C1651948200E7A2A4 /* LTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */; };
 		DA2E05B9164F900600BF9B50 /* glyphicons_233_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */; };
 		DA2E05BA164F900600BF9B50 /* glyphicons_233_direction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */; };
 		DAF330A3164F335100DBBFD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
@@ -238,6 +241,11 @@
 		DA0A32EB16502BAC00E7A2A4 /* LTRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRegisterViewController.h; sourceTree = "<group>"; };
 		DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRegisterViewController.m; sourceTree = "<group>"; };
 		DA0A32EE16502BCD00E7A2A4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DA0A331516503CE400E7A2A4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		DA0A331616503CE400E7A2A4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		DA0A331716503CE400E7A2A4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		DA0A331A1651948100E7A2A4 /* LTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLoginViewController.h; sourceTree = "<group>"; };
+		DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLoginViewController.m; sourceTree = "<group>"; };
 		DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_233_direction.png; sourceTree = "<group>"; };
 		DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_233_direction@2x.png"; sourceTree = "<group>"; };
 		DAF3309E164F335100DBBFD3 /* Latitune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latitune.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -496,6 +504,16 @@
 			path = BWSelectViewController;
 			sourceTree = "<group>";
 		};
+		DA0A331416503CE400E7A2A4 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DA0A331516503CE400E7A2A4 /* SVProgressHUD.bundle */,
+				DA0A331616503CE400E7A2A4 /* SVProgressHUD.h */,
+				DA0A331716503CE400E7A2A4 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		DA2E05B4164F8FC400BF9B50 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +575,8 @@
 			children = (
 				DA0A32EB16502BAC00E7A2A4 /* LTRegisterViewController.h */,
 				DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */,
+				DA0A331A1651948100E7A2A4 /* LTLoginViewController.h */,
+				DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */,
 				A69FE9C1164F59AB00274407 /* LTLocationController.h */,
 				A69FE9C2164F59AB00274407 /* LTLocationController.m */,
 				DAF330B1164F335100DBBFD3 /* LTAppDelegate.h */,
@@ -617,6 +637,7 @@
 		DAF330EE164F374000DBBFD3 /* External Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DA0A331416503CE400E7A2A4 /* SVProgressHUD */,
 				DA0A327B16502B9C00E7A2A4 /* FormKit */,
 				DA0A32B216502B9C00E7A2A4 /* SSKeyChain */,
 				DA0A32B516502B9C00E7A2A4 /* Vendor */,
@@ -781,6 +802,7 @@
 				DAF330CA164F335200DBBFD3 /* second@2x.png in Resources */,
 				DA2E05B9164F900600BF9B50 /* glyphicons_233_direction.png in Resources */,
 				DA2E05BA164F900600BF9B50 /* glyphicons_233_direction@2x.png in Resources */,
+				DA0A331816503CE400E7A2A4 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,6 +904,8 @@
 				DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */,
 				A6E84ADF1650204B00CE73F6 /* JSONKit.m in Sources */,
 				DA0A32ED16502BAC00E7A2A4 /* LTRegisterViewController.m in Sources */,
+				DA0A331916503CE400E7A2A4 /* SVProgressHUD.m in Sources */,
+				DA0A331C1651948200E7A2A4 /* LTLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

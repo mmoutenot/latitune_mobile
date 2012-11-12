@@ -7,7 +7,9 @@
 //
 
 #import "LTRegisterViewController.h"
-
+#import "LTCommunication.h"
+#import "SVProgressHUD.h"
+#import "LTBlipViewController.h"
 @interface RegisterObject : NSObject
 
 @property (strong,nonatomic) NSString *username, *email, *password, *passwordAgain;
@@ -21,6 +23,9 @@
 @end
 
 @interface LTRegisterViewController ()
+{
+  RegisterObject *regObj;
+}
 
 @end
 
@@ -38,7 +43,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+  regObj = [[RegisterObject alloc] init];
+  regObj.username = @"";
+  regObj.email = @"";
+  regObj.password = @"";
+  regObj.passwordAgain = @"";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -55,10 +64,36 @@
     [mapping mapAttribute:@"password" title:@"Password" type:FKFormAttributeMappingTypePassword];
     [mapping mapAttribute:@"passwordAgain" title:@"Password Again" type:FKFormAttributeMappingTypePassword];
     [mapping buttonSave:@"Register" handler:^{
+      if ([regObj.email length] && [regObj.username length] && [regObj.password length]) {
+        if ([regObj.password isEqualToString:regObj.passwordAgain]) {
+          [[LTCommunication sharedInstance] createUserWithUsername:regObj.username email:regObj.email password:regObj.password withDelegate:self];
+          [SVProgressHUD showWithStatus:@"Registering"];
+        } else {
+          [SVProgressHUD showErrorWithStatus:@"Passwords don't match"];
+        }
+      } else {
+        [SVProgressHUD showErrorWithStatus:@"Empty field"];
+      }
     }];
     [self.formModel registerMapping:mapping];
   }];
+  [self.formModel loadFieldsWithObject:regObj];
+}
 
+- (void) createUserDidFail {
+  NSLog(@"register fail");
+  [SVProgressHUD showErrorWithStatus:@"Registration Failed"];
+}
+
+- (void) createUserDidSucceedWithUser:(NSDictionary *)user {
+  [SVProgressHUD showSuccessWithStatus:@"Registration Successful"];
+  
+  LTBlipViewController *blipViewC = [(UITabBarController*)[self presentingViewController] viewControllers][1];
+  [self dismissViewControllerAnimated:YES completion:^{
+    NSLog(@"%@",[self presentingViewController]);
+    [blipViewC showMediaPicker:nil];
+  }];
+  NSLog(@"register succeed");
 }
 
 - (void)didReceiveMemoryWarning

@@ -104,9 +104,13 @@
     }
     [request setRequestMethod:@"PUT"];
     [request setCompletionBlock:^{
-        NSString *responseString = [request responseString];
-        NSDictionary *responseDict = [responseString JSONValue];
+      NSString *responseString = [request responseString];
+      NSDictionary *responseDict = [responseString JSONValue];
+      if ([responseDict[@"meta"][@"status"] isEqualToString:@"ERR"]) {
+        [self performSelector:failSelector withObject:cl];
+      } else {
         [self performSelector:succeedSelector withObject:responseDict withObject:cl];
+      }
     }];
     [request setFailedBlock:^{
         [self performSelector:failSelector withObject:cl];
@@ -116,8 +120,9 @@
 }
 
 - (void) requestToAddUserDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
-    NSDictionary *user = response[@"objects"][0];
-    [cl[@"delegate"] performSelector:@selector(createUserDidSucceedWithUser:) withObject:user];
+  NSDictionary *user = response[@"objects"][0];
+  userID = [user[@"id"] intValue];
+  [cl[@"delegate"] performSelector:@selector(createUserDidSucceedWithUser:) withObject:user];
 }
 
 - (void) requestToAddUserDidFailWithClosure:(NSDictionary*)cl {
