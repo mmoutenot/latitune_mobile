@@ -69,6 +69,7 @@ typedef struct {
 @property (nonatomic) NSInteger userID;
 
 +(id)sharedInstance;
+- (void) loginWithStoredData;
 - (void) loginWithUsername:(NSString *)uname password:(NSString *)password withDelegate:(NSObject <LoginDelegate>*)delegate;
 - (void) createUserWithUsername:(NSString *)uname email:(NSString*)uemail password:(NSString*)upassword
                    withDelegate:(NSObject<CreateUserDelegate>*) delegate;

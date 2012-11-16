@@ -10,6 +10,25 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "SBJson.h"
+#import "SSKeychain.h"
+
+@interface NSNull (DelegateResolver) <CreateUserDelegate, GetBlipsDelegate, AddBlipDelegate, AddSongDelegate, LoginDelegate>
+@end
+
+@implementation NSNull (DelegateResolver)
+
+- (void) loginDidFail {}
+- (void) loginDidSucceedWithUser:(NSDictionary *)user {}
+- (void) createUserDidFail {}
+- (void) createUserDidSucceedWithUser:(NSDictionary *)user {}
+- (void) getBlipsDidFail {}
+- (void) getBlipsDidSucceedWithBlips:(NSArray *)blips {}
+- (void) addBlipDidFail {}
+- (void) addBlipDidSucceedWithBlip:(Blip *)song {}
+- (void) addSongDidFail {}
+- (void) addSongDidSucceedWithSong:(Song *)song {}
+
+@end
 
 @implementation Song
 
@@ -47,6 +66,21 @@
         _sharedObject = [[self alloc] init]; // or some other init method
     });
     return _sharedObject;
+}
+
+- (id) init {
+  self = [super init];
+  if (self) {
+    if ([[SSKeychain allAccounts] count]>0) {
+      NSLog(@"loading account");
+      NSString *_username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+      NSLog(@"%@",_username);
+      NSString *_password = [SSKeychain passwordForService:@"latitune" account:_username];
+      NSLog(@"%@",_password);
+      [self loginWithUsername:_username password:_password withDelegate:nil];
+    }
+  }
+  return self;
 }
 
 - (id) performSelector: (SEL) selector withObject:(id) p1 withObject: (id) p2 {
@@ -121,6 +155,8 @@
 
 - (void) requestToAddUserDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
   NSDictionary *user = response[@"objects"][0];
+  [[NSUserDefaults standardUserDefaults] setValue:username forKey:@"username"];
+  [SSKeychain setPassword:password forService:@"latitune" account:username];
   userID = [user[@"id"] intValue];
   [cl[@"delegate"] performSelector:@selector(createUserDidSucceedWithUser:) withObject:user];
 }
@@ -141,9 +177,11 @@
 
 - (void) requestToLoginDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
     NSLog(@"%@",response);
-    NSDictionary *user = response[@"objects"][0];
-    userID = [user[@"id"] intValue];
-    [cl[@"delegate"] performSelector:@selector(loginDidSucceedWithUser:) withObject:user];
+  NSDictionary *user = response[@"objects"][0];
+  [[NSUserDefaults standardUserDefaults] setValue:username forKey:@"username"];
+  [SSKeychain setPassword:password forService:@"latitune" account:username];
+  userID = [user[@"id"] intValue];
+  [cl[@"delegate"] performSelector:@selector(loginDidSucceedWithUser:) withObject:user];
 }
 
 - (void) requestToLoginDidFailWithClosure:(NSDictionary*)cl {
@@ -152,6 +190,7 @@
 
 
 - (void) loginWithUsername:(NSString *)uname password:(NSString *)upassword withDelegate:(NSObject <LoginDelegate>*)delegate {
+  if (delegate == nil) delegate = [NSNull null];
     username = uname;
     password = upassword;
     NSDictionary *cl = @{@"delegate":delegate};
