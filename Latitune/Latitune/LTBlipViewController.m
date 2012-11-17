@@ -23,6 +23,7 @@
 }
 
 - (IBAction)showMediaPicker:(id)sender {
+  NSLog(@"Show media picker");
   if ([[LTCommunication sharedInstance] userID]) {
   MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
   mediaPicker.delegate = self;

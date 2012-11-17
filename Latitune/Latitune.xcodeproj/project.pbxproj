@@ -7,46 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A681A7691655F99E0069521B /* FKBadgeField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327E16502B9C00E7A2A4 /* FKBadgeField.m */; };
+		A681A76A1655F99E0069521B /* FKButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328016502B9C00E7A2A4 /* FKButtonField.m */; };
+		A681A76B1655F99E0069521B /* FKDisclosureIndicatorAccessoryField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328216502B9C00E7A2A4 /* FKDisclosureIndicatorAccessoryField.m */; };
+		A681A76C1655F99E0069521B /* FKFloatField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328616502B9C00E7A2A4 /* FKFloatField.m */; };
+		A681A76D1655F99E0069521B /* FKImageField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328816502B9C00E7A2A4 /* FKImageField.m */; };
+		A681A76E1655F99E0069521B /* FKIntegerField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328A16502B9C00E7A2A4 /* FKIntegerField.m */; };
+		A681A76F1655F99E0069521B /* FKLabelField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328C16502B9C00E7A2A4 /* FKLabelField.m */; };
+		A681A7701655F99E0069521B /* FKPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328E16502B9C00E7A2A4 /* FKPasswordTextField.m */; };
+		A681A7711655F99E0069521B /* FKSaveButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329016502B9C00E7A2A4 /* FKSaveButtonField.m */; };
+		A681A7721655F99E0069521B /* FKSimpleField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329216502B9C00E7A2A4 /* FKSimpleField.m */; };
+		A681A7731655F99E0069521B /* FKSliderField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329416502B9C00E7A2A4 /* FKSliderField.m */; };
+		A681A7741655F99E0069521B /* FKSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329616502B9C00E7A2A4 /* FKSwitchField.m */; };
+		A681A7751655F99E0069521B /* FKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329816502B9C00E7A2A4 /* FKTextField.m */; };
+		A681A7761655F99E0069521B /* FKTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329A16502B9C00E7A2A4 /* FKTextViewField.m */; };
+		A681A7771655F99E0069521B /* FKValueViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329C16502B9C00E7A2A4 /* FKValueViewField.m */; };
+		A681A7781655F99E0069521B /* FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329F16502B9C00E7A2A4 /* FKFormAttributeMapping.m */; };
+		A681A7791655F99E0069521B /* FKFormAttributeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A116502B9C00E7A2A4 /* FKFormAttributeValidation.m */; };
+		A681A77A1655F99E0069521B /* FKFormMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A316502B9C00E7A2A4 /* FKFormMapper.m */; };
+		A681A77B1655F99E0069521B /* FKFormMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A516502B9C00E7A2A4 /* FKFormMapping.m */; };
+		A681A77C1655F99E0069521B /* FKFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A716502B9C00E7A2A4 /* FKFormModel.m */; };
+		A681A77D1655F99E0069521B /* FKSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32AA16502B9C00E7A2A4 /* FKSectionObject.m */; };
+		A681A77E1655F99E0069521B /* NSObject+FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32AD16502B9C00E7A2A4 /* NSObject+FKFormAttributeMapping.m */; };
+		A681A77F1655F99E0069521B /* UITableViewCell+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32AF16502B9C00E7A2A4 /* UITableViewCell+FormKit.m */; };
+		A681A7801655F99E0069521B /* UIView+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32B116502B9C00E7A2A4 /* UIView+FormKit.m */; };
+		A681A7811655F99E0069521B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32B416502B9C00E7A2A4 /* SSKeychain.m */; };
+		A681A7821655F99E0069521B /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32B816502B9C00E7A2A4 /* AbstractActionSheetPicker.m */; };
+		A681A7831655F99E0069521B /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32BA16502B9C00E7A2A4 /* ActionSheetCustomPicker.m */; };
+		A681A7841655F99E0069521B /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32BD16502B9C00E7A2A4 /* ActionSheetDatePicker.m */; };
+		A681A7851655F99E0069521B /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32BF16502B9C00E7A2A4 /* ActionSheetDistancePicker.m */; };
+		A681A7861655F99E0069521B /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C116502B9C00E7A2A4 /* ActionSheetStringPicker.m */; };
+		A681A7871655F99E0069521B /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C316502B9C00E7A2A4 /* DistancePickerView.m */; };
+		A681A7881655F99E0069521B /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C616502B9C00E7A2A4 /* BWLongTextViewController.m */; };
+		A681A7891655F99E0069521B /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C916502B9C00E7A2A4 /* BWSelectViewController.m */; };
+		A681A78A1655F99E0069521B /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327216502B8300E7A2A4 /* LBYouTubeExtractor.m */; };
+		A681A78B1655F99E0069521B /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327416502B8300E7A2A4 /* LBYouTubePlayerController.m */; };
+		A681A78C1655F99E0069521B /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327616502B8300E7A2A4 /* LBYouTubePlayerViewController.m */; };
+		A681A78D1655F99E0069521B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330AE164F335100DBBFD3 /* main.m */; };
+		A681A78E1655F99E0069521B /* LTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330B2164F335100DBBFD3 /* LTAppDelegate.m */; };
+		A681A78F1655F99E0069521B /* LTExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330BE164F335100DBBFD3 /* LTExploreViewController.m */; };
+		A681A7901655F99E0069521B /* LTListenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330C5164F335200DBBFD3 /* LTListenViewController.m */; };
+		A681A7911655F99E0069521B /* LTBlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330E9164F343D00DBBFD3 /* LTBlipViewController.m */; };
+		A681A7921655F99E0069521B /* LTCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330EC164F347400DBBFD3 /* LTCommunication.m */; };
+		A681A7931655F99E0069521B /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F1164F375800DBBFD3 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A7941655F99E0069521B /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F4164F375800DBBFD3 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A7951655F99E0069521B /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F6164F375800DBBFD3 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A7961655F99E0069521B /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F8164F375800DBBFD3 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A7971655F99E0069521B /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330FA164F375800DBBFD3 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A7981655F99E0069521B /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330FC164F375800DBBFD3 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A7991655F99E0069521B /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33100164F375800DBBFD3 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A79A1655F99E0069521B /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33102164F375800DBBFD3 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A79B1655F99E0069521B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33106164F375800DBBFD3 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A79C1655F99E0069521B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33109164F375800DBBFD3 /* NSObject+SBJson.m */; };
+		A681A79D1655F99E0069521B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3310C164F375800DBBFD3 /* SBJsonParser.m */; };
+		A681A79E1655F99E0069521B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3310E164F375800DBBFD3 /* SBJsonStreamParser.m */; };
+		A681A79F1655F99E0069521B /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33110164F375800DBBFD3 /* SBJsonStreamParserAccumulator.m */; };
+		A681A7A01655F99E0069521B /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33112164F375800DBBFD3 /* SBJsonStreamParserAdapter.m */; };
+		A681A7A11655F99E0069521B /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33114164F375800DBBFD3 /* SBJsonStreamParserState.m */; };
+		A681A7A21655F99E0069521B /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33116164F375800DBBFD3 /* SBJsonStreamWriter.m */; };
+		A681A7A31655F99E0069521B /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33118164F375800DBBFD3 /* SBJsonStreamWriterAccumulator.m */; };
+		A681A7A41655F99E0069521B /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3311A164F375800DBBFD3 /* SBJsonStreamWriterState.m */; };
+		A681A7A51655F99E0069521B /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3311C164F375800DBBFD3 /* SBJsonTokeniser.m */; };
+		A681A7A61655F99E0069521B /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF3311E164F375800DBBFD3 /* SBJsonUTF8Stream.m */; };
+		A681A7A71655F99E0069521B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF33120164F375800DBBFD3 /* SBJsonWriter.m */; };
+		A681A7A81655F99E0069521B /* LTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FE9C2164F59AB00274407 /* LTLocationController.m */; };
+		A681A7A91655F99E0069521B /* LTYouTubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */; };
+		A681A7AA1655F99E0069521B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E84ADE1650204B00CE73F6 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A681A7AB1655F99E0069521B /* LTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */; };
+		A681A7AD1655F99E0069521B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A32EE16502BCD00E7A2A4 /* Security.framework */; };
+		A681A7AE1655F99E0069521B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69FE9BA164F51C600274407 /* MediaPlayer.framework */; };
+		A681A7AF1655F99E0069521B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313E164F443600DBBFD3 /* CoreLocation.framework */; };
+		A681A7B01655F99E0069521B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313C164F432700DBBFD3 /* libz.dylib */; };
+		A681A7B11655F99E0069521B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A6164F335100DBBFD3 /* CoreGraphics.framework */; };
+		A681A7B21655F99E0069521B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */; };
+		A681A7B31655F99E0069521B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF33138164F431000DBBFD3 /* SystemConfiguration.framework */; };
+		A681A7B41655F99E0069521B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF33136164F430300DBBFD3 /* CFNetwork.framework */; };
+		A681A7B51655F99E0069521B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
+		A681A7B61655F99E0069521B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A4164F335100DBBFD3 /* Foundation.framework */; };
+		A681A7B81655F99E0069521B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF330AB164F335100DBBFD3 /* InfoPlist.strings */; };
+		A681A7B91655F99E0069521B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330B4164F335100DBBFD3 /* Default.png */; };
+		A681A7BA1655F99E0069521B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330B6164F335100DBBFD3 /* Default@2x.png */; };
+		A681A7BB1655F99E0069521B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330B8164F335100DBBFD3 /* Default-568h@2x.png */; };
+		A681A7BC1655F99E0069521B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF330BA164F335100DBBFD3 /* MainStoryboard.storyboard */; };
+		A681A7BD1655F99E0069521B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330C0164F335100DBBFD3 /* first.png */; };
+		A681A7BE1655F99E0069521B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330C2164F335100DBBFD3 /* first@2x.png */; };
+		A681A7BF1655F99E0069521B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330C7164F335200DBBFD3 /* second.png */; };
+		A681A7C01655F99E0069521B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330C9164F335200DBBFD3 /* second@2x.png */; };
+		A681A7C11655F99E0069521B /* glyphicons_233_direction.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B7164F900600BF9B50 /* glyphicons_233_direction.png */; };
+		A681A7C21655F99E0069521B /* glyphicons_233_direction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E05B8164F900600BF9B50 /* glyphicons_233_direction@2x.png */; };
+		A681A7CA1655F9D70069521B /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A681A7C91655F9D70069521B /* libKIF.a */; };
+		A681A7CF1655FB5C0069521B /* LTTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = A681A7CE1655FB5C0069521B /* LTTestController.m */; };
+		A681A7D41655FBEB0069521B /* KIFTestScenario+LTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A681A7D21655FBEB0069521B /* KIFTestScenario+LTAdditions.m */; };
+		A681A7DD1655FE660069521B /* KIFTestStep+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A681A7DC1655FE660069521B /* KIFTestStep+EXAdditions.m */; };
 		A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69FE9BA164F51C600274407 /* MediaPlayer.framework */; };
 		A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FE9C2164F59AB00274407 /* LTLocationController.m */; };
 		A6E84ADF1650204B00CE73F6 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E84ADE1650204B00CE73F6 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DA0A31F016501AFB00E7A2A4 /* LTYouTubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A31EF16501AFB00E7A2A4 /* LTYouTubeViewController.m */; };
-		DA0A327716502B8300E7A2A4 /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327216502B8300E7A2A4 /* LBYouTubeExtractor.m */; };
-		DA0A327816502B8300E7A2A4 /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327416502B8300E7A2A4 /* LBYouTubePlayerController.m */; };
-		DA0A327916502B8300E7A2A4 /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327616502B8300E7A2A4 /* LBYouTubePlayerViewController.m */; };
-		DA0A32CA16502B9C00E7A2A4 /* FKBadgeField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327E16502B9C00E7A2A4 /* FKBadgeField.m */; };
-		DA0A32CB16502B9C00E7A2A4 /* FKButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328016502B9C00E7A2A4 /* FKButtonField.m */; };
-		DA0A32CC16502B9C00E7A2A4 /* FKDisclosureIndicatorAccessoryField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328216502B9C00E7A2A4 /* FKDisclosureIndicatorAccessoryField.m */; };
-		DA0A32CD16502B9C00E7A2A4 /* FKFloatField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328616502B9C00E7A2A4 /* FKFloatField.m */; };
-		DA0A32CE16502B9C00E7A2A4 /* FKImageField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328816502B9C00E7A2A4 /* FKImageField.m */; };
-		DA0A32CF16502B9C00E7A2A4 /* FKIntegerField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328A16502B9C00E7A2A4 /* FKIntegerField.m */; };
-		DA0A32D016502B9C00E7A2A4 /* FKLabelField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328C16502B9C00E7A2A4 /* FKLabelField.m */; };
-		DA0A32D116502B9C00E7A2A4 /* FKPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A328E16502B9C00E7A2A4 /* FKPasswordTextField.m */; };
-		DA0A32D216502B9C00E7A2A4 /* FKSaveButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329016502B9C00E7A2A4 /* FKSaveButtonField.m */; };
-		DA0A32D316502B9C00E7A2A4 /* FKSimpleField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329216502B9C00E7A2A4 /* FKSimpleField.m */; };
-		DA0A32D416502B9C00E7A2A4 /* FKSliderField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329416502B9C00E7A2A4 /* FKSliderField.m */; };
-		DA0A32D516502B9C00E7A2A4 /* FKSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329616502B9C00E7A2A4 /* FKSwitchField.m */; };
-		DA0A32D616502B9C00E7A2A4 /* FKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329816502B9C00E7A2A4 /* FKTextField.m */; };
-		DA0A32D716502B9C00E7A2A4 /* FKTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329A16502B9C00E7A2A4 /* FKTextViewField.m */; };
-		DA0A32D816502B9C00E7A2A4 /* FKValueViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329C16502B9C00E7A2A4 /* FKValueViewField.m */; };
-		DA0A32D916502B9C00E7A2A4 /* FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A329F16502B9C00E7A2A4 /* FKFormAttributeMapping.m */; };
-		DA0A32DA16502B9C00E7A2A4 /* FKFormAttributeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A116502B9C00E7A2A4 /* FKFormAttributeValidation.m */; };
-		DA0A32DB16502B9C00E7A2A4 /* FKFormMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A316502B9C00E7A2A4 /* FKFormMapper.m */; };
-		DA0A32DC16502B9C00E7A2A4 /* FKFormMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A516502B9C00E7A2A4 /* FKFormMapping.m */; };
-		DA0A32DD16502B9C00E7A2A4 /* FKFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32A716502B9C00E7A2A4 /* FKFormModel.m */; };
-		DA0A32DE16502B9C00E7A2A4 /* FKSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32AA16502B9C00E7A2A4 /* FKSectionObject.m */; };
-		DA0A32DF16502B9C00E7A2A4 /* NSObject+FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32AD16502B9C00E7A2A4 /* NSObject+FKFormAttributeMapping.m */; };
-		DA0A32E016502B9C00E7A2A4 /* UITableViewCell+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32AF16502B9C00E7A2A4 /* UITableViewCell+FormKit.m */; };
-		DA0A32E116502B9C00E7A2A4 /* UIView+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32B116502B9C00E7A2A4 /* UIView+FormKit.m */; };
-		DA0A32E216502B9C00E7A2A4 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32B416502B9C00E7A2A4 /* SSKeychain.m */; };
-		DA0A32E316502B9C00E7A2A4 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32B816502B9C00E7A2A4 /* AbstractActionSheetPicker.m */; };
-		DA0A32E416502B9C00E7A2A4 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32BA16502B9C00E7A2A4 /* ActionSheetCustomPicker.m */; };
-		DA0A32E516502B9C00E7A2A4 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32BD16502B9C00E7A2A4 /* ActionSheetDatePicker.m */; };
-		DA0A32E616502B9C00E7A2A4 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32BF16502B9C00E7A2A4 /* ActionSheetDistancePicker.m */; };
-		DA0A32E716502B9C00E7A2A4 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C116502B9C00E7A2A4 /* ActionSheetStringPicker.m */; };
-		DA0A32E816502B9C00E7A2A4 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C316502B9C00E7A2A4 /* DistancePickerView.m */; };
-		DA0A32E916502B9C00E7A2A4 /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C616502B9C00E7A2A4 /* BWLongTextViewController.m */; };
-		DA0A32EA16502B9C00E7A2A4 /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32C916502B9C00E7A2A4 /* BWSelectViewController.m */; };
 		DA0A32ED16502BAC00E7A2A4 /* LTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */; };
 		DA0A32EF16502BCD00E7A2A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A32EE16502BCD00E7A2A4 /* Security.framework */; };
 		DA0A32F016502C1500E7A2A4 /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A327216502B8300E7A2A4 /* LBYouTubeExtractor.m */; };
@@ -106,11 +162,6 @@
 		DAF330C6164F335200DBBFD3 /* LTListenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330C5164F335200DBBFD3 /* LTListenViewController.m */; };
 		DAF330C8164F335200DBBFD3 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330C7164F335200DBBFD3 /* second.png */; };
 		DAF330CA164F335200DBBFD3 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF330C9164F335200DBBFD3 /* second@2x.png */; };
-		DAF330D2164F335200DBBFD3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330D1164F335200DBBFD3 /* SenTestingKit.framework */; };
-		DAF330D3164F335200DBBFD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
-		DAF330D4164F335200DBBFD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A4164F335100DBBFD3 /* Foundation.framework */; };
-		DAF330DC164F335200DBBFD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF330DA164F335200DBBFD3 /* InfoPlist.strings */; };
-		DAF330DF164F335200DBBFD3 /* LatituneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330DE164F335200DBBFD3 /* LatituneTests.m */; };
 		DAF330EA164F343D00DBBFD3 /* LTBlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330E9164F343D00DBBFD3 /* LTBlipViewController.m */; };
 		DAF330ED164F347400DBBFD3 /* LTCommunication.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330EC164F347400DBBFD3 /* LTCommunication.m */; };
 		DAF33121164F375800DBBFD3 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330F1164F375800DBBFD3 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -141,17 +192,16 @@
 		DAF3313F164F443600DBBFD3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313E164F443600DBBFD3 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DAF330D5164F335200DBBFD3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAF33095164F335100DBBFD3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DAF3309D164F335100DBBFD3;
-			remoteInfo = Latitune;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		A681A7C61655F99E0069521B /* Latitune copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitune copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A681A7C81655F99E0069521B /* Latitune copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Latitune copy-Info.plist"; path = "/Users/mmoutenot/projects/latitune_mobile/Latitune/Latitune copy-Info.plist"; sourceTree = "<absolute>"; };
+		A681A7C91655F9D70069521B /* libKIF.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKIF.a; path = "../Frameworks/KIF/build/Release-iphoneos/libKIF.a"; sourceTree = "<group>"; };
+		A681A7CD1655FB5C0069521B /* LTTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTTestController.h; path = "Integration Tests/LTTestController.h"; sourceTree = "<group>"; };
+		A681A7CE1655FB5C0069521B /* LTTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTTestController.m; path = "Integration Tests/LTTestController.m"; sourceTree = "<group>"; };
+		A681A7D11655FBEB0069521B /* KIFTestScenario+LTAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KIFTestScenario+LTAdditions.h"; path = "Integration Tests/KIFTestScenario+LTAdditions.h"; sourceTree = "<group>"; };
+		A681A7D21655FBEB0069521B /* KIFTestScenario+LTAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = file; name = "KIFTestScenario+LTAdditions.m"; path = "Integration Tests/KIFTestScenario+LTAdditions.m"; sourceTree = "<group>"; };
+		A681A7DB1655FE660069521B /* KIFTestStep+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestStep+EXAdditions.h"; path = "Integration Tests/KIFTestStep+EXAdditions.h"; sourceTree = "<group>"; };
+		A681A7DC1655FE660069521B /* KIFTestStep+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestStep+EXAdditions.m"; path = "Integration Tests/KIFTestStep+EXAdditions.m"; sourceTree = "<group>"; };
 		A69FE9BA164F51C600274407 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A69FE9C1164F59AB00274407 /* LTLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocationController.h; sourceTree = "<group>"; };
 		A69FE9C2164F59AB00274407 /* LTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLocationController.m; sourceTree = "<group>"; };
@@ -270,7 +320,6 @@
 		DAF330C5164F335200DBBFD3 /* LTListenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTListenViewController.m; sourceTree = "<group>"; };
 		DAF330C7164F335200DBBFD3 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DAF330C9164F335200DBBFD3 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		DAF330D0164F335200DBBFD3 /* LatituneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LatituneTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF330D1164F335200DBBFD3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		DAF330D9164F335200DBBFD3 /* LatituneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LatituneTests-Info.plist"; sourceTree = "<group>"; };
 		DAF330DB164F335200DBBFD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -335,6 +384,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A681A7AC1655F99E0069521B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A681A7CA1655F9D70069521B /* libKIF.a in Frameworks */,
+				A681A7AD1655F99E0069521B /* Security.framework in Frameworks */,
+				A681A7AE1655F99E0069521B /* MediaPlayer.framework in Frameworks */,
+				A681A7AF1655F99E0069521B /* CoreLocation.framework in Frameworks */,
+				A681A7B01655F99E0069521B /* libz.dylib in Frameworks */,
+				A681A7B11655F99E0069521B /* CoreGraphics.framework in Frameworks */,
+				A681A7B21655F99E0069521B /* MobileCoreServices.framework in Frameworks */,
+				A681A7B31655F99E0069521B /* SystemConfiguration.framework in Frameworks */,
+				A681A7B41655F99E0069521B /* CFNetwork.framework in Frameworks */,
+				A681A7B51655F99E0069521B /* UIKit.framework in Frameworks */,
+				A681A7B61655F99E0069521B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAF3309B164F335100DBBFD3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,19 +419,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAF330CC164F335200DBBFD3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAF330D2164F335200DBBFD3 /* SenTestingKit.framework in Frameworks */,
-				DAF330D3164F335200DBBFD3 /* UIKit.framework in Frameworks */,
-				DAF330D4164F335200DBBFD3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A681A7CB1655FAFE0069521B /* Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A681A7DB1655FE660069521B /* KIFTestStep+EXAdditions.h */,
+				A681A7DC1655FE660069521B /* KIFTestStep+EXAdditions.m */,
+				A681A7D11655FBEB0069521B /* KIFTestScenario+LTAdditions.h */,
+				A681A7D21655FBEB0069521B /* KIFTestScenario+LTAdditions.m */,
+				A681A7CD1655FB5C0069521B /* LTTestController.h */,
+				A681A7CE1655FB5C0069521B /* LTTestController.m */,
+			);
+			name = "Integration Tests";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		A6E84AD116501F4200CE73F6 /* LBYouTubeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +605,7 @@
 		DAF33093164F335100DBBFD3 = {
 			isa = PBXGroup;
 			children = (
+				A681A7C91655F9D70069521B /* libKIF.a */,
 				DA0A32EE16502BCD00E7A2A4 /* Security.framework */,
 				A69FE9BA164F51C600274407 /* MediaPlayer.framework */,
 				DAF3313E164F443600DBBFD3 /* CoreLocation.framework */,
@@ -544,9 +616,11 @@
 				DA2E05B4164F8FC400BF9B50 /* Resources */,
 				DAF330EE164F374000DBBFD3 /* External Sources */,
 				DAF330A8164F335100DBBFD3 /* Latitune */,
+				A681A7CB1655FAFE0069521B /* Integration Tests */,
 				DAF330D7164F335200DBBFD3 /* LatituneTests */,
 				DAF330A1164F335100DBBFD3 /* Frameworks */,
 				DAF3309F164F335100DBBFD3 /* Products */,
+				A681A7C81655F99E0069521B /* Latitune copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -554,7 +628,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF3309E164F335100DBBFD3 /* Latitune.app */,
-				DAF330D0164F335200DBBFD3 /* LatituneTests.octest */,
+				A681A7C61655F99E0069521B /* Latitune copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -722,6 +796,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A681A7671655F99E0069521B /* Integration Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A681A7C31655F99E0069521B /* Build configuration list for PBXNativeTarget "Integration Tests" */;
+			buildPhases = (
+				A681A7681655F99E0069521B /* Sources */,
+				A681A7AC1655F99E0069521B /* Frameworks */,
+				A681A7B71655F99E0069521B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Integration Tests";
+			productName = Latitune;
+			productReference = A681A7C61655F99E0069521B /* Latitune copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DAF3309D164F335100DBBFD3 /* Latitune */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAF330E2164F335200DBBFD3 /* Build configuration list for PBXNativeTarget "Latitune" */;
@@ -738,25 +829,6 @@
 			productName = Latitune;
 			productReference = DAF3309E164F335100DBBFD3 /* Latitune.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DAF330CF164F335200DBBFD3 /* LatituneTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DAF330E5164F335200DBBFD3 /* Build configuration list for PBXNativeTarget "LatituneTests" */;
-			buildPhases = (
-				DAF330CB164F335200DBBFD3 /* Sources */,
-				DAF330CC164F335200DBBFD3 /* Frameworks */,
-				DAF330CD164F335200DBBFD3 /* Resources */,
-				DAF330CE164F335200DBBFD3 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DAF330D6164F335200DBBFD3 /* PBXTargetDependency */,
-			);
-			name = LatituneTests;
-			productName = LatituneTests;
-			productReference = DAF330D0164F335200DBBFD3 /* LatituneTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -781,12 +853,30 @@
 			projectRoot = "";
 			targets = (
 				DAF3309D164F335100DBBFD3 /* Latitune */,
-				DAF330CF164F335200DBBFD3 /* LatituneTests */,
+				A681A7671655F99E0069521B /* Integration Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A681A7B71655F99E0069521B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A681A7B81655F99E0069521B /* InfoPlist.strings in Resources */,
+				A681A7B91655F99E0069521B /* Default.png in Resources */,
+				A681A7BA1655F99E0069521B /* Default@2x.png in Resources */,
+				A681A7BB1655F99E0069521B /* Default-568h@2x.png in Resources */,
+				A681A7BC1655F99E0069521B /* MainStoryboard.storyboard in Resources */,
+				A681A7BD1655F99E0069521B /* first.png in Resources */,
+				A681A7BE1655F99E0069521B /* first@2x.png in Resources */,
+				A681A7BF1655F99E0069521B /* second.png in Resources */,
+				A681A7C01655F99E0069521B /* second@2x.png in Resources */,
+				A681A7C11655F99E0069521B /* glyphicons_233_direction.png in Resources */,
+				A681A7C21655F99E0069521B /* glyphicons_233_direction@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAF3309C164F335100DBBFD3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -806,33 +896,86 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAF330CD164F335200DBBFD3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAF330DC164F335200DBBFD3 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		DAF330CE164F335200DBBFD3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		A681A7681655F99E0069521B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
+				A681A7691655F99E0069521B /* FKBadgeField.m in Sources */,
+				A681A76A1655F99E0069521B /* FKButtonField.m in Sources */,
+				A681A76B1655F99E0069521B /* FKDisclosureIndicatorAccessoryField.m in Sources */,
+				A681A76C1655F99E0069521B /* FKFloatField.m in Sources */,
+				A681A76D1655F99E0069521B /* FKImageField.m in Sources */,
+				A681A76E1655F99E0069521B /* FKIntegerField.m in Sources */,
+				A681A76F1655F99E0069521B /* FKLabelField.m in Sources */,
+				A681A7701655F99E0069521B /* FKPasswordTextField.m in Sources */,
+				A681A7711655F99E0069521B /* FKSaveButtonField.m in Sources */,
+				A681A7721655F99E0069521B /* FKSimpleField.m in Sources */,
+				A681A7731655F99E0069521B /* FKSliderField.m in Sources */,
+				A681A7741655F99E0069521B /* FKSwitchField.m in Sources */,
+				A681A7751655F99E0069521B /* FKTextField.m in Sources */,
+				A681A7761655F99E0069521B /* FKTextViewField.m in Sources */,
+				A681A7771655F99E0069521B /* FKValueViewField.m in Sources */,
+				A681A7781655F99E0069521B /* FKFormAttributeMapping.m in Sources */,
+				A681A7791655F99E0069521B /* FKFormAttributeValidation.m in Sources */,
+				A681A77A1655F99E0069521B /* FKFormMapper.m in Sources */,
+				A681A77B1655F99E0069521B /* FKFormMapping.m in Sources */,
+				A681A77C1655F99E0069521B /* FKFormModel.m in Sources */,
+				A681A77D1655F99E0069521B /* FKSectionObject.m in Sources */,
+				A681A77E1655F99E0069521B /* NSObject+FKFormAttributeMapping.m in Sources */,
+				A681A77F1655F99E0069521B /* UITableViewCell+FormKit.m in Sources */,
+				A681A7801655F99E0069521B /* UIView+FormKit.m in Sources */,
+				A681A7811655F99E0069521B /* SSKeychain.m in Sources */,
+				A681A7821655F99E0069521B /* AbstractActionSheetPicker.m in Sources */,
+				A681A7831655F99E0069521B /* ActionSheetCustomPicker.m in Sources */,
+				A681A7841655F99E0069521B /* ActionSheetDatePicker.m in Sources */,
+				A681A7851655F99E0069521B /* ActionSheetDistancePicker.m in Sources */,
+				A681A7861655F99E0069521B /* ActionSheetStringPicker.m in Sources */,
+				A681A7871655F99E0069521B /* DistancePickerView.m in Sources */,
+				A681A7881655F99E0069521B /* BWLongTextViewController.m in Sources */,
+				A681A7891655F99E0069521B /* BWSelectViewController.m in Sources */,
+				A681A78A1655F99E0069521B /* LBYouTubeExtractor.m in Sources */,
+				A681A78B1655F99E0069521B /* LBYouTubePlayerController.m in Sources */,
+				A681A78C1655F99E0069521B /* LBYouTubePlayerViewController.m in Sources */,
+				A681A78D1655F99E0069521B /* main.m in Sources */,
+				A681A78E1655F99E0069521B /* LTAppDelegate.m in Sources */,
+				A681A78F1655F99E0069521B /* LTExploreViewController.m in Sources */,
+				A681A7901655F99E0069521B /* LTListenViewController.m in Sources */,
+				A681A7911655F99E0069521B /* LTBlipViewController.m in Sources */,
+				A681A7921655F99E0069521B /* LTCommunication.m in Sources */,
+				A681A7931655F99E0069521B /* ASIAuthenticationDialog.m in Sources */,
+				A681A7941655F99E0069521B /* ASIDataCompressor.m in Sources */,
+				A681A7951655F99E0069521B /* ASIDataDecompressor.m in Sources */,
+				A681A7961655F99E0069521B /* ASIDownloadCache.m in Sources */,
+				A681A7971655F99E0069521B /* ASIFormDataRequest.m in Sources */,
+				A681A7981655F99E0069521B /* ASIHTTPRequest.m in Sources */,
+				A681A7991655F99E0069521B /* ASIInputStream.m in Sources */,
+				A681A79A1655F99E0069521B /* ASINetworkQueue.m in Sources */,
+				A681A79B1655F99E0069521B /* Reachability.m in Sources */,
+				A681A79C1655F99E0069521B /* NSObject+SBJson.m in Sources */,
+				A681A79D1655F99E0069521B /* SBJsonParser.m in Sources */,
+				A681A79E1655F99E0069521B /* SBJsonStreamParser.m in Sources */,
+				A681A79F1655F99E0069521B /* SBJsonStreamParserAccumulator.m in Sources */,
+				A681A7A01655F99E0069521B /* SBJsonStreamParserAdapter.m in Sources */,
+				A681A7A11655F99E0069521B /* SBJsonStreamParserState.m in Sources */,
+				A681A7A21655F99E0069521B /* SBJsonStreamWriter.m in Sources */,
+				A681A7A31655F99E0069521B /* SBJsonStreamWriterAccumulator.m in Sources */,
+				A681A7A41655F99E0069521B /* SBJsonStreamWriterState.m in Sources */,
+				A681A7A51655F99E0069521B /* SBJsonTokeniser.m in Sources */,
+				A681A7A61655F99E0069521B /* SBJsonUTF8Stream.m in Sources */,
+				A681A7A71655F99E0069521B /* SBJsonWriter.m in Sources */,
+				A681A7A81655F99E0069521B /* LTLocationController.m in Sources */,
+				A681A7A91655F99E0069521B /* LTYouTubeViewController.m in Sources */,
+				A681A7AA1655F99E0069521B /* JSONKit.m in Sources */,
+				A681A7AB1655F99E0069521B /* LTRegisterViewController.m in Sources */,
+				A681A7CF1655FB5C0069521B /* LTTestController.m in Sources */,
+				A681A7D41655FBEB0069521B /* KIFTestScenario+LTAdditions.m in Sources */,
+				A681A7DD1655FE660069521B /* KIFTestStep+EXAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		DAF3309A164F335100DBBFD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -909,59 +1052,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAF330CB164F335200DBBFD3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAF330DF164F335200DBBFD3 /* LatituneTests.m in Sources */,
-				DA0A327716502B8300E7A2A4 /* LBYouTubeExtractor.m in Sources */,
-				DA0A327816502B8300E7A2A4 /* LBYouTubePlayerController.m in Sources */,
-				DA0A327916502B8300E7A2A4 /* LBYouTubePlayerViewController.m in Sources */,
-				DA0A32CA16502B9C00E7A2A4 /* FKBadgeField.m in Sources */,
-				DA0A32CB16502B9C00E7A2A4 /* FKButtonField.m in Sources */,
-				DA0A32CC16502B9C00E7A2A4 /* FKDisclosureIndicatorAccessoryField.m in Sources */,
-				DA0A32CD16502B9C00E7A2A4 /* FKFloatField.m in Sources */,
-				DA0A32CE16502B9C00E7A2A4 /* FKImageField.m in Sources */,
-				DA0A32CF16502B9C00E7A2A4 /* FKIntegerField.m in Sources */,
-				DA0A32D016502B9C00E7A2A4 /* FKLabelField.m in Sources */,
-				DA0A32D116502B9C00E7A2A4 /* FKPasswordTextField.m in Sources */,
-				DA0A32D216502B9C00E7A2A4 /* FKSaveButtonField.m in Sources */,
-				DA0A32D316502B9C00E7A2A4 /* FKSimpleField.m in Sources */,
-				DA0A32D416502B9C00E7A2A4 /* FKSliderField.m in Sources */,
-				DA0A32D516502B9C00E7A2A4 /* FKSwitchField.m in Sources */,
-				DA0A32D616502B9C00E7A2A4 /* FKTextField.m in Sources */,
-				DA0A32D716502B9C00E7A2A4 /* FKTextViewField.m in Sources */,
-				DA0A32D816502B9C00E7A2A4 /* FKValueViewField.m in Sources */,
-				DA0A32D916502B9C00E7A2A4 /* FKFormAttributeMapping.m in Sources */,
-				DA0A32DA16502B9C00E7A2A4 /* FKFormAttributeValidation.m in Sources */,
-				DA0A32DB16502B9C00E7A2A4 /* FKFormMapper.m in Sources */,
-				DA0A32DC16502B9C00E7A2A4 /* FKFormMapping.m in Sources */,
-				DA0A32DD16502B9C00E7A2A4 /* FKFormModel.m in Sources */,
-				DA0A32DE16502B9C00E7A2A4 /* FKSectionObject.m in Sources */,
-				DA0A32DF16502B9C00E7A2A4 /* NSObject+FKFormAttributeMapping.m in Sources */,
-				DA0A32E016502B9C00E7A2A4 /* UITableViewCell+FormKit.m in Sources */,
-				DA0A32E116502B9C00E7A2A4 /* UIView+FormKit.m in Sources */,
-				DA0A32E216502B9C00E7A2A4 /* SSKeychain.m in Sources */,
-				DA0A32E316502B9C00E7A2A4 /* AbstractActionSheetPicker.m in Sources */,
-				DA0A32E416502B9C00E7A2A4 /* ActionSheetCustomPicker.m in Sources */,
-				DA0A32E516502B9C00E7A2A4 /* ActionSheetDatePicker.m in Sources */,
-				DA0A32E616502B9C00E7A2A4 /* ActionSheetDistancePicker.m in Sources */,
-				DA0A32E716502B9C00E7A2A4 /* ActionSheetStringPicker.m in Sources */,
-				DA0A32E816502B9C00E7A2A4 /* DistancePickerView.m in Sources */,
-				DA0A32E916502B9C00E7A2A4 /* BWLongTextViewController.m in Sources */,
-				DA0A32EA16502B9C00E7A2A4 /* BWSelectViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DAF330D6164F335200DBBFD3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DAF3309D164F335100DBBFD3 /* Latitune */;
-			targetProxy = DAF330D5164F335200DBBFD3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DAF330AB164F335100DBBFD3 /* InfoPlist.strings */ = {
@@ -991,6 +1082,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A681A7C41655F99E0069521B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Latitune/Latitune-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"RUN_KIF_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/KIF/**",
+				);
+				INFOPLIST_FILE = "Latitune copy-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "Latitune copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A681A7C51655F99E0069521B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Latitune/Latitune-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"RUN_KIF_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/KIF/**",
+				);
+				INFOPLIST_FILE = "Latitune copy-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "Latitune copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		DAF330E0164F335200DBBFD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1063,43 +1200,18 @@
 			};
 			name = Release;
 		};
-		DAF330E6164F335200DBBFD3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Latitune.app/Latitune";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Latitune/Latitune-Prefix.pch";
-				INFOPLIST_FILE = "LatituneTests/LatituneTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		DAF330E7164F335200DBBFD3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Latitune.app/Latitune";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Latitune/Latitune-Prefix.pch";
-				INFOPLIST_FILE = "LatituneTests/LatituneTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A681A7C31655F99E0069521B /* Build configuration list for PBXNativeTarget "Integration Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A681A7C41655F99E0069521B /* Debug */,
+				A681A7C51655F99E0069521B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DAF33098164F335100DBBFD3 /* Build configuration list for PBXProject "Latitune" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1114,15 +1226,6 @@
 			buildConfigurations = (
 				DAF330E3164F335200DBBFD3 /* Debug */,
 				DAF330E4164F335200DBBFD3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DAF330E5164F335200DBBFD3 /* Build configuration list for PBXNativeTarget "LatituneTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAF330E6164F335200DBBFD3 /* Debug */,
-				DAF330E7164F335200DBBFD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
