@@ -1,4 +1,6 @@
 # Xcode
+DerivedData
+.git
 .DS_Store
 build/*
 *.pbxuser
