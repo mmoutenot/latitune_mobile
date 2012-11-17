@@ -102,7 +102,7 @@
   if (cell.accessoryView.tag != 3) {
     UIView *accessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     accessoryView.tag = 3;
-    UIImageView *compassView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"glyphicons_233_direction.png"]];
+    UIImageView *compassView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
     compassView.contentMode = UIViewContentModeScaleAspectFit;
     compassView.frame = CGRectMake(0,5,44,22);
     compassView.tag = 0;
@@ -126,7 +126,7 @@
   UILabel *distanceLabel = (UILabel *)[cell.accessoryView viewWithTag:1];
   [distanceLabel setText:[NSString stringWithFormat:@"%.01fmi",distance]];
   [distanceLabel setTextColor:[UIColor grayColor]];
-  //cell.imageView.image = [UIImage imageNamed:@"glyphicons_233_direction.png"];
+  //cell.imageView.image = [UIImage imageNamed:@"arrow.png"];
   return cell;
 }
 
