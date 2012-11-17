@@ -39,25 +39,6 @@
 		A61770B4165826F200F5E5EE /* NSObject+FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FE0165826F200F5E5EE /* NSObject+FKFormAttributeMapping.m */; };
 		A61770B5165826F200F5E5EE /* UITableViewCell+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FE2165826F200F5E5EE /* UITableViewCell+FormKit.m */; };
 		A61770B6165826F200F5E5EE /* UIView+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FE4165826F200F5E5EE /* UIView+FormKit.m */; };
-		A61770B7165826F200F5E5EE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A6176FE6165826F200F5E5EE /* .gitignore */; };
-		A61770CE165826F200F5E5EE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A6177023165826F200F5E5EE /* LICENSE */; };
-		A61770CF165826F200F5E5EE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A6177024165826F200F5E5EE /* README.md */; };
-		A61770D0165826F200F5E5EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6177026165826F200F5E5EE /* InfoPlist.strings */; };
-		A61770D1165826F200F5E5EE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6177028165826F200F5E5EE /* MainWindow.xib */; };
-		A61770D2165826F200F5E5EE /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A617702A165826F200F5E5EE /* RootViewController.xib */; };
-		A61770D5165826F200F5E5EE /* Testable-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A617702F165826F200F5E5EE /* Testable-Info.plist */; };
-		A61770DA165826F200F5E5EE /* Add Category Linker Flags.png in Resources */ = {isa = PBXBuildFile; fileRef = A617703E165826F200F5E5EE /* Add Category Linker Flags.png */; };
-		A61770DB165826F200F5E5EE /* Add Header Search Paths.png in Resources */ = {isa = PBXBuildFile; fileRef = A617703F165826F200F5E5EE /* Add Header Search Paths.png */; };
-		A61770DC165826F200F5E5EE /* Add KIF Preprocessor Macro.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177040165826F200F5E5EE /* Add KIF Preprocessor Macro.png */; };
-		A61770DD165826F200F5E5EE /* Add Library Sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177041165826F200F5E5EE /* Add Library Sheet.png */; };
-		A61770DE165826F200F5E5EE /* Add Library.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177042165826F200F5E5EE /* Add Library.png */; };
-		A61770DF165826F200F5E5EE /* Create Workspace.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177043165826F200F5E5EE /* Create Workspace.png */; };
-		A61770E0165826F200F5E5EE /* Duplicate Target Confirmation.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177044165826F200F5E5EE /* Duplicate Target Confirmation.png */; };
-		A61770E1165826F200F5E5EE /* Duplicate Target.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177045165826F200F5E5EE /* Duplicate Target.png */; };
-		A61770E2165826F200F5E5EE /* Rename Product.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177046165826F200F5E5EE /* Rename Product.png */; };
-		A61770E3165826F200F5E5EE /* Rename Target.png in Resources */ = {isa = PBXBuildFile; fileRef = A6177047165826F200F5E5EE /* Rename Target.png */; };
-		A61770E4165826F200F5E5EE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A617704B165826F200F5E5EE /* LICENSE */; };
-		A61770E5165826F200F5E5EE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A617704C165826F200F5E5EE /* README.md */; };
 		A61770E6165826F200F5E5EE /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177050165826F200F5E5EE /* LBYouTubeExtractor.m */; };
 		A61770E7165826F200F5E5EE /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177052165826F200F5E5EE /* LBYouTubePlayerController.m */; };
 		A61770E8165826F200F5E5EE /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177054165826F200F5E5EE /* LBYouTubePlayerViewController.m */; };
@@ -144,37 +125,6 @@
 		DAF3313F164F443600DBBFD3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313E164F443600DBBFD3 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A6177102165826F200F5E5EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6177048165826F200F5E5EE /* KIF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAB07268139719AC008AF393;
-			remoteInfo = KIF;
-		};
-		A6177105165826F200F5E5EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6177020165826F200F5E5EE /* KIF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAB07268139719AC008AF393;
-			remoteInfo = KIF;
-		};
-		A6177109165826F200F5E5EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A617703A165826F200F5E5EE /* Testable.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAB073A8139861C0008AF393;
-			remoteInfo = Testable;
-		};
-		A617710B165826F200F5E5EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A617703A165826F200F5E5EE /* Testable.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAB073DF13994E20008AF393;
-			remoteInfo = "Integration Tests";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		A6176F9A165826F200F5E5EE /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		A6176F9B165826F200F5E5EE /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -249,7 +199,6 @@
 		A6176FE2165826F200F5E5EE /* UITableViewCell+FormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FormKit.m"; sourceTree = "<group>"; };
 		A6176FE3165826F200F5E5EE /* UIView+FormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormKit.h"; sourceTree = "<group>"; };
 		A6176FE4165826F200F5E5EE /* UIView+FormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormKit.m"; sourceTree = "<group>"; };
-		A6176FE6165826F200F5E5EE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A6176FE8165826F200F5E5EE /* CGGeometry-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry-KIFAdditions.h"; sourceTree = "<group>"; };
 		A6176FE9165826F200F5E5EE /* CGGeometry-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry-KIFAdditions.m"; sourceTree = "<group>"; };
 		A6176FEA165826F200F5E5EE /* LoadableCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadableCategory.h; sourceTree = "<group>"; };
@@ -274,63 +223,6 @@
 		A6176FFE165826F200F5E5EE /* KIFTestScenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIFTestScenario.m; sourceTree = "<group>"; };
 		A6176FFF165826F200F5E5EE /* KIFTestStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIFTestStep.h; sourceTree = "<group>"; };
 		A6177000165826F200F5E5EE /* KIFTestStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIFTestStep.m; sourceTree = "<group>"; };
-		A6177007165826F200F5E5EE /* CGGeometry-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry-KIFAdditions.h"; sourceTree = "<group>"; };
-		A6177008165826F200F5E5EE /* CGGeometry-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry-KIFAdditions.m"; sourceTree = "<group>"; };
-		A6177009165826F200F5E5EE /* LoadableCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadableCategory.h; sourceTree = "<group>"; };
-		A617700A165826F200F5E5EE /* NSFileManager-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager-KIFAdditions.h"; sourceTree = "<group>"; };
-		A617700B165826F200F5E5EE /* NSFileManager-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager-KIFAdditions.m"; sourceTree = "<group>"; };
-		A617700C165826F200F5E5EE /* UIAccessibilityElement-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAccessibilityElement-KIFAdditions.h"; sourceTree = "<group>"; };
-		A617700D165826F200F5E5EE /* UIAccessibilityElement-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAccessibilityElement-KIFAdditions.m"; sourceTree = "<group>"; };
-		A617700E165826F200F5E5EE /* UIApplication-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication-KIFAdditions.h"; sourceTree = "<group>"; };
-		A617700F165826F200F5E5EE /* UIApplication-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication-KIFAdditions.m"; sourceTree = "<group>"; };
-		A6177010165826F200F5E5EE /* UIScrollView-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView-KIFAdditions.h"; sourceTree = "<group>"; };
-		A6177011165826F200F5E5EE /* UIScrollView-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView-KIFAdditions.m"; sourceTree = "<group>"; };
-		A6177012165826F200F5E5EE /* UITouch-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch-KIFAdditions.h"; sourceTree = "<group>"; };
-		A6177013165826F200F5E5EE /* UITouch-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch-KIFAdditions.m"; sourceTree = "<group>"; };
-		A6177014165826F200F5E5EE /* UIView-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-KIFAdditions.h"; sourceTree = "<group>"; };
-		A6177015165826F200F5E5EE /* UIView-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-KIFAdditions.m"; sourceTree = "<group>"; };
-		A6177016165826F200F5E5EE /* UIWindow-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow-KIFAdditions.h"; sourceTree = "<group>"; };
-		A6177017165826F200F5E5EE /* UIWindow-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow-KIFAdditions.m"; sourceTree = "<group>"; };
-		A6177019165826F200F5E5EE /* KIF-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIF-Prefix.pch"; sourceTree = "<group>"; };
-		A617701A165826F200F5E5EE /* KIFTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIFTestController.h; sourceTree = "<group>"; };
-		A617701B165826F200F5E5EE /* KIFTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIFTestController.m; sourceTree = "<group>"; };
-		A617701C165826F200F5E5EE /* KIFTestScenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIFTestScenario.h; sourceTree = "<group>"; };
-		A617701D165826F200F5E5EE /* KIFTestScenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIFTestScenario.m; sourceTree = "<group>"; };
-		A617701E165826F200F5E5EE /* KIFTestStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIFTestStep.h; sourceTree = "<group>"; };
-		A617701F165826F200F5E5EE /* KIFTestStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIFTestStep.m; sourceTree = "<group>"; };
-		A6177020165826F200F5E5EE /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = KIF.xcodeproj; sourceTree = "<group>"; };
-		A6177023165826F200F5E5EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A6177024165826F200F5E5EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		A6177027165826F200F5E5EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A6177029165826F200F5E5EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		A617702B165826F200F5E5EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
-		A617702C165826F200F5E5EE /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A617702D165826F200F5E5EE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		A617702E165826F200F5E5EE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		A617702F165826F200F5E5EE /* Testable-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Testable-Info.plist"; sourceTree = "<group>"; };
-		A6177030165826F200F5E5EE /* Testable-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Testable-Prefix.pch"; sourceTree = "<group>"; };
-		A6177031165826F200F5E5EE /* TestableAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestableAppDelegate.h; sourceTree = "<group>"; };
-		A6177032165826F200F5E5EE /* TestableAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestableAppDelegate.m; sourceTree = "<group>"; };
-		A6177034165826F200F5E5EE /* EXTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTestController.h; sourceTree = "<group>"; };
-		A6177035165826F200F5E5EE /* EXTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTestController.m; sourceTree = "<group>"; };
-		A6177036165826F200F5E5EE /* KIFTestScenario+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFTestScenario+EXAdditions.h"; sourceTree = "<group>"; };
-		A6177037165826F200F5E5EE /* KIFTestScenario+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFTestScenario+EXAdditions.m"; sourceTree = "<group>"; };
-		A6177038165826F200F5E5EE /* KIFTestStep+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFTestStep+EXAdditions.h"; sourceTree = "<group>"; };
-		A6177039165826F200F5E5EE /* KIFTestStep+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFTestStep+EXAdditions.m"; sourceTree = "<group>"; };
-		A617703A165826F200F5E5EE /* Testable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Testable.xcodeproj; sourceTree = "<group>"; };
-		A617703E165826F200F5E5EE /* Add Category Linker Flags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Category Linker Flags.png"; sourceTree = "<group>"; };
-		A617703F165826F200F5E5EE /* Add Header Search Paths.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Header Search Paths.png"; sourceTree = "<group>"; };
-		A6177040165826F200F5E5EE /* Add KIF Preprocessor Macro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add KIF Preprocessor Macro.png"; sourceTree = "<group>"; };
-		A6177041165826F200F5E5EE /* Add Library Sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Library Sheet.png"; sourceTree = "<group>"; };
-		A6177042165826F200F5E5EE /* Add Library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Library.png"; sourceTree = "<group>"; };
-		A6177043165826F200F5E5EE /* Create Workspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Create Workspace.png"; sourceTree = "<group>"; };
-		A6177044165826F200F5E5EE /* Duplicate Target Confirmation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Duplicate Target Confirmation.png"; sourceTree = "<group>"; };
-		A6177045165826F200F5E5EE /* Duplicate Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Duplicate Target.png"; sourceTree = "<group>"; };
-		A6177046165826F200F5E5EE /* Rename Product.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rename Product.png"; sourceTree = "<group>"; };
-		A6177047165826F200F5E5EE /* Rename Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rename Target.png"; sourceTree = "<group>"; };
-		A6177048165826F200F5E5EE /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = KIF.xcodeproj; sourceTree = "<group>"; };
-		A617704B165826F200F5E5EE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A617704C165826F200F5E5EE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A617704E165826F200F5E5EE /* LBYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTube.h; sourceTree = "<group>"; };
 		A617704F165826F200F5E5EE /* LBYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubeExtractor.h; sourceTree = "<group>"; };
 		A6177050165826F200F5E5EE /* LBYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubeExtractor.m; sourceTree = "<group>"; };
@@ -583,13 +475,8 @@
 		A6176FE5165826F200F5E5EE /* KIF */ = {
 			isa = PBXGroup;
 			children = (
-				A6176FE6165826F200F5E5EE /* .gitignore */,
 				A6176FE7165826F200F5E5EE /* Additions */,
 				A6176FF9165826F200F5E5EE /* Classes */,
-				A6177001165826F200F5E5EE /* Documentation */,
-				A6177048165826F200F5E5EE /* KIF.xcodeproj */,
-				A617704B165826F200F5E5EE /* LICENSE */,
-				A617704C165826F200F5E5EE /* README.md */,
 			);
 			name = KIF;
 			path = "External Sources/KIF";
@@ -631,164 +518,6 @@
 				A6177000165826F200F5E5EE /* KIFTestStep.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		A6177001165826F200F5E5EE /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				A6177002165826F200F5E5EE /* Examples */,
-				A617703D165826F200F5E5EE /* Images */,
-			);
-			path = Documentation;
-			sourceTree = "<group>";
-		};
-		A6177002165826F200F5E5EE /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-				A6177003165826F200F5E5EE /* Testable */,
-			);
-			path = Examples;
-			sourceTree = "<group>";
-		};
-		A6177003165826F200F5E5EE /* Testable */ = {
-			isa = PBXGroup;
-			children = (
-				A6177004165826F200F5E5EE /* Frameworks */,
-				A6177025165826F200F5E5EE /* Testable */,
-				A617703A165826F200F5E5EE /* Testable.xcodeproj */,
-			);
-			path = Testable;
-			sourceTree = "<group>";
-		};
-		A6177004165826F200F5E5EE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A6177005165826F200F5E5EE /* KIF */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		A6177005165826F200F5E5EE /* KIF */ = {
-			isa = PBXGroup;
-			children = (
-				A6177006165826F200F5E5EE /* Additions */,
-				A6177018165826F200F5E5EE /* Classes */,
-				A6177020165826F200F5E5EE /* KIF.xcodeproj */,
-				A6177023165826F200F5E5EE /* LICENSE */,
-				A6177024165826F200F5E5EE /* README.md */,
-			);
-			path = KIF;
-			sourceTree = "<group>";
-		};
-		A6177006165826F200F5E5EE /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				A6177007165826F200F5E5EE /* CGGeometry-KIFAdditions.h */,
-				A6177008165826F200F5E5EE /* CGGeometry-KIFAdditions.m */,
-				A6177009165826F200F5E5EE /* LoadableCategory.h */,
-				A617700A165826F200F5E5EE /* NSFileManager-KIFAdditions.h */,
-				A617700B165826F200F5E5EE /* NSFileManager-KIFAdditions.m */,
-				A617700C165826F200F5E5EE /* UIAccessibilityElement-KIFAdditions.h */,
-				A617700D165826F200F5E5EE /* UIAccessibilityElement-KIFAdditions.m */,
-				A617700E165826F200F5E5EE /* UIApplication-KIFAdditions.h */,
-				A617700F165826F200F5E5EE /* UIApplication-KIFAdditions.m */,
-				A6177010165826F200F5E5EE /* UIScrollView-KIFAdditions.h */,
-				A6177011165826F200F5E5EE /* UIScrollView-KIFAdditions.m */,
-				A6177012165826F200F5E5EE /* UITouch-KIFAdditions.h */,
-				A6177013165826F200F5E5EE /* UITouch-KIFAdditions.m */,
-				A6177014165826F200F5E5EE /* UIView-KIFAdditions.h */,
-				A6177015165826F200F5E5EE /* UIView-KIFAdditions.m */,
-				A6177016165826F200F5E5EE /* UIWindow-KIFAdditions.h */,
-				A6177017165826F200F5E5EE /* UIWindow-KIFAdditions.m */,
-			);
-			path = Additions;
-			sourceTree = "<group>";
-		};
-		A6177018165826F200F5E5EE /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				A6177019165826F200F5E5EE /* KIF-Prefix.pch */,
-				A617701A165826F200F5E5EE /* KIFTestController.h */,
-				A617701B165826F200F5E5EE /* KIFTestController.m */,
-				A617701C165826F200F5E5EE /* KIFTestScenario.h */,
-				A617701D165826F200F5E5EE /* KIFTestScenario.m */,
-				A617701E165826F200F5E5EE /* KIFTestStep.h */,
-				A617701F165826F200F5E5EE /* KIFTestStep.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		A6177021165826F200F5E5EE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A6177106165826F200F5E5EE /* libKIF.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A6177025165826F200F5E5EE /* Testable */ = {
-			isa = PBXGroup;
-			children = (
-				A6177026165826F200F5E5EE /* InfoPlist.strings */,
-				A6177028165826F200F5E5EE /* MainWindow.xib */,
-				A617702A165826F200F5E5EE /* RootViewController.xib */,
-				A617702C165826F200F5E5EE /* main.m */,
-				A617702D165826F200F5E5EE /* RootViewController.h */,
-				A617702E165826F200F5E5EE /* RootViewController.m */,
-				A617702F165826F200F5E5EE /* Testable-Info.plist */,
-				A6177030165826F200F5E5EE /* Testable-Prefix.pch */,
-				A6177031165826F200F5E5EE /* TestableAppDelegate.h */,
-				A6177032165826F200F5E5EE /* TestableAppDelegate.m */,
-				A6177033165826F200F5E5EE /* Testing */,
-			);
-			path = Testable;
-			sourceTree = "<group>";
-		};
-		A6177033165826F200F5E5EE /* Testing */ = {
-			isa = PBXGroup;
-			children = (
-				A6177034165826F200F5E5EE /* EXTestController.h */,
-				A6177035165826F200F5E5EE /* EXTestController.m */,
-				A6177036165826F200F5E5EE /* KIFTestScenario+EXAdditions.h */,
-				A6177037165826F200F5E5EE /* KIFTestScenario+EXAdditions.m */,
-				A6177038165826F200F5E5EE /* KIFTestStep+EXAdditions.h */,
-				A6177039165826F200F5E5EE /* KIFTestStep+EXAdditions.m */,
-			);
-			path = Testing;
-			sourceTree = "<group>";
-		};
-		A617703B165826F200F5E5EE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A617710A165826F200F5E5EE /* Testable.app */,
-				A617710C165826F200F5E5EE /* Testable (Integration Tests).app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A617703D165826F200F5E5EE /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				A617703E165826F200F5E5EE /* Add Category Linker Flags.png */,
-				A617703F165826F200F5E5EE /* Add Header Search Paths.png */,
-				A6177040165826F200F5E5EE /* Add KIF Preprocessor Macro.png */,
-				A6177041165826F200F5E5EE /* Add Library Sheet.png */,
-				A6177042165826F200F5E5EE /* Add Library.png */,
-				A6177043165826F200F5E5EE /* Create Workspace.png */,
-				A6177044165826F200F5E5EE /* Duplicate Target Confirmation.png */,
-				A6177045165826F200F5E5EE /* Duplicate Target.png */,
-				A6177046165826F200F5E5EE /* Rename Product.png */,
-				A6177047165826F200F5E5EE /* Rename Target.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		A6177049165826F200F5E5EE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A6177103165826F200F5E5EE /* libKIF.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A617704D165826F200F5E5EE /* LBYouTubeView */ = {
@@ -1127,20 +856,6 @@
 			mainGroup = DAF33093164F335100DBBFD3;
 			productRefGroup = DAF3309F164F335100DBBFD3 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A6177049165826F200F5E5EE /* Products */;
-					ProjectRef = A6177048165826F200F5E5EE /* KIF.xcodeproj */;
-				},
-				{
-					ProductGroup = A6177021165826F200F5E5EE /* Products */;
-					ProjectRef = A6177020165826F200F5E5EE /* KIF.xcodeproj */;
-				},
-				{
-					ProductGroup = A617703B165826F200F5E5EE /* Products */;
-					ProjectRef = A617703A165826F200F5E5EE /* Testable.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DAF3309D164F335100DBBFD3 /* Latitune */,
@@ -1148,37 +863,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A6177103165826F200F5E5EE /* libKIF.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libKIF.a;
-			remoteRef = A6177102165826F200F5E5EE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A6177106165826F200F5E5EE /* libKIF.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libKIF.a;
-			remoteRef = A6177105165826F200F5E5EE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A617710A165826F200F5E5EE /* Testable.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Testable.app;
-			remoteRef = A6177109165826F200F5E5EE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A617710C165826F200F5E5EE /* Testable (Integration Tests).app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Testable (Integration Tests).app";
-			remoteRef = A617710B165826F200F5E5EE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A681A7B71655F99E0069521B /* Resources */ = {
@@ -1202,25 +886,6 @@
 				DAF330B7164F335100DBBFD3 /* Default@2x.png in Resources */,
 				DAF330B9164F335100DBBFD3 /* Default-568h@2x.png in Resources */,
 				DAF330BC164F335100DBBFD3 /* MainStoryboard.storyboard in Resources */,
-				A61770B7165826F200F5E5EE /* .gitignore in Resources */,
-				A61770CE165826F200F5E5EE /* LICENSE in Resources */,
-				A61770CF165826F200F5E5EE /* README.md in Resources */,
-				A61770D0165826F200F5E5EE /* InfoPlist.strings in Resources */,
-				A61770D1165826F200F5E5EE /* MainWindow.xib in Resources */,
-				A61770D2165826F200F5E5EE /* RootViewController.xib in Resources */,
-				A61770D5165826F200F5E5EE /* Testable-Info.plist in Resources */,
-				A61770DA165826F200F5E5EE /* Add Category Linker Flags.png in Resources */,
-				A61770DB165826F200F5E5EE /* Add Header Search Paths.png in Resources */,
-				A61770DC165826F200F5E5EE /* Add KIF Preprocessor Macro.png in Resources */,
-				A61770DD165826F200F5E5EE /* Add Library Sheet.png in Resources */,
-				A61770DE165826F200F5E5EE /* Add Library.png in Resources */,
-				A61770DF165826F200F5E5EE /* Create Workspace.png in Resources */,
-				A61770E0165826F200F5E5EE /* Duplicate Target Confirmation.png in Resources */,
-				A61770E1165826F200F5E5EE /* Duplicate Target.png in Resources */,
-				A61770E2165826F200F5E5EE /* Rename Product.png in Resources */,
-				A61770E3165826F200F5E5EE /* Rename Target.png in Resources */,
-				A61770E4165826F200F5E5EE /* LICENSE in Resources */,
-				A61770E5165826F200F5E5EE /* README.md in Resources */,
 				A61770F7165826F200F5E5EE /* SVProgressHUD.bundle in Resources */,
 				A617710F1658281F00F5E5EE /* arrow.png in Resources */,
 				A61771101658281F00F5E5EE /* arrow@2x.png in Resources */,
@@ -1329,30 +994,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A6177026165826F200F5E5EE /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A6177027165826F200F5E5EE /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A6177028165826F200F5E5EE /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A6177029165826F200F5E5EE /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		A617702A165826F200F5E5EE /* RootViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A617702B165826F200F5E5EE /* en */,
-			);
-			name = RootViewController.xib;
-			sourceTree = "<group>";
-		};
 		DAF330AB164F335100DBBFD3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
