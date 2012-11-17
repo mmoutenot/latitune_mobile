@@ -1,9 +1,3 @@
-[submodule "Frameworks/KIF"]
-	path = Frameworks/KIF
-	url = https://github.com/square/KIF.git
-[submodule "Latitune/External"]
-	path = Latitune/External
-	url = https://github.com/square/KIF.git
 [submodule "Latitune/External Sources/KIF"]
 	path = Latitune/External Sources/KIF
 	url = https://github.com/square/KIF.git
