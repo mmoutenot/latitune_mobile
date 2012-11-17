@@ -104,6 +104,65 @@
 		DA0A32ED16502BAC00E7A2A4 /* LTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */; };
 		DA0A32EF16502BCD00E7A2A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A32EE16502BCD00E7A2A4 /* Security.framework */; };
 		DA0A331C1651948200E7A2A4 /* LTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */; };
+		DA67CE801658364F007AB84B /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176F9B165826F200F5E5EE /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE811658364F007AB84B /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176F9E165826F200F5E5EE /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE821658364F007AB84B /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FA0165826F200F5E5EE /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE831658364F007AB84B /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FA2165826F200F5E5EE /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE841658364F007AB84B /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FA4165826F200F5E5EE /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE851658364F007AB84B /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FA6165826F200F5E5EE /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE861658364F007AB84B /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FAA165826F200F5E5EE /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE871658364F007AB84B /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FAC165826F200F5E5EE /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CE881658367E007AB84B /* FKBadgeField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FB1165826F200F5E5EE /* FKBadgeField.m */; };
+		DA67CE891658367E007AB84B /* FKButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FB3165826F200F5E5EE /* FKButtonField.m */; };
+		DA67CE8A1658367E007AB84B /* FKDisclosureIndicatorAccessoryField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FB5165826F200F5E5EE /* FKDisclosureIndicatorAccessoryField.m */; };
+		DA67CE8B1658367E007AB84B /* FKFloatField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FB9165826F200F5E5EE /* FKFloatField.m */; };
+		DA67CE8C1658367E007AB84B /* FKImageField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FBB165826F200F5E5EE /* FKImageField.m */; };
+		DA67CE8D1658367E007AB84B /* FKIntegerField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FBD165826F200F5E5EE /* FKIntegerField.m */; };
+		DA67CE8E1658367E007AB84B /* FKLabelField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FBF165826F200F5E5EE /* FKLabelField.m */; };
+		DA67CE8F1658367E007AB84B /* FKPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FC1165826F200F5E5EE /* FKPasswordTextField.m */; };
+		DA67CE901658367E007AB84B /* FKSaveButtonField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FC3165826F200F5E5EE /* FKSaveButtonField.m */; };
+		DA67CE911658367E007AB84B /* FKSimpleField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FC5165826F200F5E5EE /* FKSimpleField.m */; };
+		DA67CE921658367E007AB84B /* FKSliderField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FC7165826F200F5E5EE /* FKSliderField.m */; };
+		DA67CE931658367E007AB84B /* FKSwitchField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FC9165826F200F5E5EE /* FKSwitchField.m */; };
+		DA67CE941658367E007AB84B /* FKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FCB165826F200F5E5EE /* FKTextField.m */; };
+		DA67CE951658367E007AB84B /* FKTextViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FCD165826F200F5E5EE /* FKTextViewField.m */; };
+		DA67CE961658367E007AB84B /* FKValueViewField.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FCF165826F200F5E5EE /* FKValueViewField.m */; };
+		DA67CE971658367E007AB84B /* FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FD2165826F200F5E5EE /* FKFormAttributeMapping.m */; };
+		DA67CE981658367E007AB84B /* FKFormAttributeValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FD4165826F200F5E5EE /* FKFormAttributeValidation.m */; };
+		DA67CE991658367E007AB84B /* FKFormMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FD6165826F200F5E5EE /* FKFormMapper.m */; };
+		DA67CE9A1658367E007AB84B /* FKFormMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FD8165826F200F5E5EE /* FKFormMapping.m */; };
+		DA67CE9B1658367E007AB84B /* FKFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FDA165826F200F5E5EE /* FKFormModel.m */; };
+		DA67CE9C1658367E007AB84B /* FKSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FDD165826F200F5E5EE /* FKSectionObject.m */; };
+		DA67CE9D1658367E007AB84B /* NSObject+FKFormAttributeMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FE0165826F200F5E5EE /* NSObject+FKFormAttributeMapping.m */; };
+		DA67CE9E1658367E007AB84B /* UITableViewCell+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FE2165826F200F5E5EE /* UITableViewCell+FormKit.m */; };
+		DA67CE9F1658367E007AB84B /* UIView+FormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FE4165826F200F5E5EE /* UIView+FormKit.m */; };
+		DA67CEA0165836B5007AB84B /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177050165826F200F5E5EE /* LBYouTubeExtractor.m */; };
+		DA67CEA1165836B5007AB84B /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177052165826F200F5E5EE /* LBYouTubePlayerController.m */; };
+		DA67CEA2165836B5007AB84B /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177054165826F200F5E5EE /* LBYouTubePlayerViewController.m */; };
+		DA67CEA3165836B5007AB84B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177057165826F200F5E5EE /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA67CEA4165836B5007AB84B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = A617705A165826F200F5E5EE /* NSObject+SBJson.m */; };
+		DA67CEA5165836B5007AB84B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A617705D165826F200F5E5EE /* SBJsonParser.m */; };
+		DA67CEA6165836B5007AB84B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A617705F165826F200F5E5EE /* SBJsonStreamParser.m */; };
+		DA67CEA7165836B5007AB84B /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177061165826F200F5E5EE /* SBJsonStreamParserAccumulator.m */; };
+		DA67CEA8165836B5007AB84B /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177063165826F200F5E5EE /* SBJsonStreamParserAdapter.m */; };
+		DA67CEA9165836B5007AB84B /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177065165826F200F5E5EE /* SBJsonStreamParserState.m */; };
+		DA67CEAA165836B5007AB84B /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177067165826F200F5E5EE /* SBJsonStreamWriter.m */; };
+		DA67CEAB165836B5007AB84B /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177069165826F200F5E5EE /* SBJsonStreamWriterAccumulator.m */; };
+		DA67CEAC165836B5007AB84B /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = A617706B165826F200F5E5EE /* SBJsonStreamWriterState.m */; };
+		DA67CEAD165836B5007AB84B /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = A617706D165826F200F5E5EE /* SBJsonTokeniser.m */; };
+		DA67CEAE165836B5007AB84B /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = A617706F165826F200F5E5EE /* SBJsonUTF8Stream.m */; };
+		DA67CEAF165836B5007AB84B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177071165826F200F5E5EE /* SBJsonWriter.m */; };
+		DA67CEB0165836B5007AB84B /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177074165826F200F5E5EE /* SSKeychain.m */; };
+		DA67CEB1165836B5007AB84B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177078165826F200F5E5EE /* SVProgressHUD.m */; };
+		DA67CEB2165836B5007AB84B /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A617707C165826F200F5E5EE /* AbstractActionSheetPicker.m */; };
+		DA67CEB3165836B5007AB84B /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A617707E165826F200F5E5EE /* ActionSheetCustomPicker.m */; };
+		DA67CEB4165836B5007AB84B /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177081165826F200F5E5EE /* ActionSheetDatePicker.m */; };
+		DA67CEB5165836B5007AB84B /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177083165826F200F5E5EE /* ActionSheetDistancePicker.m */; };
+		DA67CEB6165836B5007AB84B /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177085165826F200F5E5EE /* ActionSheetStringPicker.m */; };
+		DA67CEB7165836B5007AB84B /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6177087165826F200F5E5EE /* DistancePickerView.m */; };
+		DA67CEB8165836B5007AB84B /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A617708A165826F200F5E5EE /* BWLongTextViewController.m */; };
+		DA67CEB9165836B5007AB84B /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A617708D165826F200F5E5EE /* BWSelectViewController.m */; };
+		DA67CEC51658377B007AB84B /* LTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */; };
 		DAF330A3164F335100DBBFD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
 		DAF330A5164F335100DBBFD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A4164F335100DBBFD3 /* Foundation.framework */; };
 		DAF330A7164F335100DBBFD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A6164F335100DBBFD3 /* CoreGraphics.framework */; };
@@ -124,6 +183,18 @@
 		DAF3313D164F432700DBBFD3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313C164F432700DBBFD3 /* libz.dylib */; };
 		DAF3313F164F443600DBBFD3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF3313E164F443600DBBFD3 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		DA67CEC716584517007AB84B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "python ../latitune/latitune.py";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		A6176F9A165826F200F5E5EE /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -686,14 +757,6 @@
 		DAF33093164F335100DBBFD3 = {
 			isa = PBXGroup;
 			children = (
-				A681A7C91655F9D70069521B /* libKIF.a */,
-				DA0A32EE16502BCD00E7A2A4 /* Security.framework */,
-				A69FE9BA164F51C600274407 /* MediaPlayer.framework */,
-				DAF3313E164F443600DBBFD3 /* CoreLocation.framework */,
-				DAF3313C164F432700DBBFD3 /* libz.dylib */,
-				DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */,
-				DAF33138164F431000DBBFD3 /* SystemConfiguration.framework */,
-				DAF33136164F430300DBBFD3 /* CFNetwork.framework */,
 				DA2E05B4164F8FC400BF9B50 /* Resources */,
 				DAF330EE164F374000DBBFD3 /* External Sources */,
 				DAF330A8164F335100DBBFD3 /* Latitune */,
@@ -717,6 +780,14 @@
 		DAF330A1164F335100DBBFD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A681A7C91655F9D70069521B /* libKIF.a */,
+				DA0A32EE16502BCD00E7A2A4 /* Security.framework */,
+				A69FE9BA164F51C600274407 /* MediaPlayer.framework */,
+				DAF3313E164F443600DBBFD3 /* CoreLocation.framework */,
+				DAF3313C164F432700DBBFD3 /* libz.dylib */,
+				DAF3313A164F431600DBBFD3 /* MobileCoreServices.framework */,
+				DAF33138164F431000DBBFD3 /* SystemConfiguration.framework */,
+				DAF33136164F430300DBBFD3 /* CFNetwork.framework */,
 				DAF330A2164F335100DBBFD3 /* UIKit.framework */,
 				DAF330A4164F335100DBBFD3 /* Foundation.framework */,
 				DAF330A6164F335100DBBFD3 /* CoreGraphics.framework */,
@@ -811,6 +882,7 @@
 				A681A7B71655F99E0069521B /* Resources */,
 			);
 			buildRules = (
+				DA67CEC716584517007AB84B /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -899,6 +971,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA67CEC51658377B007AB84B /* LTLoginViewController.m in Sources */,
+				DA67CEA0165836B5007AB84B /* LBYouTubeExtractor.m in Sources */,
+				DA67CEA1165836B5007AB84B /* LBYouTubePlayerController.m in Sources */,
+				DA67CEA2165836B5007AB84B /* LBYouTubePlayerViewController.m in Sources */,
+				DA67CEA3165836B5007AB84B /* Reachability.m in Sources */,
+				DA67CEA4165836B5007AB84B /* NSObject+SBJson.m in Sources */,
+				DA67CEA5165836B5007AB84B /* SBJsonParser.m in Sources */,
+				DA67CEA6165836B5007AB84B /* SBJsonStreamParser.m in Sources */,
+				DA67CEA7165836B5007AB84B /* SBJsonStreamParserAccumulator.m in Sources */,
+				DA67CEA8165836B5007AB84B /* SBJsonStreamParserAdapter.m in Sources */,
+				DA67CEA9165836B5007AB84B /* SBJsonStreamParserState.m in Sources */,
+				DA67CEAA165836B5007AB84B /* SBJsonStreamWriter.m in Sources */,
+				DA67CEAB165836B5007AB84B /* SBJsonStreamWriterAccumulator.m in Sources */,
+				DA67CEAC165836B5007AB84B /* SBJsonStreamWriterState.m in Sources */,
+				DA67CEAD165836B5007AB84B /* SBJsonTokeniser.m in Sources */,
+				DA67CEAE165836B5007AB84B /* SBJsonUTF8Stream.m in Sources */,
+				DA67CEAF165836B5007AB84B /* SBJsonWriter.m in Sources */,
+				DA67CEB0165836B5007AB84B /* SSKeychain.m in Sources */,
+				DA67CEB1165836B5007AB84B /* SVProgressHUD.m in Sources */,
+				DA67CEB2165836B5007AB84B /* AbstractActionSheetPicker.m in Sources */,
+				DA67CEB3165836B5007AB84B /* ActionSheetCustomPicker.m in Sources */,
+				DA67CEB4165836B5007AB84B /* ActionSheetDatePicker.m in Sources */,
+				DA67CEB5165836B5007AB84B /* ActionSheetDistancePicker.m in Sources */,
+				DA67CEB6165836B5007AB84B /* ActionSheetStringPicker.m in Sources */,
+				DA67CEB7165836B5007AB84B /* DistancePickerView.m in Sources */,
+				DA67CEB8165836B5007AB84B /* BWLongTextViewController.m in Sources */,
+				DA67CEB9165836B5007AB84B /* BWSelectViewController.m in Sources */,
+				DA67CE881658367E007AB84B /* FKBadgeField.m in Sources */,
+				DA67CE891658367E007AB84B /* FKButtonField.m in Sources */,
+				DA67CE8A1658367E007AB84B /* FKDisclosureIndicatorAccessoryField.m in Sources */,
+				DA67CE8B1658367E007AB84B /* FKFloatField.m in Sources */,
+				DA67CE8C1658367E007AB84B /* FKImageField.m in Sources */,
+				DA67CE8D1658367E007AB84B /* FKIntegerField.m in Sources */,
+				DA67CE8E1658367E007AB84B /* FKLabelField.m in Sources */,
+				DA67CE8F1658367E007AB84B /* FKPasswordTextField.m in Sources */,
+				DA67CE901658367E007AB84B /* FKSaveButtonField.m in Sources */,
+				DA67CE911658367E007AB84B /* FKSimpleField.m in Sources */,
+				DA67CE921658367E007AB84B /* FKSliderField.m in Sources */,
+				DA67CE931658367E007AB84B /* FKSwitchField.m in Sources */,
+				DA67CE941658367E007AB84B /* FKTextField.m in Sources */,
+				DA67CE951658367E007AB84B /* FKTextViewField.m in Sources */,
+				DA67CE961658367E007AB84B /* FKValueViewField.m in Sources */,
+				DA67CE971658367E007AB84B /* FKFormAttributeMapping.m in Sources */,
+				DA67CE981658367E007AB84B /* FKFormAttributeValidation.m in Sources */,
+				DA67CE991658367E007AB84B /* FKFormMapper.m in Sources */,
+				DA67CE9A1658367E007AB84B /* FKFormMapping.m in Sources */,
+				DA67CE9B1658367E007AB84B /* FKFormModel.m in Sources */,
+				DA67CE9C1658367E007AB84B /* FKSectionObject.m in Sources */,
+				DA67CE9D1658367E007AB84B /* NSObject+FKFormAttributeMapping.m in Sources */,
+				DA67CE9E1658367E007AB84B /* UITableViewCell+FormKit.m in Sources */,
+				DA67CE9F1658367E007AB84B /* UIView+FormKit.m in Sources */,
+				DA67CE801658364F007AB84B /* ASIAuthenticationDialog.m in Sources */,
+				DA67CE811658364F007AB84B /* ASIDataCompressor.m in Sources */,
+				DA67CE821658364F007AB84B /* ASIDataDecompressor.m in Sources */,
+				DA67CE831658364F007AB84B /* ASIDownloadCache.m in Sources */,
+				DA67CE841658364F007AB84B /* ASIFormDataRequest.m in Sources */,
+				DA67CE851658364F007AB84B /* ASIHTTPRequest.m in Sources */,
+				DA67CE861658364F007AB84B /* ASIInputStream.m in Sources */,
+				DA67CE871658364F007AB84B /* ASINetworkQueue.m in Sources */,
 				A681A78D1655F99E0069521B /* main.m in Sources */,
 				A681A78E1655F99E0069521B /* LTAppDelegate.m in Sources */,
 				A681A78F1655F99E0069521B /* LTExploreViewController.m in Sources */,
@@ -1037,6 +1168,7 @@
 				);
 				INFOPLIST_FILE = "Latitune copy-Info.plist";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);
@@ -1060,6 +1192,7 @@
 				);
 				INFOPLIST_FILE = "Latitune copy-Info.plist";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);

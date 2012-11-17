@@ -7,15 +7,18 @@
 //
 
 #import "KIFTestScenario+LTAdditions.h"
+#import "KIFTestStep.h"
 
 @implementation KIFTestScenario (LTAdditions)
 
 + (id) scenarioToChangeTabs {
   KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Test that a user can change tabs"];
-  [scenario addStep:[KIFTestStep stepToReset]];
+  NSLog(@"testing");
+  [scenario addStep:[KIFTestStep stepToSimulateMemoryWarning]];
+  /*[scenario addStep:[KIFTestStep stepToReset]];
   [scenario addStep:[KIFTestStep stepToSelectTabNamed:@"Explore"]];
   [scenario addStep:[KIFTestStep stepToSelectTabNamed:@"Listen"]];
-  [scenario addStep:[KIFTestStep stepToSelectTabNamed:@"Blip"]];
+  [scenario addStep:[KIFTestStep stepToSelectTabNamed:@"Blip"]];*/
   
   return scenario;
 }

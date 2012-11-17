@@ -13,6 +13,7 @@
 
 - (void)initializeScenarios;
 {
+  NSLog(@"testing 123");
   [self addScenario:[KIFTestScenario scenarioToChangeTabs]];
 }
 

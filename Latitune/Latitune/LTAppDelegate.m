@@ -10,12 +10,22 @@
 #import "LTLocationController.h"
 #import "LTCommunication.h"
 #import "SSKeychain.h"
+#if RUN_KIF_TESTS
+#import "LTTestController.h"
+#endif
 
 @implementation LTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  [self.window makeKeyAndVisible];
+#if RUN_KIF_TESTS
+  [[LTTestController sharedInstance] startTestingWithCompletionBlock:^{
+    // Exit after the tests complete so that CI knows we're done
+    exit([[LTTestController sharedInstance] failureCount]);
+  }];
+#endif
   [LTLocationController sharedInstance];
   return YES;
 }

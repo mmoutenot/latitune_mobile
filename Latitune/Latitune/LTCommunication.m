@@ -108,14 +108,19 @@
     for (id key in [params allKeys]) {
         urlString = [NSString stringWithFormat:@"%@&%@=%@",urlString,key,params[key]];
     }
-    NSLog(@"%@",urlString);
     NSURL *url = [NSURL URLWithString:urlString];
     __weak ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+  [request setRequestMethod:@"GET"];
     [request setCompletionBlock:^{
         NSString *responseString = [request responseString];
         NSDictionary *responseDict = [responseString JSONValue];
+      NSLog(@"%@",urlString);
+      NSLog(@"%@",responseDict);
+      if ([responseDict[@"meta"][@"status"] isEqualToString:@"ERR"]) {
+        [self performSelector:failSelector withObject:cl];
+      } else {
         [self performSelector:succeedSelector withObject:responseDict withObject:cl];
-
+      }
     }];
     [request setFailedBlock:^{
         [self performSelector:failSelector withObject:cl];
