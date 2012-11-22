@@ -40,7 +40,13 @@
                                  userInfo:nil
                                   repeats:YES];
   
-	// Do any additional setup after loading the view, typically from a nib.
+  UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+  refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+  [refresh addTarget:self
+              action:@selector(refreshView:)
+    forControlEvents:UIControlEventValueChanged];
+  self.refreshControl = refresh;
+  
 }
 
 - (void)didReceiveMemoryWarning
@@ -270,6 +276,19 @@
     [UIView commitAnimations];
   }
 }
+
+-(void)refreshView:(UIRefreshControl *)refresh {
+  refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
+  
+  // custom refresh logic would be placed here...
+  
+  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+  [formatter setDateFormat:@"MMM d, h:mm a"];
+  NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@", [formatter stringFromDate:[NSDate date]]];
+  refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+  [refresh endRefreshing];
+}
+                           
 
 #pragma mark -
 #pragma mark LBYouTubePlayerViewControllerDelegate

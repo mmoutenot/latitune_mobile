@@ -68,6 +68,8 @@
 		A6177100165826F200F5E5EE /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A617708D165826F200F5E5EE /* BWSelectViewController.m */; };
 		A617710F1658281F00F5E5EE /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A617710D1658281F00F5E5EE /* arrow.png */; };
 		A61771101658281F00F5E5EE /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A617710E1658281F00F5E5EE /* arrow@2x.png */; };
+		A64CD1F8165E9F12004824BF /* blip_button_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = A64CD1F6165E9F12004824BF /* blip_button_v1.png */; };
+		A64CD1F9165E9F12004824BF /* blip_button_v1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A64CD1F7165E9F12004824BF /* blip_button_v1@2x.png */; };
 		A681A78D1655F99E0069521B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330AE164F335100DBBFD3 /* main.m */; };
 		A681A78E1655F99E0069521B /* LTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330B2164F335100DBBFD3 /* LTAppDelegate.m */; };
 		A681A78F1655F99E0069521B /* LTExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF330BE164F335100DBBFD3 /* LTExploreViewController.m */; };
@@ -352,6 +354,8 @@
 		A617708D165826F200F5E5EE /* BWSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSelectViewController.m; sourceTree = "<group>"; };
 		A617710D1658281F00F5E5EE /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = Resources/arrow.png; sourceTree = "<group>"; };
 		A617710E1658281F00F5E5EE /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow@2x.png"; path = "Resources/arrow@2x.png"; sourceTree = "<group>"; };
+		A64CD1F6165E9F12004824BF /* blip_button_v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blip_button_v1.png; path = Resources/blip_button_v1.png; sourceTree = "<group>"; };
+		A64CD1F7165E9F12004824BF /* blip_button_v1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blip_button_v1@2x.png"; path = "Resources/blip_button_v1@2x.png"; sourceTree = "<group>"; };
 		A681A7C61655F99E0069521B /* Latitune copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitune copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A681A7C81655F99E0069521B /* Latitune copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Latitune copy-Info.plist"; path = "/Users/mmoutenot/projects/latitune_mobile/Latitune/Latitune copy-Info.plist"; sourceTree = "<absolute>"; };
 		A681A7C91655F9D70069521B /* libKIF.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKIF.a; path = "../Frameworks/KIF/build/Release-iphoneos/libKIF.a"; sourceTree = "<group>"; };
@@ -758,6 +762,8 @@
 		DA2E05B6164F8FFB00BF9B50 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				A64CD1F6165E9F12004824BF /* blip_button_v1.png */,
+				A64CD1F7165E9F12004824BF /* blip_button_v1@2x.png */,
 				A617710D1658281F00F5E5EE /* arrow.png */,
 				A617710E1658281F00F5E5EE /* arrow@2x.png */,
 			);
@@ -971,6 +977,8 @@
 				A61770F7165826F200F5E5EE /* SVProgressHUD.bundle in Resources */,
 				A617710F1658281F00F5E5EE /* arrow.png in Resources */,
 				A61771101658281F00F5E5EE /* arrow@2x.png in Resources */,
+				A64CD1F8165E9F12004824BF /* blip_button_v1.png in Resources */,
+				A64CD1F9165E9F12004824BF /* blip_button_v1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

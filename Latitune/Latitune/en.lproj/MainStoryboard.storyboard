@@ -58,6 +58,68 @@
             </objects>
             <point key="canvasLocation" x="257" y="1307"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="7C3-eN-PT6">
+            <objects>
+                <viewController id="JCl-Pn-3Jv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="22B-IC-74Y">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wvq-fb-yex">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="468" id="MG7-dB-3qM"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="TuE-tb-DXn">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Reu-nn-JFV">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMr-Pp-vfC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="dp3-Dx-MsV"/>
+                                    <constraint firstAttribute="height" constant="53" id="jbD-GE-baO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.5069607344341438" green="0.6612761040635402" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="blip_button_v1.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wvq-fb-yex" firstAttribute="leading" secondItem="22B-IC-74Y" secondAttribute="leading" type="default" id="96O-Ua-o5x"/>
+                            <constraint firstItem="Reu-nn-JFV" firstAttribute="trailing" secondItem="22B-IC-74Y" secondAttribute="trailing" type="default" id="CqM-Eq-CQv"/>
+                            <constraint firstItem="Reu-nn-JFV" firstAttribute="bottom" secondItem="22B-IC-74Y" secondAttribute="bottom" type="default" id="E2f-DF-XEs"/>
+                            <constraint firstItem="Reu-nn-JFV" firstAttribute="top" secondItem="Wvq-fb-yex" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XKx-dt-k19"/>
+                            <constraint firstItem="yMr-Pp-vfC" firstAttribute="centerX" secondItem="Reu-nn-JFV" secondAttribute="centerX" type="default" id="ezK-7j-ifh"/>
+                            <constraint firstItem="Wvq-fb-yex" firstAttribute="top" secondItem="22B-IC-74Y" secondAttribute="top" type="default" id="god-BM-R93"/>
+                            <constraint firstItem="Reu-nn-JFV" firstAttribute="leading" secondItem="22B-IC-74Y" secondAttribute="leading" type="default" id="sQ0-1L-P4s"/>
+                            <constraint firstAttribute="bottom" secondItem="yMr-Pp-vfC" secondAttribute="bottom" constant="57" id="vlg-J7-Wmx"/>
+                            <constraint firstItem="Wvq-fb-yex" firstAttribute="trailing" secondItem="22B-IC-74Y" secondAttribute="trailing" type="default" id="zxt-aW-FJJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3d8-mt-Oxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="2122"/>
+        </scene>
         <!--Register View Controller - Register-->
         <scene sceneID="5Ph-Mn-Ivm">
             <objects>
@@ -219,37 +281,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blip_button_v1.png" width="100" height="63"/>
         <image name="second" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="LTBlipViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTBlipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showMediaPicker:"/>
-            </relationships>
-        </class>
-        <class className="LTExploreViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTExploreViewController.h"/>
-        </class>
-        <class className="LTListenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTListenViewController.h"/>
-        </class>
-        <class className="LTLoginViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
-        </class>
-        <class className="LTRegisterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRegisterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

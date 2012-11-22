@@ -10,6 +10,7 @@
 #import "LTCommunication.h"
 #import "LTLocationController.h"
 #import "LBYouTube.h"
+#import <UIKit/UIRefreshControl.h>
 
 @interface LTExploreViewController : UITableViewController <GetBlipsDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, LTLocationControllerDelegate, LBYouTubePlayerControllerDelegate, LBYouTubePlayerDelegate>
 {
