@@ -69,11 +69,11 @@
 }
 
 - (void) loginDidSucceedWithUser:(NSDictionary *)user {
-    NSLog(@"login succeed");
+  NSLog(@"login succeed");
 }
 
 - (void) loginDidFail {
-    NSLog(@"login fail");
+  NSLog(@"login fail");
 }
 
 - (void) addSongDidFail {
@@ -89,7 +89,11 @@
 }
 
 - (void) addBlipDidSucceedWithBlip:(Blip*) blip {
-    NSLog(@"added blip y'all");
+  NSLog(@"added blip y'all");
+}
+
+- (void) addBlipDidFail{
+  NSLog(@"add blip failed");
 }
 
 - (void) getBlipsDidFail {
@@ -110,8 +114,8 @@
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end

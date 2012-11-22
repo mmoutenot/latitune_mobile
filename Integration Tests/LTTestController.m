@@ -8,13 +8,15 @@
 
 #import "LTTestController.h"
 #import "KIFTestScenario+LTAdditions.h"
+#import "KIFTestStep+LTAdditions.h"
 
 @implementation LTTestController
 
 - (void)initializeScenarios;
 {
-  [KIFTestScenario]
-  [self addScenario:[KIFTestScenario scenarioToChangeTabs]];
+  NSArray *setUpSteps = @[[KIFTestStep stepToResetDatabase]];
+  [KIFTestScenario setDefaultStepsToSetUp:setUpSteps];
+  [self addScenario:[KIFTestScenario scenarioTrue]];
 }
 
 @end

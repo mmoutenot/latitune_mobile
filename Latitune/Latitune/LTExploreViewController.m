@@ -242,6 +242,10 @@
   }
 }
 
+-(void)locationError:(NSError *)error {
+  NSLog(@"Location error!");
+}
+
 - (void)updateCompass {
   LTLocationController *locationController = [LTLocationController sharedInstance];
   CLLocationCoordinate2D coordinate = locationController.location;

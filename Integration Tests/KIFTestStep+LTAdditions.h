@@ -10,6 +10,7 @@
 
 @interface KIFTestStep (EXAdditions)
 
-+ (id) stepToSelectTabNamed:(NSString *) tabName;
++ (id) stepToResetDatabase;
+
 
 @end

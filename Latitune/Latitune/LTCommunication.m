@@ -32,6 +32,11 @@
 
 @implementation Song
 
+// used to get rid of unkown selector warnings
+// http://stackoverflow.com/questions/7017281/performselector-may-cause-a-leak-because-its-selector-is-unknown
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 @synthesize album,artist,providerKey,providerSongID,songID,title;
 - (id) initWithTitle:(NSString *)_title artist:(NSString*)_artist album:(NSString*)_album {
     self = [super init];
@@ -295,5 +300,6 @@
        [self getURL:BLIP_EXT parameters:params succeedSelector:@selector(requestToGetBlipsDidSucceedWithResponse:closure:) failSelector:@selector(requestToGetBlipsDidFailWithClosure:) closure:cl];
 }
 
+#pragma clang diagnostic pop
 
 @end

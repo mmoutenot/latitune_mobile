@@ -96,7 +96,7 @@
 		A681A7CA1655F9D70069521B /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A681A7C91655F9D70069521B /* libKIF.a */; };
 		A681A7CF1655FB5C0069521B /* LTTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = A681A7CE1655FB5C0069521B /* LTTestController.m */; };
 		A681A7D41655FBEB0069521B /* KIFTestScenario+LTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A681A7D21655FBEB0069521B /* KIFTestScenario+LTAdditions.m */; };
-		A681A7DD1655FE660069521B /* KIFTestStep+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A681A7DC1655FE660069521B /* KIFTestStep+EXAdditions.m */; };
+		A681A7DD1655FE660069521B /* KIFTestStep+LTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A681A7DC1655FE660069521B /* KIFTestStep+LTAdditions.m */; };
 		A69FE9BB164F51C600274407 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69FE9BA164F51C600274407 /* MediaPlayer.framework */; };
 		A69FE9C3164F59AB00274407 /* LTLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69FE9C2164F59AB00274407 /* LTLocationController.m */; };
 		A6E84ADF1650204B00CE73F6 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E84ADE1650204B00CE73F6 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -359,11 +359,12 @@
 		A681A7CE1655FB5C0069521B /* LTTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTTestController.m; path = "Integration Tests/LTTestController.m"; sourceTree = "<group>"; };
 		A681A7D11655FBEB0069521B /* KIFTestScenario+LTAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "KIFTestScenario+LTAdditions.h"; path = "Integration Tests/KIFTestScenario+LTAdditions.h"; sourceTree = "<group>"; };
 		A681A7D21655FBEB0069521B /* KIFTestScenario+LTAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "KIFTestScenario+LTAdditions.m"; path = "Integration Tests/KIFTestScenario+LTAdditions.m"; sourceTree = "<group>"; };
-		A681A7DB1655FE660069521B /* KIFTestStep+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestStep+EXAdditions.h"; path = "Integration Tests/KIFTestStep+EXAdditions.h"; sourceTree = "<group>"; };
-		A681A7DC1655FE660069521B /* KIFTestStep+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestStep+EXAdditions.m"; path = "Integration Tests/KIFTestStep+EXAdditions.m"; sourceTree = "<group>"; };
+		A681A7DB1655FE660069521B /* KIFTestStep+LTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestStep+LTAdditions.h"; path = "Integration Tests/KIFTestStep+LTAdditions.h"; sourceTree = "<group>"; };
+		A681A7DC1655FE660069521B /* KIFTestStep+LTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestStep+LTAdditions.m"; path = "Integration Tests/KIFTestStep+LTAdditions.m"; sourceTree = "<group>"; };
 		A69FE9BA164F51C600274407 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A69FE9C1164F59AB00274407 /* LTLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocationController.h; sourceTree = "<group>"; };
 		A69FE9C2164F59AB00274407 /* LTLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLocationController.m; sourceTree = "<group>"; };
+		A6BB7412165857A9003A6FD6 /* Integration_Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Integration_Tests-Prefix.pch"; sourceTree = "<group>"; };
 		A6E84ADD1650204B00CE73F6 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		A6E84ADE1650204B00CE73F6 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		DA0A31EE16501AFB00E7A2A4 /* LTYouTubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTYouTubeViewController.h; sourceTree = "<group>"; };
@@ -722,8 +723,9 @@
 		A681A7CB1655FAFE0069521B /* Integration Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A681A7DB1655FE660069521B /* KIFTestStep+EXAdditions.h */,
-				A681A7DC1655FE660069521B /* KIFTestStep+EXAdditions.m */,
+				A6BB741116585773003A6FD6 /* Supporting Files */,
+				A681A7DB1655FE660069521B /* KIFTestStep+LTAdditions.h */,
+				A681A7DC1655FE660069521B /* KIFTestStep+LTAdditions.m */,
 				A681A7D11655FBEB0069521B /* KIFTestScenario+LTAdditions.h */,
 				A681A7D21655FBEB0069521B /* KIFTestScenario+LTAdditions.m */,
 				A681A7CD1655FB5C0069521B /* LTTestController.h */,
@@ -731,6 +733,14 @@
 			);
 			name = "Integration Tests";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		A6BB741116585773003A6FD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6BB7412165857A9003A6FD6 /* Integration_Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DA2E05B4164F8FC400BF9B50 /* Resources */ = {
@@ -1042,7 +1052,7 @@
 				A681A7AB1655F99E0069521B /* LTRegisterViewController.m in Sources */,
 				A681A7CF1655FB5C0069521B /* LTTestController.m in Sources */,
 				A681A7D41655FBEB0069521B /* KIFTestScenario+LTAdditions.m in Sources */,
-				A681A7DD1655FE660069521B /* KIFTestStep+EXAdditions.m in Sources */,
+				A681A7DD1655FE660069521B /* KIFTestStep+LTAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1256,6 +1266,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Latitune/Latitune-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "Latitune/Latitune-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1267,6 +1281,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Latitune/Latitune-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "Latitune/Latitune-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

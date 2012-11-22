@@ -10,6 +10,6 @@
 
 @interface KIFTestScenario (LTAdditions)
 
-+ (id)scenarioToChangeTabs;
++ (id)scenarioTrue;
 
 @end
