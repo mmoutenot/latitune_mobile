@@ -62,27 +62,35 @@
                                                            longitude:currentLocationCoordinate.longitude];
   __block int waiting = 0;
   for (Blip *blip in _blips) {
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:blip.location.lat longitude:blip.location.lng];
-    waiting++;
-    [[[CLGeocoder alloc] init] reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-      waiting--;
-      NSDictionary *locationData = @{@"description":((CLPlacemark*)placemarks[0]).name,@"latlng":location,@"song":blip.song};
-      NSUInteger newIndex = [blips indexOfObject:locationData
-                                   inSortedRange:(NSRange){0, [blips count]}
-                                         options:NSBinarySearchingInsertionIndex
-                                     usingComparator:^NSComparisonResult(id obj1, id obj2) {
-                                       CLLocation *obj1location = obj1[@"latlng"];
-                                       CLLocation *obj2location = obj2[@"latlng"];
-                                       return [@([obj1location distanceFromLocation:currentLocation]) compare:@([obj2location distanceFromLocation:currentLocation])] ;
-                                     }];
-      [blips insertObject:locationData atIndex:newIndex];
-      if (waiting == 0) {
-        for (NSDictionary *loc in blips) {
-          NSLog(@"%@ by %@ at %@",((Song *)loc[@"song"]).title, ((Song *)loc[@"song"]).artist, loc[@"description"]);
-        }
-        [self.tableView reloadData];
+    BOOL addBlip = true;
+    for (Blip *existingBlip in blips) {
+      if (blip.blipID == existingBlip.blipID){
+        addBlip = false;
       }
-    }];
+    }
+    if (addBlip){
+      CLLocation *location = [[CLLocation alloc] initWithLatitude:blip.location.lat longitude:blip.location.lng];
+      waiting++;
+      [[[CLGeocoder alloc] init] reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        waiting--;
+        NSDictionary *locationData = @{@"description":((CLPlacemark*)placemarks[0]).name,@"latlng":location,@"song":blip.song};
+        NSUInteger newIndex = [blips indexOfObject:locationData
+                                     inSortedRange:(NSRange){0, [blips count]}
+                                           options:NSBinarySearchingInsertionIndex
+                                   usingComparator:^NSComparisonResult(id obj1, id obj2) {
+                                     CLLocation *obj1location = obj1[@"latlng"];
+                                     CLLocation *obj2location = obj2[@"latlng"];
+                                     return [@([obj1location distanceFromLocation:currentLocation]) compare:@([obj2location distanceFromLocation:currentLocation])] ;
+                                   }];
+        [blips insertObject:locationData atIndex:newIndex];
+        if (waiting == 0) {
+          for (NSDictionary *loc in blips) {
+            NSLog(@"%@ by %@ at %@",((Song *)loc[@"song"]).title, ((Song *)loc[@"song"]).artist, loc[@"description"]);
+          }
+          [self.tableView reloadData];
+        }
+      }];
+    }
   }
 }
 
@@ -281,6 +289,13 @@
   refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
   
   // custom refresh logic would be placed here...
+  LTLocationController *locationController = [LTLocationController sharedInstance];
+  CLLocationCoordinate2D location = [locationController location];
+  GeoPoint point;
+  point.lat = location.latitude;
+  point.lng = location.longitude;
+
+  [[LTCommunication sharedInstance] getBlipsNearLocation:point withDelegate:self];
   
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
   [formatter setDateFormat:@"MMM d, h:mm a"];
