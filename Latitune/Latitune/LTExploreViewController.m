@@ -1,5 +1,5 @@
 //
-//  LTFirstViewController.m
+//  LTExploreViewController.m
 //  Latitune
 //
 //  Created by Ben Weitzman on 11/10/12.
@@ -53,8 +53,8 @@
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 // callback for the communication to handle get 'getBlipsNearLocation' response
@@ -78,6 +78,7 @@
     // only add blip if it doesn't already exist in the table
     if (addBlip){
       CLLocation *location = [[CLLocation alloc] initWithLatitude:blip.location.lat longitude:blip.location.lng];
+      if ([location distanceFromLocation:currentLocation] > 8000) continue;
       waiting++;
       [[[CLGeocoder alloc] init] reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         waiting--;
@@ -120,7 +121,7 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-      }
+  }
   if (cell.accessoryView.tag != 3) {
     UIView *accessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     accessoryView.tag = 3;
@@ -135,7 +136,7 @@
     [accessoryView addSubview:compassView];
     [cell setAccessoryView:accessoryView];
     [mileLabel setText:@"2.2mi"];
-
+    
   }
   NSDictionary *blipDict = blips[indexPath.row];
   Song *song = blipDict[@"song"];
@@ -167,9 +168,9 @@
   self.controller.view.hidden = true;
   
   [self.view addSubview:self.controller.view];
-
-//  [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
-//  webViewPlayer.frame = self.view.frame;
+  
+  //  [self.webViewPlayer loadRequest:[NSURLRequest requestWithURL:url]];
+  //  webViewPlayer.frame = self.view.frame;
   NSLog(@"%@",url);
 }
 
@@ -191,7 +192,7 @@
     NSString *selSongID = selSong.providerSongID;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",YOUTUBE_PREFIX, selSongID]];
     [ytc.webView loadRequest:[NSURLRequest requestWithURL:url]];
-   // ytc.webView loadRequest:];
+    // ytc.webView loadRequest:];
   }
 }
 
@@ -278,7 +279,7 @@
     NSInteger cellIndex = [self.tableView indexPathForCell:cell].row;
     NSDictionary *blipDict = blips[cellIndex];
     float heading = [self getHeadingForDirectionFromCoordinate:coordinate toCoordinate:((CLLocation*)blipDict[@"latlng"]).coordinate];
-   // NSLog(@"%f",heading);
+    // NSLog(@"%f",heading);
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
     //[UIView setAnimationCurve:curve];
@@ -302,7 +303,7 @@
   GeoPoint point;
   point.lat = location.latitude;
   point.lng = location.longitude;
-
+  
   [[LTCommunication sharedInstance] getBlipsNearLocation:point withDelegate:self];
   
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -311,7 +312,7 @@
   refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
   [refresh endRefreshing];
 }
-                           
+
 
 #pragma mark -
 #pragma mark LBYouTubePlayerViewControllerDelegate
