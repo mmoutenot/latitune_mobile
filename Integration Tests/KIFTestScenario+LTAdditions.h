@@ -12,4 +12,6 @@
 
 + (id)scenarioTrue;
 
++ (id)scenarioGetNearbyBlips;
+
 @end

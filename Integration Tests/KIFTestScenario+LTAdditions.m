@@ -18,4 +18,8 @@
   return scenario;
 }
 
++ (id) scenarioGetNearbyBlips{
+  
+}
+
 @end
