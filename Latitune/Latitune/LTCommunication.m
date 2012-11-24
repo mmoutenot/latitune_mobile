@@ -120,7 +120,6 @@
         NSString *responseString = [request responseString];
         NSDictionary *responseDict = [responseString JSONValue];
       NSLog(@"%@",urlString);
-      NSLog(@"%@",responseDict);
       if ([responseDict[@"meta"][@"status"] isEqualToString:@"ERR"]) {
         [self performSelector:failSelector withObject:cl];
       } else {
@@ -262,26 +261,28 @@
 }
 
 - (void) requestToGetBlipsDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
-    NSDictionary *blips = response[@"objects"];
-    NSMutableArray *toReturn = [[NSMutableArray alloc] init];
-    for (NSDictionary *blip in blips) {
-        Blip *blipObj = [[Blip alloc] init];
-        blipObj.userID = [blip[@"user_id"] intValue];
-        NSDictionary *song = blip[@"song"];
-        blipObj.song = [[Song alloc] initWithTitle:song[@"title"]
-                                             artist:song[@"artist"]
-                                             album:song[@"album"]];
-        blipObj.song.songID = [song[@"id"] intValue];
-        blipObj.song.providerSongID = song[@"provider_song_id"];
-        blipObj.userID = [blip[@"user_id"] intValue];
-        blipObj.timestamp = nil;
-        GeoPoint location;
-        location.lat = [blip[@"latitude"] floatValue];
-        location.lng = [blip[@"longitude"] floatValue];
-        blipObj.location = location;
-        [toReturn addObject:blipObj];
-    }
-    [cl[@"delegate"] performSelector:@selector(getBlipsDidSucceedWithBlips:) withObject:toReturn];
+  NSDictionary *blips = response[@"objects"];
+  NSMutableArray *toReturn = [[NSMutableArray alloc] init];
+  for (NSDictionary *blip in blips) {
+    Blip *blipObj = [[Blip alloc] init];
+    
+    blipObj.blipID = [blip [@"id"] intValue];
+    blipObj.userID = [blip[@"user_id"] intValue];
+    NSDictionary *song = blip[@"song"];
+    blipObj.song = [[Song alloc] initWithTitle:song[@"title"]
+                                        artist:song[@"artist"]
+                                         album:song[@"album"]];
+    blipObj.song.songID = [song[@"id"] intValue];
+    blipObj.song.providerSongID = song[@"provider_song_id"];
+    blipObj.userID = [blip[@"user_id"] intValue];
+    blipObj.timestamp = nil;
+    GeoPoint location;
+    location.lat = [blip[@"latitude"] floatValue];
+    location.lng = [blip[@"longitude"] floatValue];
+    blipObj.location = location;
+    [toReturn addObject:blipObj];
+  }
+  [cl[@"delegate"] performSelector:@selector(getBlipsDidSucceedWithBlips:) withObject:toReturn];
 }
 
 - (void) requestToGetBlipsDidFailWithClosure:(NSDictionary*)cl {

@@ -19,32 +19,34 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  
+  // get location controller singleton and get current location
   LTLocationController *locationController = [LTLocationController sharedInstance];
   locationController.delegate = self;
   CLLocationCoordinate2D location = [locationController location];
   GeoPoint point;
   point.lat = location.latitude;
   point.lng = location.longitude;
+  
   [[LTCommunication sharedInstance] getBlipsNearLocation:point withDelegate:self];
   blips = [[NSMutableArray alloc] init];
   
+  // web view player to play youtube videos in the background
   webViewPlayer = [[UIWebView alloc] init];
   webViewPlayer.delegate = self;
   
-  
-  
+  // timer for updating compass
   [NSTimer scheduledTimerWithTimeInterval:0.1
                                    target:self
                                  selector:@selector(updateCompass)
                                  userInfo:nil
                                   repeats:YES];
   
+  // 'pull to refresh' control
   UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
   refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
-  [refresh addTarget:self
-              action:@selector(refreshView:)
-    forControlEvents:UIControlEventValueChanged];
+  [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
   self.refreshControl = refresh;
   
 }
@@ -55,25 +57,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+// callback for the communication to handle get 'getBlipsNearLocation' response
 - (void) getBlipsDidSucceedWithBlips:(NSArray *)_blips {
+  // get location controller from location singleton and current location
   LTLocationController *locationController = [LTLocationController sharedInstance];
   CLLocationCoordinate2D currentLocationCoordinate = [locationController location];
   CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:currentLocationCoordinate.latitude
                                                            longitude:currentLocationCoordinate.longitude];
+  NSLog(@"getting blips %@ %@\n\n\n", _blips, blips);
   __block int waiting = 0;
   for (Blip *blip in _blips) {
     BOOL addBlip = true;
-    for (Blip *existingBlip in blips) {
-      if (blip.blipID == existingBlip.blipID){
+    for (NSDictionary *existingLocationData in blips) {
+      NSInteger existingBlipID = ((Blip *)[existingLocationData objectForKey:@"blip"]).blipID;
+      NSLog(@"%d - %d", blip.blipID, existingBlipID);
+      if (blip.blipID == existingBlipID){
         addBlip = false;
       }
     }
+    // only add blip if it doesn't already exist in the table
     if (addBlip){
       CLLocation *location = [[CLLocation alloc] initWithLatitude:blip.location.lat longitude:blip.location.lng];
       waiting++;
       [[[CLGeocoder alloc] init] reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         waiting--;
-        NSDictionary *locationData = @{@"description":((CLPlacemark*)placemarks[0]).name,@"latlng":location,@"song":blip.song};
+        NSDictionary *locationData = @{@"description":((CLPlacemark*)placemarks[0]).name,@"latlng":location,@"song":blip.song, @"blip":blip};
         NSUInteger newIndex = [blips indexOfObject:locationData
                                      inSortedRange:(NSRange){0, [blips count]}
                                            options:NSBinarySearchingInsertionIndex
