@@ -78,11 +78,16 @@
     // only add blip if it doesn't already exist in the table
     if (addBlip){
       CLLocation *location = [[CLLocation alloc] initWithLatitude:blip.location.lat longitude:blip.location.lng];
+      
+      // skip if it is far away
       if ([location distanceFromLocation:currentLocation] > 8000) continue;
+      
       waiting++;
       [[[CLGeocoder alloc] init] reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         waiting--;
         NSDictionary *locationData = @{@"description":((CLPlacemark*)placemarks[0]).name,@"latlng":location,@"song":blip.song, @"blip":blip};
+        
+        // order by distance
         NSUInteger newIndex = [blips indexOfObject:locationData
                                      inSortedRange:(NSRange){0, [blips count]}
                                            options:NSBinarySearchingInsertionIndex
