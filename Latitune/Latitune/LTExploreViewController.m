@@ -75,11 +75,13 @@
         addBlip = false;
       }
     }
+    NSLog(@"%d",addBlip);
     // only add blip if it doesn't already exist in the table
     if (addBlip){
       CLLocation *location = [[CLLocation alloc] initWithLatitude:blip.location.lat longitude:blip.location.lng];
       
       // skip if it is far away
+      NSLog(@"%f",[location distanceFromLocation:currentLocation]);
       if ([location distanceFromLocation:currentLocation] > 8000) continue;
       
       waiting++;
