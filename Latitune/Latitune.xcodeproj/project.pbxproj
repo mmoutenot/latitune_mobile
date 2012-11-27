@@ -106,6 +106,8 @@
 		DA0A32ED16502BAC00E7A2A4 /* LTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */; };
 		DA0A32EF16502BCD00E7A2A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A32EE16502BCD00E7A2A4 /* Security.framework */; };
 		DA0A331C1651948200E7A2A4 /* LTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */; };
+		DA60B0AD1665425400F5A952 /* LTInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */; };
+		DA60B0AE1665425400F5A952 /* LTInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */; };
 		DA67CE801658364F007AB84B /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176F9B165826F200F5E5EE /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DA67CE811658364F007AB84B /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176F9E165826F200F5E5EE /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DA67CE821658364F007AB84B /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176FA0165826F200F5E5EE /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -165,6 +167,13 @@
 		DA67CEB8165836B5007AB84B /* BWLongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A617708A165826F200F5E5EE /* BWLongTextViewController.m */; };
 		DA67CEB9165836B5007AB84B /* BWSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A617708D165826F200F5E5EE /* BWSelectViewController.m */; };
 		DA67CEC51658377B007AB84B /* LTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */; };
+		DA692B1116641C5E0039F4C4 /* Boston.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DA692B1016641C5E0039F4C4 /* Boston.gpx */; };
+		DA692B1216641C5E0039F4C4 /* Boston.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DA692B1016641C5E0039F4C4 /* Boston.gpx */; };
+		DA692B1916642FC40039F4C4 /* LTAuthenticateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA692B1816642FC30039F4C4 /* LTAuthenticateViewController.m */; };
+		DA692B1A16642FC40039F4C4 /* LTAuthenticateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA692B1816642FC30039F4C4 /* LTAuthenticateViewController.m */; };
+		DA692B1B16652E0F0039F4C4 /* KIFTestStepAsync.m in Sources */ = {isa = PBXBuildFile; fileRef = DA692B15166426460039F4C4 /* KIFTestStepAsync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA692B1E16652E6C0039F4C4 /* LTTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA692B1D16652E6B0039F4C4 /* LTTextCell.m */; };
+		DA692B1F16652E6C0039F4C4 /* LTTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA692B1D16652E6B0039F4C4 /* LTTextCell.m */; };
 		DAF330A3164F335100DBBFD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A2164F335100DBBFD3 /* UIKit.framework */; };
 		DAF330A5164F335100DBBFD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A4164F335100DBBFD3 /* Foundation.framework */; };
 		DAF330A7164F335100DBBFD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF330A6164F335100DBBFD3 /* CoreGraphics.framework */; };
@@ -378,6 +387,15 @@
 		DA0A32EE16502BCD00E7A2A4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DA0A331A1651948100E7A2A4 /* LTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLoginViewController.h; sourceTree = "<group>"; };
 		DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLoginViewController.m; sourceTree = "<group>"; };
+		DA60B0AB1665425400F5A952 /* LTInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTInstructionsViewController.h; sourceTree = "<group>"; };
+		DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTInstructionsViewController.m; sourceTree = "<group>"; };
+		DA692B1016641C5E0039F4C4 /* Boston.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Boston.gpx; path = Resources/Boston.gpx; sourceTree = "<group>"; };
+		DA692B14166426450039F4C4 /* KIFTestStepAsync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIFTestStepAsync.h; path = "Integration Tests/KIFTestStepAsync.h"; sourceTree = "<group>"; };
+		DA692B15166426460039F4C4 /* KIFTestStepAsync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIFTestStepAsync.m; path = "Integration Tests/KIFTestStepAsync.m"; sourceTree = "<group>"; };
+		DA692B1716642FC30039F4C4 /* LTAuthenticateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAuthenticateViewController.h; sourceTree = "<group>"; };
+		DA692B1816642FC30039F4C4 /* LTAuthenticateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAuthenticateViewController.m; sourceTree = "<group>"; };
+		DA692B1C16652E6B0039F4C4 /* LTTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTextCell.h; sourceTree = "<group>"; };
+		DA692B1D16652E6B0039F4C4 /* LTTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTextCell.m; sourceTree = "<group>"; };
 		DAF3309E164F335100DBBFD3 /* Latitune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latitune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF330A2164F335100DBBFD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DAF330A4164F335100DBBFD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -728,6 +746,8 @@
 			isa = PBXGroup;
 			children = (
 				A6BB741116585773003A6FD6 /* Supporting Files */,
+				DA692B14166426450039F4C4 /* KIFTestStepAsync.h */,
+				DA692B15166426460039F4C4 /* KIFTestStepAsync.m */,
 				A681A7DB1655FE660069521B /* KIFTestStep+LTAdditions.h */,
 				A681A7DC1655FE660069521B /* KIFTestStep+LTAdditions.m */,
 				A681A7D11655FBEB0069521B /* KIFTestScenario+LTAdditions.h */,
@@ -750,6 +770,7 @@
 		DA2E05B4164F8FC400BF9B50 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA692B1016641C5E0039F4C4 /* Boston.gpx */,
 				DAF330BA164F335100DBBFD3 /* MainStoryboard.storyboard */,
 				DAF330B4164F335100DBBFD3 /* Default.png */,
 				DAF330B6164F335100DBBFD3 /* Default@2x.png */,
@@ -815,10 +836,14 @@
 		DAF330A8164F335100DBBFD3 /* Latitune */ = {
 			isa = PBXGroup;
 			children = (
+				DA60B0AB1665425400F5A952 /* LTInstructionsViewController.h */,
+				DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */,
 				DA0A32EB16502BAC00E7A2A4 /* LTRegisterViewController.h */,
 				DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */,
 				DA0A331A1651948100E7A2A4 /* LTLoginViewController.h */,
 				DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */,
+				DA692B1716642FC30039F4C4 /* LTAuthenticateViewController.h */,
+				DA692B1816642FC30039F4C4 /* LTAuthenticateViewController.m */,
 				A69FE9C1164F59AB00274407 /* LTLocationController.h */,
 				A69FE9C2164F59AB00274407 /* LTLocationController.m */,
 				DAF330B1164F335100DBBFD3 /* LTAppDelegate.h */,
@@ -833,6 +858,8 @@
 				DAF330E9164F343D00DBBFD3 /* LTBlipViewController.m */,
 				DAF330EB164F347400DBBFD3 /* LTCommunication.h */,
 				DAF330EC164F347400DBBFD3 /* LTCommunication.m */,
+				DA692B1C16652E6B0039F4C4 /* LTTextCell.h */,
+				DA692B1D16652E6B0039F4C4 /* LTTextCell.m */,
 				DAF330A9164F335100DBBFD3 /* Supporting Files */,
 			);
 			path = Latitune;
@@ -962,6 +989,7 @@
 				A681A7BA1655F99E0069521B /* Default@2x.png in Resources */,
 				A681A7BB1655F99E0069521B /* Default-568h@2x.png in Resources */,
 				A681A7BC1655F99E0069521B /* MainStoryboard.storyboard in Resources */,
+				DA692B1216641C5E0039F4C4 /* Boston.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,6 +1007,7 @@
 				A61771101658281F00F5E5EE /* arrow@2x.png in Resources */,
 				A64CD1F8165E9F12004824BF /* blip_button_v1.png in Resources */,
 				A64CD1F9165E9F12004824BF /* blip_button_v1@2x.png in Resources */,
+				DA692B1116641C5E0039F4C4 /* Boston.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +1018,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA692B1B16652E0F0039F4C4 /* KIFTestStepAsync.m in Sources */,
 				DA67CEC51658377B007AB84B /* LTLoginViewController.m in Sources */,
 				DA67CEA0165836B5007AB84B /* LBYouTubeExtractor.m in Sources */,
 				DA67CEA1165836B5007AB84B /* LBYouTubePlayerController.m in Sources */,
@@ -1061,6 +1091,9 @@
 				A681A7CF1655FB5C0069521B /* LTTestController.m in Sources */,
 				A681A7D41655FBEB0069521B /* KIFTestScenario+LTAdditions.m in Sources */,
 				A681A7DD1655FE660069521B /* KIFTestStep+LTAdditions.m in Sources */,
+				DA692B1A16642FC40039F4C4 /* LTAuthenticateViewController.m in Sources */,
+				DA692B1F16652E6C0039F4C4 /* LTTextCell.m in Sources */,
+				DA60B0AE1665425400F5A952 /* LTInstructionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,6 +1170,9 @@
 				A61770FE165826F200F5E5EE /* DistancePickerView.m in Sources */,
 				A61770FF165826F200F5E5EE /* BWLongTextViewController.m in Sources */,
 				A6177100165826F200F5E5EE /* BWSelectViewController.m in Sources */,
+				DA692B1916642FC40039F4C4 /* LTAuthenticateViewController.m in Sources */,
+				DA692B1E16652E6C0039F4C4 /* LTTextCell.m in Sources */,
+				DA60B0AD1665425400F5A952 /* LTInstructionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

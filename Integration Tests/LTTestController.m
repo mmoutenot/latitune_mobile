@@ -17,6 +17,7 @@
   NSArray *setUpSteps = @[[KIFTestStep stepToResetDatabase]];
   [KIFTestScenario setDefaultStepsToSetUp:setUpSteps];
   [self addScenario:[KIFTestScenario scenarioTrue]];
+  [self addScenario:[KIFTestScenario scenarioToRegisterUser]];
 }
 
 @end

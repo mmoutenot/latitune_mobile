@@ -99,7 +99,7 @@
                                      return [@([obj1location distanceFromLocation:currentLocation]) compare:@([obj2location distanceFromLocation:currentLocation])] ;
                                    }];
         [blips insertObject:locationData atIndex:newIndex];
-        if (waiting == 0) {
+        if (true) {
           for (NSDictionary *loc in blips) {
             NSLog(@"%@ by %@ at %@",((Song *)loc[@"song"]).title, ((Song *)loc[@"song"]).artist, loc[@"description"]);
           }

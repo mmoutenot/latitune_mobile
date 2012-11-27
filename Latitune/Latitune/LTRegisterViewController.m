@@ -10,26 +10,27 @@
 #import "LTCommunication.h"
 #import "SVProgressHUD.h"
 #import "LTBlipViewController.h"
-@interface RegisterObject : NSObject
+#import "LTTextCell.h"
 
-@property (strong,nonatomic) NSString *username, *email, *password, *passwordAgain;
+typedef enum {
+  FormSection = 0,
+  ButtonSection = 1
+} RegisterSection;
 
-@end
-
-@implementation RegisterObject
-
-@synthesize username, email, password, passwordAgain;
-
-@end
+typedef enum {
+  UsernameField = 0,
+  EmailField = 1,
+  PasswordField = 2,
+  PasswordAgainField = 3
+} FormField;
 
 @interface LTRegisterViewController ()
-{
-  RegisterObject *regObj;
-}
 
 @end
 
 @implementation LTRegisterViewController
+
+@synthesize textFields, fieldPrompts, accessibilityLabels;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,12 +43,11 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-  regObj = [[RegisterObject alloc] init];
-  regObj.username = @"";
-  regObj.email = @"";
-  regObj.password = @"";
-  regObj.passwordAgain = @"";
+  [super viewDidLoad];
+  fieldPrompts = @[@"Username",@"Email",@"Password",@"Password Again"];
+  accessibilityLabels = @[@"Username field",@"Email field",@"Password field",@"Password Again field"];
+  textFields = [[NSMutableArray alloc] initWithObjects:[NSNull null],[NSNull null],[NSNull null],[NSNull null],nil];
+  self.view.accessibilityLabel = @"Register View";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -56,28 +56,6 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-  self.formModel = [FKFormModel formTableModelForTableView:self.tableView navigationController:self.navigationController];
-  [FKFormMapping mappingForClass:[RegisterObject class] block:^(FKFormMapping *mapping) {
-    [mapping sectionWithTitle:@"Register" identifier:@"register"];
-    [mapping mapAttribute:@"username" title:@"Username" type:FKFormAttributeMappingTypeText];
-    [mapping mapAttribute:@"email" title:@"E-mail" type:FKFormAttributeMappingTypeText];
-    [mapping mapAttribute:@"password" title:@"Password" type:FKFormAttributeMappingTypePassword];
-    [mapping mapAttribute:@"passwordAgain" title:@"Password Again" type:FKFormAttributeMappingTypePassword];
-    [mapping buttonSave:@"Register" handler:^{
-      if ([regObj.email length] && [regObj.username length] && [regObj.password length]) {
-        if ([regObj.password isEqualToString:regObj.passwordAgain]) {
-          [[LTCommunication sharedInstance] createUserWithUsername:regObj.username email:regObj.email password:regObj.password withDelegate:self];
-          [SVProgressHUD showWithStatus:@"Registering"];
-        } else {
-          [SVProgressHUD showErrorWithStatus:@"Passwords don't match"];
-        }
-      } else {
-        [SVProgressHUD showErrorWithStatus:@"Empty field"];
-      }
-    }];
-    [self.formModel registerMapping:mapping];
-  }];
-  [self.formModel loadFieldsWithObject:regObj];
 }
 
 - (void) createUserDidFail {
@@ -88,13 +66,10 @@
 - (void) createUserDidSucceedWithUser:(NSDictionary *)user {
   [SVProgressHUD showSuccessWithStatus:@"Registration Successful"];
   
-  LTBlipViewController *blipViewC = [(UITabBarController*)[self presentingViewController] viewControllers][1];
+  UITabBarController *mainViewC = (UITabBarController*)[self presentingViewController];
   [self dismissViewControllerAnimated:YES completion:^{
-    NSLog(@"%@",[self presentingViewController]);
-    [blipViewC showMediaPicker:nil];
-  }];
-  NSLog(@"register succeed");
-}
+    [mainViewC performSegueWithIdentifier:@"showInstructionsSegue" sender:self];
+  }];}
 
 - (void)didReceiveMemoryWarning
 {
@@ -105,4 +80,91 @@
 - (IBAction)close:(id)sender {
   [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - Table View Functions
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+  return 2;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  if (section == FormSection) {
+    return 4;
+  } else if (section == ButtonSection) {
+    return 1;
+  }
+  return 0;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *CellIdentifier = @"Cell";
+  static NSString *FormCellIdentifier = @"FormCell";
+  UITableViewCell *cell;
+  if (indexPath.section == FormSection){
+    cell = [tableView dequeueReusableCellWithIdentifier:FormCellIdentifier];
+  } else {
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  }
+  if (cell == nil) {
+    if (indexPath.section == FormSection) {
+      cell = [[LTTextCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FormCellIdentifier];
+      cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+      cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+  }
+  if (indexPath.section == FormSection) {
+    //if (indexPath.row == UsernameField) {
+    cell.textLabel.text = fieldPrompts[indexPath.row];
+    cell.accessibilityLabel = [NSString stringWithFormat:@"%@ cell",fieldPrompts[indexPath.row]];
+    [(LTTextCell *)cell textField].accessibilityLabel = accessibilityLabels[indexPath.row];
+    [(LTTextCell *)cell textField].delegate = self;
+    [textFields replaceObjectAtIndex:indexPath.row withObject:[(LTTextCell *)cell textField]];
+    if (indexPath.row == PasswordAgainField) {
+      [(LTTextCell *)cell textField].returnKeyType = UIReturnKeyDone;
+    }
+    if (indexPath.row == PasswordAgainField || indexPath.row == PasswordField) {
+      [(LTTextCell *)cell textField].secureTextEntry = TRUE;
+    }
+  } else {
+    cell.textLabel.text = @"Submit";
+    cell.accessibilityLabel = @"Register Submit Button";
+  }
+  return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  if (indexPath.section == ButtonSection) {
+    for (UITextField *field in textFields) {
+      if ([field.text isEqualToString:@""]) {
+        NSInteger textFieldIdx = [textFields indexOfObjectIdenticalTo:field];
+        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@ field is empty",fieldPrompts[textFieldIdx]]];
+        return;
+      }
+    }
+    if (![[(UITextField *)textFields[PasswordField] text] isEqualToString:[(UITextField *)textFields[PasswordAgainField] text]]) {
+      [SVProgressHUD showErrorWithStatus:@"Passwords Don't Match"];
+      return;
+    }
+    NSString *username = [(UITextField *)textFields[UsernameField] text];
+    NSString *email = [(UITextField *)textFields[EmailField] text];
+    NSString *password = [(UITextField *)textFields[PasswordField] text];
+    [SVProgressHUD showWithStatus:@"Registering"];
+    [[LTCommunication sharedInstance] createUserWithUsername:username email:email password:password withDelegate:self];
+  }
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+  NSInteger textFieldIdx = [textFields indexOfObjectIdenticalTo:textField];
+  if (textFieldIdx != PasswordAgainField) {
+    [textFields[textFieldIdx+1] becomeFirstResponder];
+    return NO;
+  } else {
+    [textField resignFirstResponder];
+    return YES;
+  }
+}
+
 @end

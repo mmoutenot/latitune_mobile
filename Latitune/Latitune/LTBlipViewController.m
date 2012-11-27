@@ -22,48 +22,6 @@
   locationController = [LTLocationController sharedInstance];
 }
 
-- (IBAction)showMediaPicker:(id)sender {
-  NSLog(@"Show media picker");
-  if ([[LTCommunication sharedInstance] userID]) {
-  MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
-  mediaPicker.delegate = self;
-  mediaPicker.allowsPickingMultipleItems = YES;
-  //mediaPicker.prompt = @"Select songs to play";
-  //@try {
-    [self presentViewController:mediaPicker animated:YES completion:nil];
- /* }
-  @catch (NSException *exception) {
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Oops!",@"Error title")
-                                message:NSLocalizedString(@"The music library is not available.",@"Error message when MPMediaPickerController fails to load")
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
-  }*/
-  } else {
-    
-  }
-}
-
-- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-  if ([identifier isEqualToString:@"authenticateSegue"]) {
-    if ([[LTCommunication sharedInstance] userID]) return NO;
-  }
-  return YES;
-}
-
-- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection {
-  if (mediaItemCollection) {
-    MPMediaItem *representativeItem = [mediaItemCollection representativeItem];
-    NSString *albumName = [representativeItem valueForProperty: MPMediaItemPropertyAlbumTitle];
-    NSString *artistName = [representativeItem valueForProperty: MPMediaItemPropertyArtist];
-    NSString *songName = [representativeItem valueForProperty: MPMediaItemPropertyTitle];
-    
-    Song *newSong = [[Song alloc] initWithTitle:songName artist:artistName album:albumName];
-    [[LTCommunication sharedInstance] addSong:newSong withDelegate:self];
-  }
-  [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker {
   [self dismissViewControllerAnimated:YES completion:nil];
 }

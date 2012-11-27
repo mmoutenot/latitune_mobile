@@ -12,6 +12,6 @@
 
 + (id)scenarioTrue;
 
-+ (id)scenarioGetNearbyBlips;
++ (id)scenarioToRegisterUser;
 
 @end

@@ -26,6 +26,7 @@
     exit([[LTTestController sharedInstance] failureCount]);
   }];
 #endif
+  [self.window.rootViewController performSegueWithIdentifier:@"showAuthenticateSegue" sender:self];
   [LTLocationController sharedInstance];
   return YES;
 }
