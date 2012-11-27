@@ -15,6 +15,5 @@
 @property (nonatomic, strong) NSMutableArray *textFields;
 @property (nonatomic, strong) NSArray *fieldPrompts;
 @property (nonatomic, strong) NSArray *accessibilityLabels;
-- (IBAction)close:(id)sender;
 
 @end

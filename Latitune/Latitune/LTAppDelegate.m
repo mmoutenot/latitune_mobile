@@ -26,7 +26,8 @@
     exit([[LTTestController sharedInstance] failureCount]);
   }];
 #endif
-  [self.window.rootViewController performSegueWithIdentifier:@"showAuthenticateSegue" sender:self];
+  [((UINavigationController*)self.window.rootViewController).topViewController performSegueWithIdentifier:@"showAuthenticateSegue" sender:self];
+  NSLog(@"%@",((UINavigationController*)self.window.rootViewController).topViewController);
   [LTLocationController sharedInstance];
   return YES;
 }

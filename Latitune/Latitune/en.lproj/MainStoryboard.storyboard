@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5q1-hk-WXL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController title="Second" id="3" customClass="LTListenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -24,7 +24,7 @@
             <objects>
                 <viewController id="8vR-re-pG7" customClass="LTBlipViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ym6-J5-yfp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-8Y-SP5">
@@ -82,6 +82,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="closeButton" destination="6wT-8x-X9I" id="kKR-Tj-ZWn"/>
                         <outlet property="pageControl" destination="0q4-jC-TWB" id="JbL-OM-Uco"/>
                     </connections>
                 </viewController>
@@ -223,13 +224,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Register" id="DXD-NA-4G7">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="kC4-Su-WHf">
-                            <connections>
-                                <action selector="close:" destination="uUp-kG-SJq" id="WK3-5Z-bTZ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Register" id="DXD-NA-4G7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Evt-Gi-K0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,13 +254,7 @@
                             <outlet property="delegate" destination="WC7-Pt-nib" id="ovu-gV-tIV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Login" id="T1O-J3-JuF">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="QNu-63-QEy">
-                            <connections>
-                                <action selector="close:" destination="WC7-Pt-nib" id="KnZ-3v-aGK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Login" id="T1O-J3-JuF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXf-eL-0mt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,13 +299,7 @@
                             <outlet property="delegate" destination="rAE-La-zEC" id="eqZ-7h-cJN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Authenticate" id="lcI-jQ-dNx">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="h03-Hg-Uuf">
-                            <connections>
-                                <action selector="close:" destination="rAE-La-zEC" id="30n-Z0-B8z"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Authenticate" id="lcI-jQ-dNx"/>
                     <connections>
                         <segue destination="WC7-Pt-nib" kind="push" identifier="showLoginSegue" id="QS2-Eg-2Km"/>
                         <segue destination="uUp-kG-SJq" kind="push" identifier="showRegisterSegue" id="7cL-WO-DdP"/>
@@ -326,10 +309,32 @@
             </objects>
             <point key="canvasLocation" x="699" y="-690"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="GfB-UK-9Iy">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="5q1-hk-WXL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="exb-KL-ORA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4" kind="relationship" relationship="rootViewController" id="LH6-fW-xda"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHX-9X-FMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-751" y="320"/>
+        </scene>
+        <!--Tab Bar View Controller - {L}-->
         <scene sceneID="15">
             <objects>
-                <tabBarController id="4" sceneMemberID="viewController">
+                <tabBarController id="4" customClass="LTTabBarViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="{L}" id="CzN-79-cpa">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="6do-lb-ojK">
+                            <connections>
+                                <action selector="logout:" destination="4" id="tlq-dn-lcY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -337,6 +342,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="logoutButton" destination="6do-lb-ojK" id="Wsj-l4-WUD"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="8vR-re-pG7" kind="relationship" relationship="viewControllers" id="1uG-Wc-hPZ"/>
                         <segue destination="XJv-3z-ETx" kind="relationship" relationship="viewControllers" id="DK2-Bb-Fs8"/>
@@ -353,7 +359,7 @@
             <objects>
                 <tableViewController id="XJv-3z-ETx" customClass="LTExploreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dbn-1t-4Yt">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -406,6 +412,56 @@
         <image name="blip_button_v1.png" width="100" height="63"/>
         <image name="second" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="LTAuthenticateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTAuthenticateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+            </relationships>
+        </class>
+        <class className="LTBlipViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTBlipViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showMediaPicker:"/>
+            </relationships>
+        </class>
+        <class className="LTExploreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTExploreViewController.h"/>
+        </class>
+        <class className="LTInstructionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTInstructionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+                <relationship kind="outlet" name="closeButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+            </relationships>
+        </class>
+        <class className="LTListenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTListenViewController.h"/>
+        </class>
+        <class className="LTLoginViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+            </relationships>
+        </class>
+        <class className="LTRegisterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRegisterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+            </relationships>
+        </class>
+        <class className="LTTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTTabBarViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

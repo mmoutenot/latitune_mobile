@@ -14,10 +14,11 @@
 
 - (void)initializeScenarios;
 {
-  NSArray *setUpSteps = @[[KIFTestStep stepToResetDatabase]];
+  NSArray *setUpSteps = @[[KIFTestStep stepToResetDatabase],[KIFTestStep stepToShowAuthenticationWindow],[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Authentication View"]];
   [KIFTestScenario setDefaultStepsToSetUp:setUpSteps];
   [self addScenario:[KIFTestScenario scenarioTrue]];
   [self addScenario:[KIFTestScenario scenarioToRegisterUser]];
+  [self addScenario:[KIFTestScenario scenarioToLogIn]];
 }
 
 @end

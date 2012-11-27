@@ -8,21 +8,57 @@
 
 #import "KIFTestStep+LTAdditions.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "SBJson.h"
+#import "UIAccessibilityElement-KIFAdditions.h"
+#import "UIApplication-KIFAdditions.h"
+#import "UIView-KIFAdditions.h"
 
 @implementation KIFTestStep (EXAdditions)
 
 + (id) stepToResetDatabase {
-  return [KIFTestStep stepWithDescription:@"Recreate database" executionBlock:^(KIFTestStep *step, NSError **error) {
-    BOOL successfulReset = NO;
-    
+  return [KIFTestStep stepWithDescription:@"Recreate database" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError **error) {
     NSURL *url = [NSURL URLWithString:RASA_EXT];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request startSynchronous];
     NSError *err = [request error];
-    NSLog(@"%@", [request responseString]);
     if (!err) {
       NSString *response = [request responseString];
       if ([response isEqualToString:@"OK"]){
+        return KIFTestStepResultSuccess;
+      }
+    }
+    return KIFTestStepResultFailure;
+  }];
+}
+
++ (id) stepToShowAuthenticationWindow {
+  return [KIFTestStep stepWithDescription:@"Show Authentication Window" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError *__autoreleasing *error) {
+    if ([[UIApplication sharedApplication] accessibilityElementWithLabel:@"Authentication View"] != nil) {
+      return KIFTestStepResultSuccess;
+    } else {
+      UIAccessibilityElement *logoutAccessibilityElement = [[UIApplication sharedApplication] accessibilityElementWithLabel:@"Logout Button"];
+      UIView *logoutButton = [UIAccessibilityElement viewContainingAccessibilityElement:logoutAccessibilityElement];
+      [logoutButton tap];
+      return KIFTestStepResultSuccess;
+    }
+  }];
+}
+
++ (id) stepToCreateDefaultUser {
+  return [KIFTestStep stepWithDescription:@"Create default user" executionBlock:^(KIFTestStep *step, NSError **error) {
+    NSURL *url = [NSURL URLWithString:USER_EXT];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setPostValue:@"testuser" forKey:@"username"];
+    [request setPostValue:@"testpass" forKey:@"password"];
+    [request setPostValue:@"testuser@gmail.com" forKey:@"email"];
+    [request setRequestMethod:@"PUT"];
+    [request startSynchronous];
+    NSError *err = [request error];
+    if (!err) {
+      NSString *response = [request responseString];
+      NSDictionary *responseDict = [response JSONValue];
+      if ([responseDict[@"meta"][@"status"] isEqualToString:@"OK"]){
         return KIFTestStepResultSuccess;
       }
     }

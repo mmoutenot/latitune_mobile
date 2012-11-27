@@ -10,6 +10,4 @@
 
 @interface LTAuthenticateViewController : UITableViewController
 
-- (IBAction)close:(id)sender;
-
 @end

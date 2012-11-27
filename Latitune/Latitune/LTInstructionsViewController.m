@@ -14,7 +14,7 @@
 
 @implementation LTInstructionsViewController
 
-@synthesize pageController, pageControl;
+@synthesize pageController, pageControl, closeButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  closeButton.accessibilityLabel = @"Close Instructions Button";
   pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
   pageController.delegate = self;
   pageController.dataSource = self;

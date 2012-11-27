@@ -66,7 +66,8 @@ typedef enum {
 - (void) createUserDidSucceedWithUser:(NSDictionary *)user {
   [SVProgressHUD showSuccessWithStatus:@"Registration Successful"];
   
-  UITabBarController *mainViewC = (UITabBarController*)[self presentingViewController];
+  UINavigationController *mainNavC = (UINavigationController*)[self presentingViewController];
+  UITabBarController *mainViewC = (UITabBarController*)mainNavC.topViewController;
   [self dismissViewControllerAnimated:YES completion:^{
     [mainViewC performSegueWithIdentifier:@"showInstructionsSegue" sender:self];
   }];}
@@ -77,9 +78,6 @@ typedef enum {
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)close:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark - Table View Functions
 

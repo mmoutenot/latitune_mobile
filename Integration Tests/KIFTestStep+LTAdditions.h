@@ -11,6 +11,9 @@
 @interface KIFTestStep (EXAdditions)
 
 + (id) stepToResetDatabase;
++ (id) stepToShowAuthenticationWindow;
+
++ (id) stepToCreateDefaultUser;
 
 
 @end

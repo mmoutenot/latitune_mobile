@@ -14,4 +14,6 @@
 
 + (id)scenarioToRegisterUser;
 
++ (id)scenarioToLogIn;
+
 @end

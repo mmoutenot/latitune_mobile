@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UIPageViewController *pageController;
 @property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *closeButton;
 
 - (IBAction)close:(id)sender;
 

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FormKit.h"
 #import "LTCommunication.h"
 
-@interface LTLoginViewController : UITableViewController <LoginDelegate>
+@interface LTLoginViewController : UITableViewController <LoginDelegate, UITextFieldDelegate>
 
-@property (nonatomic, strong) FKFormModel *formModel;
-- (IBAction)close:(id)sender;
+@property (nonatomic, strong) NSMutableArray *textFields;
+@property (nonatomic, strong) NSArray *fieldPrompts;
+@property (nonatomic, strong) NSArray *accessibilityLabels;
 
 @end

@@ -106,6 +106,8 @@
 		DA0A32ED16502BAC00E7A2A4 /* LTRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A32EC16502BAC00E7A2A4 /* LTRegisterViewController.m */; };
 		DA0A32EF16502BCD00E7A2A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0A32EE16502BCD00E7A2A4 /* Security.framework */; };
 		DA0A331C1651948200E7A2A4 /* LTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */; };
+		DA22E12416655C8B00463D22 /* LTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA22E12316655C8B00463D22 /* LTTabBarViewController.m */; };
+		DA22E12516655C8B00463D22 /* LTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA22E12316655C8B00463D22 /* LTTabBarViewController.m */; };
 		DA60B0AD1665425400F5A952 /* LTInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */; };
 		DA60B0AE1665425400F5A952 /* LTInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */; };
 		DA67CE801658364F007AB84B /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A6176F9B165826F200F5E5EE /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -387,6 +389,8 @@
 		DA0A32EE16502BCD00E7A2A4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DA0A331A1651948100E7A2A4 /* LTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLoginViewController.h; sourceTree = "<group>"; };
 		DA0A331B1651948100E7A2A4 /* LTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLoginViewController.m; sourceTree = "<group>"; };
+		DA22E12216655C8A00463D22 /* LTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTabBarViewController.h; sourceTree = "<group>"; };
+		DA22E12316655C8B00463D22 /* LTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTabBarViewController.m; sourceTree = "<group>"; };
 		DA60B0AB1665425400F5A952 /* LTInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTInstructionsViewController.h; sourceTree = "<group>"; };
 		DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTInstructionsViewController.m; sourceTree = "<group>"; };
 		DA692B1016641C5E0039F4C4 /* Boston.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Boston.gpx; path = Resources/Boston.gpx; sourceTree = "<group>"; };
@@ -836,6 +840,8 @@
 		DAF330A8164F335100DBBFD3 /* Latitune */ = {
 			isa = PBXGroup;
 			children = (
+				DA22E12216655C8A00463D22 /* LTTabBarViewController.h */,
+				DA22E12316655C8B00463D22 /* LTTabBarViewController.m */,
 				DA60B0AB1665425400F5A952 /* LTInstructionsViewController.h */,
 				DA60B0AC1665425400F5A952 /* LTInstructionsViewController.m */,
 				DA0A32EB16502BAC00E7A2A4 /* LTRegisterViewController.h */,
@@ -1094,6 +1100,7 @@
 				DA692B1A16642FC40039F4C4 /* LTAuthenticateViewController.m in Sources */,
 				DA692B1F16652E6C0039F4C4 /* LTTextCell.m in Sources */,
 				DA60B0AE1665425400F5A952 /* LTInstructionsViewController.m in Sources */,
+				DA22E12516655C8B00463D22 /* LTTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1173,6 +1180,7 @@
 				DA692B1916642FC40039F4C4 /* LTAuthenticateViewController.m in Sources */,
 				DA692B1E16652E6C0039F4C4 /* LTTextCell.m in Sources */,
 				DA60B0AD1665425400F5A952 /* LTInstructionsViewController.m in Sources */,
+				DA22E12416655C8B00463D22 /* LTTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
