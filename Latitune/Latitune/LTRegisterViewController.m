@@ -147,8 +147,19 @@ typedef enum {
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
   if (indexPath.section == ButtonSection) {
+    NSString *password = [(UITextField *)textFields[PasswordField] text];
+    NSString *passwordAgain = [(UITextField *)textFields[PasswordAgainField] text];
+    NSString *username = [(UITextField *)textFields[UsernameField] text];
+    NSString *email = [(UITextField *)textFields[EmailField] text];
+    if (![password isEqualToString:passwordAgain]
+        && ![password isEqualToString:@""]
+        && password != nil) {
+      [SVProgressHUD showErrorWithStatus:@"Passwords Don't Match"];
+      return;
+    }
+    
     for (UITextField *field in textFields) {
-      if ([field.text isEqualToString:@""]) {
+      if ([field.text isEqualToString:@""] || field.text == nil) {
         NSInteger textFieldIdx = [textFields indexOfObjectIdenticalTo:field];
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@ field is empty",fieldPrompts[textFieldIdx]]];
         return;
@@ -160,13 +171,6 @@ typedef enum {
       return;
     }
     
-    if (![[(UITextField *)textFields[PasswordField] text] isEqualToString:[(UITextField *)textFields[PasswordAgainField] text]]) {
-      [SVProgressHUD showErrorWithStatus:@"Passwords Don't Match"];
-      return;
-    }
-    NSString *username = [(UITextField *)textFields[UsernameField] text];
-    NSString *email = [(UITextField *)textFields[EmailField] text];
-    NSString *password = [(UITextField *)textFields[PasswordField] text];
     [SVProgressHUD showWithStatus:@"Registering"];
     [[LTCommunication sharedInstance] createUserWithUsername:username email:email password:password withDelegate:self];
   }

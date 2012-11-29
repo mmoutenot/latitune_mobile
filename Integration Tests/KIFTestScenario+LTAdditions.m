@@ -55,10 +55,10 @@
 + (id) scenarioToRegisterUserWithEmptyFields {
   KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User With Empty Fields"];
   NSArray *fieldDicts = @[
-  @{@"username":@"",@"email":@"testuser@gmail.com",@"passwordA":@"testpass",@"passwordB":@"testpass",@"missingField":@"Username"},
-  @{@"username":@"testuser",@"email":@"",@"passwordA":@"testpass",@"passwordB":@"testpass",@"missingField":@"Email"},
-  @{@"username":@"testuser",@"email":@"testuser@gmail.com",@"passwordA":@"",@"passwordB":@"testpass",@"missingField":@"Password"},
-  @{@"username":@"tsetuser",@"email":@"testuser@gmail.com",@"passwordA":@"testpass",@"passwordB":@"",@"missingField":@"Password Again"}
+  @{@"username":@"",@"email":@"testuser@gmail.com",@"passwordA":@"testpass",@"passwordB":@"testpass",@"error":@"Username field is empty"},
+  @{@"username":@"testuser",@"email":@"",@"passwordA":@"testpass",@"passwordB":@"testpass",@"error":@"Email field is empty"},
+  @{@"username":@"testuser",@"email":@"testuser@gmail.com",@"passwordA":@"",@"passwordB":@"testpass",@"error":@"Password field is empty"},
+  @{@"username":@"testuser",@"email":@"testuser@gmail.com",@"passwordA":@"testpass",@"passwordB":@"",@"error":@"Passwords Don't Match"}
   ];
   for (NSDictionary *fieldDict in fieldDicts) {
     [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:fieldDict[@"username"]
@@ -66,7 +66,7 @@
                                                                    passwordA:fieldDict[@"passwordA"]
                                                                    passwordB:fieldDict[@"passwordB"]]];
     [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
-    NSString *errorText = [NSString stringWithFormat:@"%@ field is empty",fieldDict[@"missingField"]];
+    NSString *errorText = fieldDict[@"error"];
     [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:errorText]];
     [scenario addStep:[KIFTestStep stepToWaitForAbsenceOfViewWithAccessibilityLabel:errorText]];
     [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"]];
