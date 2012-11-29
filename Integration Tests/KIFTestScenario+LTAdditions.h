@@ -12,7 +12,10 @@
 
 + (id)scenarioTrue;
 
-+ (id)scenarioToRegisterUser;
++ (id)scenarioToRegisterUserWithValidData;
++ (id)scenarioToRegisterUserWithInvalidEmail;
+//+ (id)scenarioToRegisterUserWithInvalidPasswords;
+//+ (id)scenarioToRegisterUserWithExistingAccount;
 
 + (id)scenarioToLogIn;
 

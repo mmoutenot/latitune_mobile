@@ -17,7 +17,8 @@
   NSArray *setUpSteps = @[[KIFTestStep stepToResetDatabase],[KIFTestStep stepToShowAuthenticationWindow],[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Authentication View"]];
   [KIFTestScenario setDefaultStepsToSetUp:setUpSteps];
   [self addScenario:[KIFTestScenario scenarioTrue]];
-  [self addScenario:[KIFTestScenario scenarioToRegisterUser]];
+  [self addScenario:[KIFTestScenario scenarioToRegisterUserWithValidData]];
+  [self addScenario:[KIFTestScenario scenarioToRegisterUserWithInvalidEmail]];
   [self addScenario:[KIFTestScenario scenarioToLogIn]];
 }
 

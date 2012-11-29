@@ -45,6 +45,18 @@
   }];
 }
 
++ (id) stepsToRegisterUserWithUsername:(NSString *)username email:(NSString*) email passwordA:(NSString *)passwordA passwordB:(NSString *)passwordB{
+  return @[
+    [KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Authentication View"],
+    [KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Button"],
+    [KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"],
+    [KIFTestStep stepToEnterText:username intoViewWithAccessibilityLabel:@"Username field"],
+    [KIFTestStep stepToEnterText:email intoViewWithAccessibilityLabel:@"Email field"],
+    [KIFTestStep stepToEnterText:passwordA intoViewWithAccessibilityLabel:@"Password field"],
+    [KIFTestStep stepToEnterText:passwordB intoViewWithAccessibilityLabel:@"Password Again field"]
+  ];
+}
+
 + (id) stepToCreateDefaultUser {
   return [KIFTestStep stepWithDescription:@"Create default user" executionBlock:^(KIFTestStep *step, NSError **error) {
     NSURL *url = [NSURL URLWithString:USER_EXT];

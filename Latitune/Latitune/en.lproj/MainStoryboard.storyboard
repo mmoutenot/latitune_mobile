@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5q1-hk-WXL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5q1-hk-WXL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -415,9 +415,6 @@
     <classes>
         <class className="LTAuthenticateViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTAuthenticateViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
         </class>
         <class className="LTBlipViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTBlipViewController.h"/>
@@ -441,15 +438,9 @@
         </class>
         <class className="LTLoginViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
         </class>
         <class className="LTRegisterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRegisterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
         </class>
         <class className="LTTabBarViewController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTTabBarViewController.h"/>

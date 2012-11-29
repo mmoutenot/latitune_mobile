@@ -11,6 +11,7 @@
 #import "SVProgressHUD.h"
 #import "LTBlipViewController.h"
 #import "LTTextCell.h"
+#import "LTAppDelegate.h"
 
 typedef enum {
   FormSection = 0,
@@ -78,6 +79,16 @@ typedef enum {
     // Dispose of any resources that can be recreated.
 }
 
+-(BOOL) NSStringIsValidEmail:(NSString *)checkString
+{
+  BOOL stricterFilter = YES; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
+  NSString *stricterFilterString = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+  NSString *laxString = @".+@.+\\.[A-Za-z]{2}[A-Za-z]*";
+  NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+  NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+  return [emailTest evaluateWithObject:checkString];
+}
+
 
 #pragma mark - Table View Functions
 
@@ -132,6 +143,7 @@ typedef enum {
   return cell;
 }
 
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
   if (indexPath.section == ButtonSection) {
@@ -142,6 +154,12 @@ typedef enum {
         return;
       }
     }
+    
+    if (![self NSStringIsValidEmail:[(UITextField *)textFields[EmailField] text]]){
+      [SVProgressHUD showErrorWithStatus:@"Invalid Email"];
+      return;
+    }
+    
     if (![[(UITextField *)textFields[PasswordField] text] isEqualToString:[(UITextField *)textFields[PasswordAgainField] text]]) {
       [SVProgressHUD showErrorWithStatus:@"Passwords Don't Match"];
       return;

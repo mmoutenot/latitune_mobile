@@ -21,6 +21,8 @@
       textField.textAlignment = NSTextAlignmentRight;
       textField.returnKeyType = UIReturnKeyNext;
       textField.backgroundColor = [UIColor clearColor];
+      textField.autocorrectionType = UITextAutocorrectionTypeNo;
+      textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
       [self.textLabel setFrame:CGRectMake(0, 12, self.contentView.bounds.size.width-CellTextFieldWidth-MarginBetweenControls, 25.0)];
       [self.contentView addSubview:textField];
         // Initialization code

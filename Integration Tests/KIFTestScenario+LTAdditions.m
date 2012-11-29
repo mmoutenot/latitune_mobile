@@ -18,20 +18,38 @@
   return scenario;
 }
 
-+ (id) scenarioToRegisterUser{
-  KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User"];
-  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Authentication View"]];
-  [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Button"]];
-  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"]];
-  [scenario addStep:[KIFTestStep stepToEnterText:@"testuser" intoViewWithAccessibilityLabel:@"Username field"]];
-  [scenario addStep:[KIFTestStep stepToEnterText:@"testuser@gmail.com" intoViewWithAccessibilityLabel:@"Email field"]];
-  [scenario addStep:[KIFTestStep stepToEnterText:@"testpass" intoViewWithAccessibilityLabel:@"Password field"]];
-  [scenario addStep:[KIFTestStep stepToEnterText:@"testpass" intoViewWithAccessibilityLabel:@"Password Again field"]];
++ (id) scenarioToRegisterUserWithValidData{
+  KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User With Valid Data"];
+  [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:@"testuser" email:@"mmoutenot@gmail.com" passwordA:@"testpass" passwordB:@"testpass"]];
   [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
   [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Instructions View"]];
   [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Close Instructions Button"]];
   return scenario;
 }
+
++ (id) scenarioToRegisterUserWithInvalidEmail{
+  KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User With Invalid Email"];
+  NSArray *invalidEmails = @[@"test@.com", @"test@gmail", @"test", @"test@g."];
+  for (NSString *invalidEmail in invalidEmails) {
+    [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:@"testuser" email:invalidEmail passwordA:@"testpass" passwordB:@"testpass"]];
+    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Invalid Email"]];
+    [scenario addStep:[KIFTestStep stepToWaitForAbsenceOfViewWithAccessibilityLabel:@"Invalid Email"]];
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"]];
+    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Authenticate"]];
+  }
+  return scenario;
+}
+
+//+ (id) scenarioToRegisterUserWithInvalidPasswords{
+//  KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User With Invalid Email"];
+//  [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:@"testuser" email:invalidEmail passwordA:@"testpass" passwordB:@"testpass"]];
+//  [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
+//  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Invalid Email"]];
+//  [scenario addStep:[KIFTestStep stepToWaitForAbsenceOfViewWithAccessibilityLabel:@"Invalid Email"]];
+//  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"]];
+//  return scenario;
+//}
 
 + (id) scenarioToLogIn {
   KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Login User"];
