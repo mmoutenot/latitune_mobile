@@ -19,6 +19,7 @@
   [self addScenario:[KIFTestScenario scenarioTrue]];
   [self addScenario:[KIFTestScenario scenarioToRegisterUserWithValidData]];
   [self addScenario:[KIFTestScenario scenarioToRegisterUserWithInvalidEmail]];
+  [self addScenario:[KIFTestScenario scenarioToRegisterUserWithInvalidPasswords]];
   [self addScenario:[KIFTestScenario scenarioToLogIn]];
 }
 

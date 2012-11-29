@@ -14,7 +14,7 @@
 
 + (id)scenarioToRegisterUserWithValidData;
 + (id)scenarioToRegisterUserWithInvalidEmail;
-//+ (id)scenarioToRegisterUserWithInvalidPasswords;
++ (id)scenarioToRegisterUserWithInvalidPasswords;
 //+ (id)scenarioToRegisterUserWithExistingAccount;
 
 + (id)scenarioToLogIn;
