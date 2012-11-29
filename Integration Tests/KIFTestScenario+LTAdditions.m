@@ -52,6 +52,29 @@
   return scenario;
 }
 
++ (id) scenarioToRegisterUserWithEmptyFields {
+  KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User With Empty Fields"];
+  NSArray *fieldDicts = @[
+  @{@"username":@"",@"email":@"testuser@gmail.com",@"passwordA":@"testpass",@"passwordB":@"testpass",@"missingField":@"Username"},
+  @{@"username":@"testuser",@"email":@"",@"passwordA":@"testpass",@"passwordB":@"testpass",@"missingField":@"Email"},
+  @{@"username":@"testuser",@"email":@"testuser@gmail.com",@"passwordA":@"",@"passwordB":@"testpass",@"missingField":@"Password"},
+  @{@"username":@"tsetuser",@"email":@"testuser@gmail.com",@"passwordA":@"testpass",@"passwordB":@"",@"missingField":@"Password Again"}
+  ];
+  for (NSDictionary *fieldDict in fieldDicts) {
+    [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:fieldDict[@"username"]
+                                                                       email:fieldDict[@"email"]
+                                                                   passwordA:fieldDict[@"passwordA"]
+                                                                   passwordB:fieldDict[@"passwordB"]]];
+    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
+    NSString *errorText = [NSString stringWithFormat:@"%@ field is empty",fieldDict[@"missingField"]];
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:errorText]];
+    [scenario addStep:[KIFTestStep stepToWaitForAbsenceOfViewWithAccessibilityLabel:errorText]];
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"]];
+    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Authenticate"]];
+  }
+  return scenario;
+}
+
 + (id) scenarioToLogIn {
   KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Login User"];
   [scenario addStep:[KIFTestStep stepToCreateDefaultUser]];
