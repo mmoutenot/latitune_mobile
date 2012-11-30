@@ -12,6 +12,18 @@ typedef struct {
     float lng;
 } GeoPoint;
 
+typedef enum {
+  Success = 20,
+  MissingRequiredParameters = 10,
+  EmailDuplicate = 30,
+  UsernameDuplicate = 31,
+  InvalidAuthentication = 32,
+  InvalidSongID = 40,
+  InvalidBlipID = 50,
+  InvalidCommentID = 60,
+  InvalidFavoriteID = 70
+} LatituneServerStatus;
+
 @interface Song : NSObject
 @property (strong, nonatomic) NSString *title, *album, *artist, *providerSongID, *providerKey;
 @property (nonatomic) NSInteger songID;
@@ -52,7 +64,7 @@ typedef struct {
 
 @protocol CreateUserDelegate <NSObject>
 
-- (void) createUserDidFail;
+- (void) createUserDidFailWithError:(NSNumber *)errorCode;
 - (void) createUserDidSucceedWithUser:(NSDictionary*)user;
 
 @end

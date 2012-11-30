@@ -59,9 +59,15 @@ typedef enum {
 - (void) viewWillAppear:(BOOL)animated {
 }
 
-- (void) createUserDidFail {
+- (void) createUserDidFailWithError:(NSNumber *)errorCode {
   NSLog(@"register fail");
-  [SVProgressHUD showErrorWithStatus:@"Registration Failed"];
+  if ([errorCode isEqualToNumber:@(UsernameDuplicate)]) {
+    [SVProgressHUD showErrorWithStatus:@"Username already exists"];
+  } else if ([errorCode isEqualToNumber:@(EmailDuplicate)]) {
+    [SVProgressHUD showErrorWithStatus:@"Email already exists"];
+  } else {
+    [SVProgressHUD showErrorWithStatus:@"Registration Failed"];
+  }
 }
 
 - (void) createUserDidSucceedWithUser:(NSDictionary *)user {

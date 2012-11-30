@@ -78,10 +78,16 @@
 + (id) scenarioToRegisterUserWithExistingAccount {
   KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User With Existing Account"];
   [scenario addStep:[KIFTestStep stepToCreateDefaultUser]];
-  [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:@"testuser" email:@"testuser@gmail.com" passwordA:@"testpass" passwordB:@"testpass"]];
+  [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:@"testuser2" email:@"testuser@gmail.com" passwordA:@"testpass" passwordB:@"testpass"]];
   [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
-  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Existing email or username"]];
-  [scenario addStep:[KIFTestStep stepToWaitForAbsenceOfViewWithAccessibilityLabel:@"Existing email or username"]];
+  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Email already exists"]];
+  [scenario addStep:[KIFTestStep stepToWaitForAbsenceOfViewWithAccessibilityLabel:@"Email already exists"]];
+  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"]];
+  [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Authenticate"]];
+  [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:@"testuser" email:@"testuser2@gmail.com" passwordA:@"testpass" passwordB:@"testpass"]];
+  [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
+  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Username already exists"]];
+  [scenario addStep:[KIFTestStep stepToWaitForAbsenceOfViewWithAccessibilityLabel:@"Username already exists"]];
   [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Register View"]];
   [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Authenticate"]];
   return scenario;

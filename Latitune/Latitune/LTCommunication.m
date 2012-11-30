@@ -120,7 +120,7 @@
         NSString *responseString = [request responseString];
         NSDictionary *responseDict = [responseString JSONValue];
       NSLog(@"%@",urlString);
-      if ([responseDict[@"meta"][@"status"] isEqualToString:@"ERR"]) {
+      if (![responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]) {
         [self performSelector:failSelector withObject:cl];
       } else {
         [self performSelector:succeedSelector withObject:responseDict withObject:cl];
@@ -149,8 +149,9 @@
     [request setCompletionBlock:^{
       NSString *responseString = [request responseString];
       NSDictionary *responseDict = [responseString JSONValue];
-      if ([responseDict[@"meta"][@"status"] isEqualToString:@"ERR"]) {
-        [self performSelector:failSelector withObject:cl];
+      if (![responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]) {
+        NSLog(@"%@",NSStringFromSelector(failSelector));
+        [self performSelector:failSelector withObject:responseDict[@"meta"][@"status"] withObject:cl];
       } else {
         [self performSelector:succeedSelector withObject:responseDict withObject:cl];
       }
@@ -170,8 +171,9 @@
   [cl[@"delegate"] performSelector:@selector(createUserDidSucceedWithUser:) withObject:user];
 }
 
-- (void) requestToAddUserDidFailWithClosure:(NSDictionary*)cl {
-    [cl[@"delegate"] performSelector:@selector(createUserDidFail)];
+- (void) requestToAddUserDidFailWithErrorCode:(NSNumber *)errorCode closure:(NSDictionary*)cl {
+  NSLog(@"request to add user did fail");
+  [cl[@"delegate"] performSelector:@selector(createUserDidFailWithError:) withObject:errorCode];
 }
 
 - (void) createUserWithUsername:(NSString *)uname email:(NSString*)uemail password:(NSString*)upassword
@@ -181,7 +183,7 @@
     NSDictionary *params = @{@"email":uemail};
     NSDictionary *cl = @{@"delegate":delegate};
     [self putURL:USER_EXT parameters:params succeedSelector:@selector(requestToAddUserDidSucceedWithResponse:closure:)
-    failSelector:@selector(requestToAddUserDidFailWithClosure:) closure:cl];
+    failSelector:@selector(requestToAddUserDidFailWithErrorCode:closure:) closure:cl];
 }
 
 - (void) requestToLoginDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {

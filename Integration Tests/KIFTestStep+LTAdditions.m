@@ -13,6 +13,7 @@
 #import "UIAccessibilityElement-KIFAdditions.h"
 #import "UIApplication-KIFAdditions.h"
 #import "UIView-KIFAdditions.h"
+#import "LTCommunication.h"
 
 @implementation KIFTestStep (EXAdditions)
 
@@ -70,7 +71,7 @@
     if (!err) {
       NSString *response = [request responseString];
       NSDictionary *responseDict = [response JSONValue];
-      if ([responseDict[@"meta"][@"status"] isEqualToString:@"OK"]){
+      if ([responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]){
         return KIFTestStepResultSuccess;
       }
     }
