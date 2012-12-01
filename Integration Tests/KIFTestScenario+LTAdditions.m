@@ -109,7 +109,7 @@
   [scenario addStep:[KIFTestStep stepToGenerateDefaultSong]];
   [scenario addStep:[KIFTestStep stepToGenerateDefaultBlip]];
   [scenario addStepsFromArray:[KIFTestStep stepsToLoginUserWithUsername:@"testuser" password:@"testpass"]];
-  [scenario addStep:[KIFTestStep stepToCheckIfBlipIsPresentWithSongNamed:@"Big Sky"]];
+  [scenario addStep:[KIFTestStep stepToCheckIfBlipIsPresentWithSongNamed:@"Big Sky" inRow:0]];
 }
 
 @end

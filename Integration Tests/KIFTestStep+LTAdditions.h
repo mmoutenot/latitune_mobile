@@ -17,7 +17,7 @@
 + (id) stepsToRegisterUserWithUsername:(NSString *)username email:(NSString*) email passwordA:(NSString *)passwordA passwordB:(NSString *)passwordB;
 + (id) stepsToLoginUserWithUsername:(NSString *)username password:(NSString *)password;
 
-+ (id) stepToCheckIfBlipIsPresentWithSongNamed:(NSstring *)name;
++ (id) stepToCheckIfBlipIsPresentWithSongNamed:(NSString *)name inRow:(NSInteger)row;
 
 // Generators
 + (id) stepToGenerateDefaultUser;

@@ -31,7 +31,7 @@
       }
     }
     return KIFTestStepResultFailure;
-  }],
+  }];
 }
 
 + (id) stepToShowAuthenticationWindow {
@@ -44,7 +44,24 @@
       [logoutButton tap];
       return KIFTestStepResultSuccess;
     }
-  }],
+  }];
+}
+
++ (id) stepToCheckIfBlipIsPresentWithSongNamed:(NSString *)name inRow:(NSInteger)row{
+  return [KIFTestStep stepWithDescription:@"Check for blip in row" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError *__autoreleasing *error) {
+    if ([[UIApplication sharedApplication] accessibilityElementWithLabel:@"Blip Table"] == nil) {
+      return KIFTestStepResultFailure;
+    } else {
+      UIAccessibilityElement *tableElem = [[UIApplication sharedApplication] accessibilityElementWithLabel:@"Blip Table"];
+      UITableView *tableView = (UITableView*)[UIAccessibilityElement viewContainingAccessibilityElement:tableElem];
+      UITableViewCell *tableCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+      if ([tableCell.accessibilityLabel isEqualToString:name]) {
+        return KIFTestStepResultSuccess;
+      } else {
+        return KIFTestStepResultFailure;
+      }
+    }
+  }];
 }
 
 + (id) stepToResetKeychain {
@@ -102,7 +119,7 @@
       }
     }
     return KIFTestStepResultFailure;
-  }],
+  }];
 }
 
 + (id) stepToGenerateDefaultSong{
