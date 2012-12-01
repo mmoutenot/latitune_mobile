@@ -12,6 +12,8 @@
 
 + (id) stepToResetDatabase;
 + (id) stepToShowAuthenticationWindow;
++ (id) stepToResetKeychain;
+
 + (id) stepsToRegisterUserWithUsername:(NSString *)username email:(NSString*) email passwordA:(NSString *)passwordA passwordB:(NSString *)passwordB;
 
 + (id) stepToCreateDefaultUser;

@@ -14,6 +14,7 @@
 #import "UIApplication-KIFAdditions.h"
 #import "UIView-KIFAdditions.h"
 #import "LTCommunication.h"
+#import "SSKeychain.h"
 
 @implementation KIFTestStep (EXAdditions)
 
@@ -43,6 +44,16 @@
       [logoutButton tap];
       return KIFTestStepResultSuccess;
     }
+  }];
+}
+
++ (id) stepToResetKeychain {
+  return [KIFTestStep stepWithDescription:@"Reset Keychain" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError *__autoreleasing *error) {
+    for (NSDictionary *account in [SSKeychain accountsForService:@"latitune"]) {
+      NSLog(@"%@",account);
+      [SSKeychain deletePasswordForService:@"latitune" account:account[@"acct"]];
+    }
+    return KIFTestStepResultSuccess;
   }];
 }
 

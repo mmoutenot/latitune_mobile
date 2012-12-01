@@ -76,7 +76,7 @@
 - (id) init {
   self = [super init];
   if (self) {
-    if ([[SSKeychain allAccounts] count]>0) {
+    if ([[SSKeychain accountsForService:@"latitune"] count]>0) {
       NSLog(@"loading account");
       NSString *_username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
       NSLog(@"%@",_username);
@@ -117,19 +117,20 @@
     __weak ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
   [request setRequestMethod:@"GET"];
     [request setCompletionBlock:^{
-        NSString *responseString = [request responseString];
-        NSDictionary *responseDict = [responseString JSONValue];
-      NSLog(@"%@",urlString);
+      NSString *responseString = [request responseString];
+      NSDictionary *responseDict = [responseString JSONValue];
+      NSLog(@"abc %@",urlString);
+      NSLog(@"%@",cl);
       if (![responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]) {
         [self performSelector:failSelector withObject:cl];
       } else {
         [self performSelector:succeedSelector withObject:responseDict withObject:cl];
       }
     }];
-    [request setFailedBlock:^{
-        [self performSelector:failSelector withObject:cl];
-    }];
-    [request startAsynchronous];
+  [request setFailedBlock:^{
+    [self performSelector:failSelector withObject:cl];
+  }];
+  [request startAsynchronous];
 }
 
 - (void)putURL:(NSString*)urlString parameters:(NSDictionary*)params succeedSelector:(SEL)succeedSelector

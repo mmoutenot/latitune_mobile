@@ -18,6 +18,7 @@
 + (id)scenarioToRegisterUserWithEmptyFields;
 + (id)scenarioToRegisterUserWithExistingAccount;
 
+
 + (id)scenarioToLogIn;
 
 @end
