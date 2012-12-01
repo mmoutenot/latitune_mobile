@@ -4,59 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Listen View Controller - Second-->
-        <scene sceneID="13">
-            <objects>
-                <viewController title="Second" id="3" customClass="LTListenViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Listen" image="second" id="6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="275" y="636"/>
-        </scene>
-        <!--Blip View Controller - Blip-->
-        <scene sceneID="aTa-9X-Xv0">
-            <objects>
-                <viewController id="8vR-re-pG7" customClass="LTBlipViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ym6-J5-yfp">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7q-8Y-SP5">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="111" id="ioC-Tw-SkP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Blip">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showMediaPicker:" destination="8vR-re-pG7" eventType="touchUpInside" id="6eP-sw-srd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="l7q-8Y-SP5" firstAttribute="centerX" secondItem="Ym6-J5-yfp" secondAttribute="centerX" type="default" id="VMQ-ES-T9L"/>
-                            <constraint firstItem="l7q-8Y-SP5" firstAttribute="centerY" secondItem="Ym6-J5-yfp" secondAttribute="centerY" type="default" id="cUG-Pc-0Xz"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Blip" id="byz-en-agg"/>
-                    <navigationItem key="navigationItem" id="p2y-kE-0RP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j1t-73-LAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="275" y="1305"/>
-        </scene>
         <!--Instructions View Controller - Instructions-->
         <scene sceneID="nxo-yZ-gQp">
             <objects>
@@ -147,7 +94,7 @@
             <objects>
                 <viewController id="JCl-Pn-3Jv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22B-IC-74Y">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wvq-fb-yex">
@@ -191,7 +138,7 @@
                             <constraint firstItem="Wvq-fb-yex" firstAttribute="leading" secondItem="22B-IC-74Y" secondAttribute="leading" type="default" id="96O-Ua-o5x"/>
                             <constraint firstItem="Reu-nn-JFV" firstAttribute="trailing" secondItem="22B-IC-74Y" secondAttribute="trailing" type="default" id="CqM-Eq-CQv"/>
                             <constraint firstItem="Reu-nn-JFV" firstAttribute="bottom" secondItem="22B-IC-74Y" secondAttribute="bottom" type="default" id="E2f-DF-XEs"/>
-                            <constraint firstItem="Reu-nn-JFV" firstAttribute="top" secondItem="Wvq-fb-yex" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="XKx-dt-k19"/>
+                            <constraint firstItem="Reu-nn-JFV" firstAttribute="top" secondItem="22B-IC-74Y" secondAttribute="top" constant="435" id="NtI-Tt-gsu"/>
                             <constraint firstItem="yMr-Pp-vfC" firstAttribute="centerX" secondItem="Reu-nn-JFV" secondAttribute="centerX" type="default" id="ezK-7j-ifh"/>
                             <constraint firstItem="Wvq-fb-yex" firstAttribute="top" secondItem="22B-IC-74Y" secondAttribute="top" type="default" id="god-BM-R93"/>
                             <constraint firstItem="Reu-nn-JFV" firstAttribute="leading" secondItem="22B-IC-74Y" secondAttribute="leading" type="default" id="sQ0-1L-P4s"/>
@@ -199,10 +146,15 @@
                             <constraint firstItem="Wvq-fb-yex" firstAttribute="trailing" secondItem="22B-IC-74Y" secondAttribute="trailing" type="default" id="zxt-aW-FJJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Tx9-t7-gjf"/>
+                    <connections>
+                        <segue destination="Ojy-Cc-ItR" kind="modal" identifier="showAuthenticateSegue" id="lHd-ZU-ith"/>
+                        <segue destination="IMj-qO-D7Y" kind="modal" identifier="showInstructionsSegue" id="LWD-P1-gVO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3d8-mt-Oxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-372" y="1846"/>
+            <point key="canvasLocation" x="-276" y="320"/>
         </scene>
         <!--Register View Controller - Register-->
         <scene sceneID="5Ph-Mn-Ivm">
@@ -317,113 +269,20 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4" kind="relationship" relationship="rootViewController" id="LH6-fW-xda"/>
+                        <segue destination="JCl-Pn-3Jv" kind="relationship" relationship="rootViewController" id="AJS-GK-rWu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHX-9X-FMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-751" y="320"/>
         </scene>
-        <!--Tab Bar View Controller - {L}-->
-        <scene sceneID="15">
-            <objects>
-                <tabBarController id="4" customClass="LTTabBarViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="{L}" id="CzN-79-cpa">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="6do-lb-ojK">
-                            <connections>
-                                <action selector="logout:" destination="4" id="tlq-dn-lcY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <outlet property="logoutButton" destination="6do-lb-ojK" id="Wsj-l4-WUD"/>
-                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
-                        <segue destination="8vR-re-pG7" kind="relationship" relationship="viewControllers" id="1uG-Wc-hPZ"/>
-                        <segue destination="XJv-3z-ETx" kind="relationship" relationship="viewControllers" id="DK2-Bb-Fs8"/>
-                        <segue destination="Ojy-Cc-ItR" kind="modal" identifier="showAuthenticateSegue" id="rJp-2P-LYD"/>
-                        <segue destination="IMj-qO-D7Y" kind="modal" identifier="showInstructionsSegue" id="rV0-ua-XZ4"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-264" y="320"/>
-        </scene>
-        <!--Explore View Controller - Explore-->
-        <scene sceneID="ZcM-nh-xVK">
-            <objects>
-                <tableViewController id="XJv-3z-ETx" customClass="LTExploreViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dbn-1t-4Yt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="nearbyCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="nearbyCell" id="NXe-nj-CS0">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRz-sQ-Js4">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="315" id="BCA-hO-oNz"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TT-cy-TN3">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="310" id="1JR-xX-Jmd"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="7TT-cy-TN3" firstAttribute="leading" secondItem="LRz-sQ-Js4" secondAttribute="leading" type="default" id="C4h-vb-MXT"/>
-                                    <constraint firstAttribute="bottom" secondItem="7TT-cy-TN3" secondAttribute="bottom" constant="2" id="QOl-Bv-RzR"/>
-                                    <constraint firstItem="7TT-cy-TN3" firstAttribute="trailing" secondItem="NXe-nj-CS0" secondAttribute="trailing" type="default" id="dDV-xw-t35"/>
-                                    <constraint firstAttribute="bottom" secondItem="LRz-sQ-Js4" secondAttribute="bottom" constant="20" type="default" id="xYY-8m-Ch1"/>
-                                </constraints>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="XJv-3z-ETx" id="7rN-sY-Wfu"/>
-                            <outlet property="delegate" destination="XJv-3z-ETx" id="o4r-LZ-hZY"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Explore" id="hEu-PJ-5WB"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KdO-OD-ntb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="275" y="-23"/>
-        </scene>
     </scenes>
     <resources>
         <image name="blip_button_v1.png" width="100" height="63"/>
-        <image name="second" width="16" height="16"/>
     </resources>
     <classes>
         <class className="LTAuthenticateViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTAuthenticateViewController.h"/>
-        </class>
-        <class className="LTBlipViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTBlipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showMediaPicker:"/>
-            </relationships>
-        </class>
-        <class className="LTExploreViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTExploreViewController.h"/>
         </class>
         <class className="LTInstructionsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTInstructionsViewController.h"/>
@@ -433,21 +292,11 @@
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
             </relationships>
         </class>
-        <class className="LTListenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTListenViewController.h"/>
-        </class>
         <class className="LTLoginViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTLoginViewController.h"/>
         </class>
         <class className="LTRegisterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRegisterViewController.h"/>
-        </class>
-        <class className="LTTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTTabBarViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logout:"/>
-                <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

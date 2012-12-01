@@ -48,7 +48,11 @@
 }
 
 + (id) stepToCheckIfBlipIsPresentWithSongNamed:(NSString *)name inRow:(NSInteger)row{
+  __block NSDate *start = nil;
   return [KIFTestStep stepWithDescription:@"Check for blip in row" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError *__autoreleasing *error) {
+    
+    if (!start) start = [NSDate date];
+    
     if ([[UIApplication sharedApplication] accessibilityElementWithLabel:@"Blip Table"] == nil) {
       return KIFTestStepResultFailure;
     } else {
@@ -58,7 +62,13 @@
       if ([tableCell.accessibilityLabel isEqualToString:name]) {
         return KIFTestStepResultSuccess;
       } else {
-        return KIFTestStepResultFailure;
+        NSTimeInterval timePassed = -[start timeIntervalSinceNow];
+        if ([self defaultTimeout] < timePassed){
+          start = nil;
+          return KIFTestStepResultFailure;
+        } else {
+          return KIFTestStepResultWait;
+        }
       }
     }
   }];

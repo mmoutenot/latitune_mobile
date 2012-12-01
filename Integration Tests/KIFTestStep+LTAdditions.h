@@ -24,4 +24,6 @@
 + (id) stepToGenerateDefaultSong;
 + (id) stepToGenerateDefaultBlip;
 
+// Utility
+
 @end
