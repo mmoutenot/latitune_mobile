@@ -12,12 +12,15 @@
 
 + (id)scenarioTrue;
 
+// Registration Tests
 + (id)scenarioToRegisterUserWithValidData;
 + (id)scenarioToRegisterUserWithInvalidEmail;
 + (id)scenarioToRegisterUserWithInvalidPasswords;
 + (id)scenarioToRegisterUserWithEmptyFields;
 + (id)scenarioToRegisterUserWithExistingAccount;
 
+// Main Screen Tests
++ (id)scenarioToLoadNearbyBlips;
 
 + (id)scenarioToLogIn;
 

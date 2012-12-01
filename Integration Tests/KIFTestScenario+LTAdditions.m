@@ -77,7 +77,7 @@
 
 + (id) scenarioToRegisterUserWithExistingAccount {
   KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Register User With Existing Account"];
-  [scenario addStep:[KIFTestStep stepToCreateDefaultUser]];
+  [scenario addStep:[KIFTestStep stepToGenerateDefaultUser]];
   [scenario addStepsFromArray:[KIFTestStep stepsToRegisterUserWithUsername:@"testuser2" email:@"testuser@gmail.com" passwordA:@"testpass" passwordB:@"testpass"]];
   [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Register Submit Button"]];
   [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Email already exists"]];
@@ -96,14 +96,20 @@
 
 + (id) scenarioToLogIn {
   KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Login User"];
-  [scenario addStep:[KIFTestStep stepToCreateDefaultUser]];
-  [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Login Button"]];
-  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Login View"]];
-  [scenario addStep:[KIFTestStep stepToEnterText:@"testuser" intoViewWithAccessibilityLabel:@"Username field"]];
-  [scenario addStep:[KIFTestStep stepToEnterText:@"testpass" intoViewWithAccessibilityLabel:@"Password field"]];
-  [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Login Submit Button"]];
-  [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Main View"]];
+  [scenario addStep:[KIFTestStep stepToGenerateDefaultUser]];
+  [scenario addStepsFromArray:[KIFTestStep stepsToLoginUserWithUsername:@"testuser" password:@"testpass"]];
   return scenario;
+}
+
+#pragma mark - Main Screen Tests
+
++ (id) scenarioToLoadNearbyBlips {
+  KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"Load Nearby Blips"];
+  [scenario addStep:[KIFTestStep stepToGenerateDefaultUser]];
+  [scenario addStep:[KIFTestStep stepToGenerateDefaultSong]];
+  [scenario addStep:[KIFTestStep stepToGenerateDefaultBlip]];
+  [scenario addStepsFromArray:[KIFTestStep stepsToLoginUserWithUsername:@"testuser" password:@"testpass"]];
+  [scenario addStep:[KIFTestStep stepToCheckIfBlipIsPresentWithSongNamed:@"Big Sky"]];
 }
 
 @end

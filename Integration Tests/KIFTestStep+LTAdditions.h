@@ -15,8 +15,13 @@
 + (id) stepToResetKeychain;
 
 + (id) stepsToRegisterUserWithUsername:(NSString *)username email:(NSString*) email passwordA:(NSString *)passwordA passwordB:(NSString *)passwordB;
++ (id) stepsToLoginUserWithUsername:(NSString *)username password:(NSString *)password;
 
-+ (id) stepToCreateDefaultUser;
++ (id) stepToCheckIfBlipIsPresentWithSongNamed:(NSstring *)name;
 
+// Generators
++ (id) stepToGenerateDefaultUser;
++ (id) stepToGenerateDefaultSong;
++ (id) stepToGenerateDefaultBlip;
 
 @end

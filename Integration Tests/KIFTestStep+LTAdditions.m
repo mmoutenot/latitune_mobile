@@ -20,42 +20,44 @@
 
 + (id) stepToResetDatabase {
   return [KIFTestStep stepWithDescription:@"Recreate database" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError **error) {
-    NSURL *url = [NSURL URLWithString:RASA_EXT];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-    [request startSynchronous];
-    NSError *err = [request error];
+    NSURL *url = [NSURL URLWithString:RASA_EXT],
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url],
+    [request startSynchronous],
+    NSError *err = [request error],
     if (!err) {
-      NSString *response = [request responseString];
+      NSString *response = [request responseString],
       if ([response isEqualToString:@"OK"]){
-        return KIFTestStepResultSuccess;
+        return KIFTestStepResultSuccess,
       }
     }
-    return KIFTestStepResultFailure;
-  }];
+    return KIFTestStepResultFailure,
+  }],
 }
 
 + (id) stepToShowAuthenticationWindow {
   return [KIFTestStep stepWithDescription:@"Show Authentication Window" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError *__autoreleasing *error) {
     if ([[UIApplication sharedApplication] accessibilityElementWithLabel:@"Authentication View"] != nil) {
-      return KIFTestStepResultSuccess;
+      return KIFTestStepResultSuccess,
     } else {
-      UIAccessibilityElement *logoutAccessibilityElement = [[UIApplication sharedApplication] accessibilityElementWithLabel:@"Logout Button"];
-      UIView *logoutButton = [UIAccessibilityElement viewContainingAccessibilityElement:logoutAccessibilityElement];
-      [logoutButton tap];
-      return KIFTestStepResultSuccess;
+      UIAccessibilityElement *logoutAccessibilityElement = [[UIApplication sharedApplication] accessibilityElementWithLabel:@"Logout Button"],
+      UIView *logoutButton = [UIAccessibilityElement viewContainingAccessibilityElement:logoutAccessibilityElement],
+      [logoutButton tap],
+      return KIFTestStepResultSuccess,
     }
-  }];
+  }],
 }
 
 + (id) stepToResetKeychain {
   return [KIFTestStep stepWithDescription:@"Reset Keychain" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError *__autoreleasing *error) {
     for (NSDictionary *account in [SSKeychain accountsForService:@"latitune"]) {
-      NSLog(@"%@",account);
-      [SSKeychain deletePasswordForService:@"latitune" account:account[@"acct"]];
+      NSLog(@"%@",account),
+      [SSKeychain deletePasswordForService:@"latitune" account:account[@"acct"]],
     }
-    return KIFTestStepResultSuccess;
-  }];
+    return KIFTestStepResultSuccess,
+  }],
 }
+
+#pragma mark - Automators
 
 + (id) stepsToRegisterUserWithUsername:(NSString *)username email:(NSString*) email passwordA:(NSString *)passwordA passwordB:(NSString *)passwordB{
   return @[
@@ -66,28 +68,86 @@
     [KIFTestStep stepToEnterText:email intoViewWithAccessibilityLabel:@"Email field"],
     [KIFTestStep stepToEnterText:passwordA intoViewWithAccessibilityLabel:@"Password field"],
     [KIFTestStep stepToEnterText:passwordB intoViewWithAccessibilityLabel:@"Password Again field"]
+  ],
+}
+
++ (id) stepsToLoginUserWithUsername:(NSString *)username password:(NSString *)password {
+  return @[
+    [KIFTestStep stepToTapViewWithAccessibilityLabel:@"Login Button"],
+    [KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Login View"],
+    [KIFTestStep stepToEnterText:username intoViewWithAccessibilityLabel:@"Username field"],
+    [KIFTestStep stepToEnterText:password intoViewWithAccessibilityLabel:@"Password field"],
+    [KIFTestStep stepToTapViewWithAccessibilityLabel:@"Login Submit Button"],
+    [KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Main View"]
   ];
 }
 
-+ (id) stepToCreateDefaultUser {
+#pragma mark - Generators
+
++ (id) stepToGenerateDefaultUser{
   return [KIFTestStep stepWithDescription:@"Create default user" executionBlock:^(KIFTestStep *step, NSError **error) {
-    NSURL *url = [NSURL URLWithString:USER_EXT];
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-    [request setPostValue:@"testuser" forKey:@"username"];
-    [request setPostValue:@"testpass" forKey:@"password"];
-    [request setPostValue:@"testuser@gmail.com" forKey:@"email"];
-    [request setRequestMethod:@"PUT"];
-    [request startSynchronous];
-    NSError *err = [request error];
+    NSURL *url = [NSURL URLWithString:USER_EXT],
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url],
+    [request setPostValue:@"testuser" forKey:@"username"],
+    [request setPostValue:@"testpass" forKey:@"password"],
+    [request setPostValue:@"testuser@gmail.com" forKey:@"email"],
+    [request setRequestMethod:@"PUT"],
+    [request startSynchronous],
+    NSError *err = [request error],
     if (!err) {
-      NSString *response = [request responseString];
-      NSDictionary *responseDict = [response JSONValue];
+      NSString *response = [request responseString],
+      NSDictionary *responseDict = [response JSONValue],
       if ([responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]){
-        return KIFTestStepResultSuccess;
+        return KIFTestStepResultSuccess,
       }
     }
-    return KIFTestStepResultFailure;
-  }];
+    return KIFTestStepResultFailure,
+  }],
+}
+
++ (id) stepToGenerateDefaultSong{
+  return [KIFTestStep stepWithDescription:@"Create default song" executionBlock:^(KIFTestStep *step, NSError **error) {
+    NSURL *url = [NSURL URLWithString:SONG_EXT],
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url],
+    [request setPostValue:@"The Kinks" forKey:@"artist"],
+    [request setPostValue:@"Big Sky" forKey:@"title"],
+    [request setRequestMethod:@"PUT"],
+    [request startSynchronous],
+    NSError *err = [request error],
+    if (!err) {
+      NSString *response = [request responseString],
+      NSDictionary *responseDict = [response JSONValue],
+      if ([responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]){
+        return KIFTestStepResultSuccess,
+      }
+    }
+    return KIFTestStepResultFailure,
+  }],
+}
+
++ (id) stepToGenerateDefaultBlip{
+  return [KIFTestStep stepWithDescription:@"Create default blip" executionBlock:^(KIFTestStep *step, NSError **error) {
+    NSURL *url = [NSURL URLWithString:BLIP_EXT],
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url],
+    [request setPostValue:@"1" forKey:@"user_id"],
+    [request setPostValue:@"1" forKey:@"song_id"],
+    // set to center of Boston for relative distance testing
+    [request setPostValue:@"-71.059721" forKey:@"longitude"],
+    [request setPostValue:@"42.359625"  forKey:@"latitude"],
+    [request setPostValue:@"testpass"   forKey:@"password"],
+    
+    [request setRequestMethod:@"PUT"],
+    [request startSynchronous],
+    NSError *err = [request error],
+    if (!err) {
+      NSString *response = [request responseString],
+      NSDictionary *responseDict = [response JSONValue],
+      if ([responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]){
+        return KIFTestStepResultSuccess,
+      }
+    }
+    return KIFTestStepResultFailure,
+  }],
 }
 
 @end
