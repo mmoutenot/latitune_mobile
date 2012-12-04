@@ -18,6 +18,7 @@ typedef enum {
   EmailDuplicate = 30,
   UsernameDuplicate = 31,
   InvalidAuthentication = 32,
+  InvalidUsername = 33,
   InvalidSongID = 40,
   InvalidBlipID = 50,
   InvalidCommentID = 60,
@@ -71,7 +72,7 @@ typedef enum {
 
 @protocol LoginDelegate <NSObject>
 
-- (void) loginDidFail;
+- (void) loginDidFailWithError:(NSNumber *)errorCode;
 - (void) loginDidSucceedWithUser:(NSDictionary*)user;
 
 @end

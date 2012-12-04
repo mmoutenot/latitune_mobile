@@ -54,22 +54,14 @@
     if (!start) start = [NSDate date];
     
     if ([[UIApplication sharedApplication] accessibilityElementWithLabel:@"Blip Table"] == nil) {
+      NSLog(@"no blip table");
       return KIFTestStepResultFailure;
     } else {
       UIAccessibilityElement *tableElem = [[UIApplication sharedApplication] accessibilityElementWithLabel:@"Blip Table"];
       UITableView *tableView = (UITableView*)[UIAccessibilityElement viewContainingAccessibilityElement:tableElem];
       UITableViewCell *tableCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-      if ([tableCell.accessibilityLabel isEqualToString:name]) {
-        return KIFTestStepResultSuccess;
-      } else {
-        NSTimeInterval timePassed = -[start timeIntervalSinceNow];
-        if ([self defaultTimeout] < timePassed){
-          start = nil;
-          return KIFTestStepResultFailure;
-        } else {
-          return KIFTestStepResultWait;
-        }
-      }
+      KIFTestWaitCondition([tableCell.accessibilityLabel isEqualToString:name], error,@"Wating for view with label %@",name);
+      return KIFTestStepResultSuccess;
     }
   }];
 }
@@ -77,7 +69,6 @@
 + (id) stepToResetKeychain {
   return [KIFTestStep stepWithDescription:@"Reset Keychain" executionBlock:^KIFTestStepResult(KIFTestStep *step, NSError *__autoreleasing *error) {
     for (NSDictionary *account in [SSKeychain accountsForService:@"latitune"]) {
-      NSLog(@"%@",account);
       [SSKeychain deletePasswordForService:@"latitune" account:account[@"acct"]];
     }
     return KIFTestStepResultSuccess;

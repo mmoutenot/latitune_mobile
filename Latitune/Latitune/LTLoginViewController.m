@@ -51,8 +51,12 @@ typedef enum {
 - (void)viewWillAppear:(BOOL)animated {
 }
 
-- (void) loginDidFail {
-  [SVProgressHUD showErrorWithStatus:@"Login failed"];
+- (void) loginDidFailWithError:(NSNumber *)errorCode {
+  if ([errorCode isEqualToNumber:@(InvalidAuthentication)]) {
+    [SVProgressHUD showErrorWithStatus:@"Incorrect Password"];
+  } else {
+    [SVProgressHUD showErrorWithStatus:@"Username Does Not Exist"];
+  }
 }
 
 - (void)loginDidSucceedWithUser:(NSDictionary *)user {
@@ -123,13 +127,13 @@ typedef enum {
     for (UITextField *field in textFields) {
       if ([field.text isEqualToString:@""]) {
         NSInteger textFieldIdx = [textFields indexOfObjectIdenticalTo:field];
-        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@ field is empty",fieldPrompts[textFieldIdx]]];
+        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"%@ Field Is Blank",fieldPrompts[textFieldIdx]]];
         return;
       }
     }
     NSString *username = [(UITextField *)textFields[UsernameField] text];
     NSString *password = [(UITextField *)textFields[PasswordField] text];
-    [SVProgressHUD showWithStatus:@"Loggin In"];
+    [SVProgressHUD showWithStatus:@"Logging In"];
     [[LTCommunication sharedInstance] loginWithUsername:username password:password withDelegate:self];
   }
 }

@@ -20,7 +20,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
+  NSLog(@"hello world");
+  self.tableView.accessibilityLabel = @"Blip Table";
   // get location controller singleton and get current location
   LTLocationController *locationController = [LTLocationController sharedInstance];
   locationController.delegate = self;
@@ -48,7 +49,11 @@
   refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
   [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
   self.refreshControl = refresh;
-  
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [[self refreshControl] beginRefreshing];
+  [self refreshView:[self refreshControl]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,6 +104,7 @@
                                      return [@([obj1location distanceFromLocation:currentLocation]) compare:@([obj2location distanceFromLocation:currentLocation])] ;
                                    }];
         [blips insertObject:locationData atIndex:newIndex];
+        [self.refreshControl endRefreshing];
         if (true) {
           for (NSDictionary *loc in blips) {
             NSLog(@"%@ by %@ at %@",((Song *)loc[@"song"]).title, ((Song *)loc[@"song"]).artist, loc[@"description"]);
@@ -149,6 +155,7 @@
   Song *song = blipDict[@"song"];
   cell.textLabel.text = [NSString stringWithFormat:@"%@ by %@", song.title, song.artist];
   cell.detailTextLabel.text = blipDict[@"description"];
+  cell.accessibilityLabel = cell.textLabel.text;
   LTLocationController *ltlc = [LTLocationController sharedInstance];
   CLLocationCoordinate2D coord = [ltlc location];
   CLLocation *location = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
@@ -317,7 +324,7 @@
   [formatter setDateFormat:@"MMM d, h:mm a"];
   NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@", [formatter stringFromDate:[NSDate date]]];
   refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
-  [refresh endRefreshing];
+  //[refresh endRefreshing];
 }
 
 

@@ -119,10 +119,8 @@
     [request setCompletionBlock:^{
       NSString *responseString = [request responseString];
       NSDictionary *responseDict = [responseString JSONValue];
-      NSLog(@"abc %@",urlString);
-      NSLog(@"%@",cl);
       if (![responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]) {
-        [self performSelector:failSelector withObject:cl];
+        [self performSelector:failSelector withObject:responseDict[@"meta"][@"status"] withObject:cl];
       } else {
         [self performSelector:succeedSelector withObject:responseDict withObject:cl];
       }
@@ -135,8 +133,6 @@
 
 - (void)putURL:(NSString*)urlString parameters:(NSDictionary*)params succeedSelector:(SEL)succeedSelector
         failSelector:(SEL) failSelector closure:(NSDictionary*)cl; {
-    NSLog(@"in put url");
-    NSLog(@"%@",params);
     NSURL *url = [NSURL URLWithString:urlString];
     __weak ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setPostValue:username forKey:@"username"];
@@ -151,7 +147,6 @@
       NSString *responseString = [request responseString];
       NSDictionary *responseDict = [responseString JSONValue];
       if (![responseDict[@"meta"][@"status"] isEqualToNumber:@(Success)]) {
-        NSLog(@"%@",NSStringFromSelector(failSelector));
         [self performSelector:failSelector withObject:responseDict[@"meta"][@"status"] withObject:cl];
       } else {
         [self performSelector:succeedSelector withObject:responseDict withObject:cl];
@@ -173,7 +168,6 @@
 }
 
 - (void) requestToAddUserDidFailWithErrorCode:(NSNumber *)errorCode closure:(NSDictionary*)cl {
-  NSLog(@"request to add user did fail");
   [cl[@"delegate"] performSelector:@selector(createUserDidFailWithError:) withObject:errorCode];
 }
 
@@ -188,7 +182,6 @@
 }
 
 - (void) requestToLoginDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
-    NSLog(@"%@",response);
   NSDictionary *user = response[@"objects"][0];
   [[NSUserDefaults standardUserDefaults] setValue:username forKey:@"username"];
   [SSKeychain setPassword:password forService:@"latitune" account:username];
@@ -196,10 +189,9 @@
   [cl[@"delegate"] performSelector:@selector(loginDidSucceedWithUser:) withObject:user];
 }
 
-- (void) requestToLoginDidFailWithClosure:(NSDictionary*)cl {
-    [cl[@"delegate"] performSelector:@selector(loginDidFail)];
+- (void) requestToLoginDidFailWithErrorCode:(NSNumber *)errorCode closure:(NSDictionary*)cl {
+    [cl[@"delegate"] performSelector:@selector(loginDidFailWithError:) withObject:errorCode];
 }
-
 
 - (void) loginWithUsername:(NSString *)uname password:(NSString *)upassword withDelegate:(NSObject <LoginDelegate>*)delegate {
   if (delegate == nil) delegate = [NSNull null];
@@ -207,7 +199,7 @@
     password = upassword;
     NSDictionary *cl = @{@"delegate":delegate};
     [self getURL:USER_EXT parameters:nil succeedSelector:@selector(requestToLoginDidSucceedWithResponse:closure:)
-    failSelector:@selector(requestToLoginDidFailWithClosure:) closure:cl];
+    failSelector:@selector(requestToLoginDidFailWithErrorCode:closure:) closure:cl];
 }
 
 - (void) addSong:(Song *)song withDelegate:(NSObject<AddSongDelegate> *)delegate {
@@ -218,7 +210,6 @@
 }
 
 - (void) requestToAddSongDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
-    NSLog(@"%@",response);
     NSDictionary *song = response[@"objects"][0];
     Song *toReturn = [[Song alloc] initWithTitle:song[@"title"] artist:song[@"artist"] album:song[@"album"]];
     toReturn.songID = [song[@"id"] intValue];
@@ -241,7 +232,6 @@
 }
 
 - (void) requestToAddBlipDidSucceedWithResponse:(NSDictionary*)response closure:(NSDictionary*)cl {
-    NSLog(@"%@",response);
     NSDictionary *blip = response[@"objects"][0];
     Blip *toReturn = [[Blip alloc] init];
     toReturn.userID = [blip[@"user_id"] intValue];

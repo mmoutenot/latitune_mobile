@@ -22,6 +22,10 @@
 // Main Screen Tests
 + (id)scenarioToLoadNearbyBlips;
 
+//Login Tests
 + (id)scenarioToLogIn;
++ (id)scenarioToLogInWithInvalidPassword;
++ (id)scenarioToLogInWithInvalidUsername;
++ (id)scenarioToLogInWithEmptyFields;
 
 @end
